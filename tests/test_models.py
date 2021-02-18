@@ -3,9 +3,9 @@ import datetime as dt
 
 import pytest
 
+from maker_hub.user.models import Role, User
+
 from .factories import UserFactory
-from maker_hub.user.models import Role
-from maker_hub.user.models import User
 
 
 @pytest.mark.usefixtures("db")

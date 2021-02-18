@@ -2,20 +2,19 @@
 import logging
 import sys
 
-from flask import Flask
-from flask import render_template
+from flask import Flask, render_template
 
-from maker_hub import commands
-from maker_hub import public
-from maker_hub import user
-from maker_hub.extensions import bcrypt
-from maker_hub.extensions import cache
-from maker_hub.extensions import csrf_protect
-from maker_hub.extensions import db
-from maker_hub.extensions import debug_toolbar
-from maker_hub.extensions import flask_static_digest
-from maker_hub.extensions import login_manager
-from maker_hub.extensions import migrate
+from maker_hub import commands, public, user
+from maker_hub.extensions import (
+    bcrypt,
+    cache,
+    csrf_protect,
+    db,
+    debug_toolbar,
+    flask_static_digest,
+    login_manager,
+    migrate,
+)
 
 
 def create_app(config_object="maker_hub.settings"):
