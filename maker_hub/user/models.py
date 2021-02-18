@@ -1,10 +1,13 @@
-# -*- coding: utf-8 -*-
 """User models."""
 import datetime as dt
 
 from flask_login import UserMixin
 
-from maker_hub.database import Column, PkModel, db, reference_col, relationship
+from maker_hub.database import Column
+from maker_hub.database import db
+from maker_hub.database import PkModel
+from maker_hub.database import reference_col
+from maker_hub.database import relationship
 from maker_hub.extensions import bcrypt
 
 

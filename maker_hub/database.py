@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """Database module, including the SQLAlchemy database object and DB-related utilities."""
 from .compat import basestring
 from .extensions import db
@@ -8,7 +7,7 @@ Column = db.Column
 relationship = db.relationship
 
 
-class CRUDMixin(object):
+class CRUDMixin:
     """Mixin that adds convenience methods for CRUD (create, read, update, delete) operations."""
 
     @classmethod

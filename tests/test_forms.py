@@ -1,6 +1,4 @@
-# -*- coding: utf-8 -*-
 """Test forms."""
-
 from maker_hub.public.forms import LoginForm
 from maker_hub.user.forms import RegisterForm
 

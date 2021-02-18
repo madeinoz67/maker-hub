@@ -1,13 +1,11 @@
-# -*- coding: utf-8 -*-
 """Functional tests using WebTest.
 
 See: http://webtest.readthedocs.org/
 """
 from flask import url_for
 
-from maker_hub.user.models import User
-
 from .factories import UserFactory
+from maker_hub.user.models import User
 
 
 class TestLoggingIn:

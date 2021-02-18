@@ -1,15 +1,12 @@
-# -*- coding: utf-8 -*-
 """Defines fixtures available to all tests."""
-
 import logging
 
 import pytest
 from webtest import TestApp
 
+from .factories import UserFactory
 from maker_hub.app import create_app
 from maker_hub.database import db as _db
-
-from .factories import UserFactory
 
 
 @pytest.fixture
