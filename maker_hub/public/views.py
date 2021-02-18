@@ -1,14 +1,14 @@
 """Public section, including homepage and signup."""
-from flask import Blueprint
-from flask import current_app
-from flask import flash
-from flask import redirect
-from flask import render_template
-from flask import request
-from flask import url_for
-from flask_login import login_required
-from flask_login import login_user
-from flask_login import logout_user
+from flask import (
+    Blueprint,
+    current_app,
+    flash,
+    redirect,
+    render_template,
+    request,
+    url_for,
+)
+from flask_login import login_required, login_user, logout_user
 
 from maker_hub.extensions import login_manager
 from maker_hub.public.forms import LoginForm
