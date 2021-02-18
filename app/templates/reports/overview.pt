@@ -1,0 +1,23 @@
+<div metal:use-macro="load: ../shared/_layout.pt">
+    <div metal:fill-slot="menu" tal:omit-tag="True">
+        <div metal:use-macro="load: _menu.pt"></div>
+    </div>
+    <div metal:fill-slot="content" tal:omit-tag="True">
+
+        <div>Parts</div>
+        <div class="mkerhub-stats">
+            <div class="stat">Total Parts: ${'{:,}'.format(total_parts)}</div>
+            <div class="stat">Total Stock: ${'{:,}'.format(total_stock)}</div>
+            <div class="stat">Stock Value: $ ${'{:,}'.format(stock_value)}</div>
+        </div>
+        <div>Storage Locations</div>
+        <div class="mkerhub-stats">
+            <div class="stat">Total Locations: ${'{:,}'.format(locations_total)}</div>
+            <div class="stat">Locations in use: ${'{:,}'.format(locations_used)}</div>
+        </div>
+        <div>Projects</div>
+        <div class="mkerhub-stats">
+            <div class="stat">Number of projects: ${'{:,}'.format(project_count)}</div>
+        </div>
+    </div>
+</div>

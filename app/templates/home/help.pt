@@ -1,0 +1,16 @@
+<div metal:use-macro="load: ../shared/_layout.pt">
+
+    <div metal:fill-slot="menu" tal:omit-tag="True"></div>
+
+
+    <div metal:fill-slot="content" tal:omit-tag="True">
+
+        <div>
+  	    <p><h1>Maker Hub: Help</h1></p>
+	    <br>
+	    <p>The Maker-Hub Help page can be found here: <a href="https://gitlab.com/madeinoz67/maker-hub/-/wikis/help">https://gitlab.com/madeinoz67/maker-hub/-/wikis/help</a>
+	</div>
+    </div>
+
+
+</div>

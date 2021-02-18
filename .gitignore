@@ -66,3 +66,4 @@ env/
 
 # Local History for Visual Studio Code
 .history/
+maker_hub/static/cache_manifest.json
