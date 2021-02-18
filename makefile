@@ -35,3 +35,6 @@ venv :
 
 install:
 	pipenv install --dev
+
+rebase:
+	git checkout master && git pull && git checkout - && git rebase master
