@@ -100,15 +100,15 @@
                 </a>
 
                 <!-- Gitlab -->
-                <a class="btn btn-primary btn-floating m-1" style="background-color: #fc6d26"
-                    href="https://gitlab.com/madeinoz67/maker-hub" role="button" rel="noopener noreferrer"
+                <a class="btn btn-primary btn-floating m-1" style="background-color: black"
+                    href="https://github.com/madeinoz67/maker-hub" role="button" rel="noopener noreferrer"
                     target="_blank" data-mdb-toggle="tooltip" data-mdb-placement="top" title="Project Source">
-                    <i class="fab fa-gitlab fa-2x"></i>
+                    <i class="fab fa-github fa-2x"></i>
                 </a>
 
                 <!-- issues -->
                 <a class="btn btn-primary btn-floating m-1 bg-warning"
-                    href="https://gitlab.com/madeinoz67/maker-hub/issues" role="button" rel="noopener noreferrer"
+                    href="https://github.com/madeinoz67/maker-hub/issues" role="button" rel="noopener noreferrer"
                     target="_blank" data-mdb-toggle="tooltip" data-mdb-placement="top" title="Issues">
                     <i class="fas fa-bug fa-lg"></i>
                 </a>

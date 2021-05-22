@@ -70,4 +70,6 @@ maker_hub/static/cache_manifest.json
 
 !app/*/parts/
 
+!.vscode/launch.json
+
 site/*
