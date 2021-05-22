@@ -1,0 +1,27 @@
+name: Build Status
+
+on:
+  - push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.x"
+      - uses: actions/setup-node@v2.1.5
+        with:
+          node-version: "12.x"
+          registry-url: "https://registry.npmjs.org"
+      - name: Install Python dependencies
+        run: |
+          pip install poetry
+          poetry install --no-dev
+      # - name: Install Node dependencies
+      #   run: npm install
+      # - run: cp .env.example .env
+      # - name: Run Node lints
+      #   run: npm run lint
