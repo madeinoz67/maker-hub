@@ -30,7 +30,7 @@ theme:
 
 # Repository
 repo_name: "madeinoz67/maker-hub"
-repo_url: "https://gitlab.com/madeinoz67/maker-hub"
+repo_url: "https://github.com/madeinoz67/maker-hub"
 edit_uri: ""
 
 # plugins
@@ -75,9 +75,9 @@ copyright: Copyright &copy; 2021 Stephen Eaton
 # footer customisation
 extra:
   social:
-    - icon: fontawesome/brands/gitlab
-      link: "https://gitlab.com/madeinoz67"
     - icon: fontawesome/brands/github
       link: "https://github.com/madeinoz67"
+    - icon: fontawesome/brands/gitlab
+      link: "https://gitlab.com/madeinoz67"
     - icon: fontawesome/brands/twitter
       link: "https://twitter.com/madeinoz"

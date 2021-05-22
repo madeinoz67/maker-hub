@@ -18,14 +18,11 @@ jobs:
           registry-url: "https://registry.npmjs.org"
       - name: Install Python dependencies
         run: |
-          pip install pipenv
-          pipenv install --dev
-      - name: Install Node dependencies
-        run: npm install
+          pip install poetry
+          poetry -D install
       - run: cp .env.example .env
-      - name: Run Node lints
-        run: npm run lint
-      - name: Run Python lints
-        run: pipenv run flask lint --check
-      - name: Run Python tests
-        run: pipenv run flask test
+      # TODO: FastAPI migration
+      # - name: Run Python lints
+      #   run: pipenv run flask lint --check
+      # - name: Run Python tests
+      #   run: pipenv run flask test

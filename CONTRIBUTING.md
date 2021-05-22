@@ -18,7 +18,7 @@ Good bug reports are extremely helpful - thank you!
 
 Guidelines for bug reports:
 
-1. **Use the GitLab issue search** &mdash; check if the issue has already been
+1. **Use the github issue search** &mdash; check if the issue has already been
    reported.
 
 2. **Check if the issue has been fixed** &mdash; try to reproduce it using the
@@ -87,11 +87,11 @@ in order to craft an excellent pull request:
 
       ```sh
       # Clone your fork of the repo into the current directory
-      git clone https://gitlab.com/<your-username>/maker-hub
+      git clone https://github.com/<your-username>/maker-hub
       # Navigate to the newly cloned directory
       cd maker-hub
       # Assign the original repo to a remote called "upstream"
-      git remote add upstream https://gitlab.com/madeinoz67/maker-hub
+      git remote add upstream https://github.com/madeinoz67/maker-hub
       ```
 
 2. If you cloned a while ago, get the latest changes from upstream:
