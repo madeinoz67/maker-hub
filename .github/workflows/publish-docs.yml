@@ -1,0 +1,38 @@
+name: Publish docs via GitHub Pages on release
+on:
+  workflow_run:
+    workflows: ["Release"]
+    types:
+      - completed
+env:
+  PYTHON_VERSION: 3.x
+  POETRY_VERSION: 1.1.6
+
+jobs:
+  documentation:
+    name: Build documentation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python runtime
+        uses: actions/setup-python@v1
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Python Poetry Action
+        uses: abatilo/actions-poetry@v2.1.0
+        with:
+          poetry-version: ${{ env.POETRY_VERSION }}
+
+      - name: View poetry version
+        run: poetry --version
+
+      - name: Install project dependencies
+        run: poetry install
+
+      - name: Deploy documentation
+        run: |
+          poetry run mkdocs gh-deploy --force
+          poetry run mkdocs --version
