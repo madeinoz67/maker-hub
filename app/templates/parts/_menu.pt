@@ -15,12 +15,13 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                 <!-- Link -->
-                <li class="nav-item"><a class="nav-link" href="/projects"><i class="fas fa-tools"
+                <li class="nav-item"><a class="nav-link" href="/parts"><i class="fas fa-microchip"
                             style="color:#448AFF"></i></a></li>
-                <li class="nav-item"><a class="nav-link" href="/projects/create"><i class="fas fa-plus"></i> Create</a>
+                <li class="nav-item"><a class="nav-link" href="/parts/create"><i class="fas fa-plus"></i> Create</a>
                 </li>
 
             </ul>
+
         </div>
     </div>
     <!-- Container wrapper -->

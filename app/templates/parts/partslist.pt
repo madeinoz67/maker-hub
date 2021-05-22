@@ -1,20 +1,19 @@
 <div metal:use-macro="load: ../shared/_layout.pt">
     <div metal:fill-slot="additional-css" tal:omit-tag="True">
         <link rel="stylesheet" type="text/css"
-            href="https://cdn.datatables.net/v/dt/jq-3.3.1/jszip-2.5.0/dt-1.10.24/b-1.7.0/b-colvis-1.7.0/b-html5-1.7.0/b-print-1.7.0/cr-1.5.3/r-2.2.7/sl-1.3.3/datatables.min.css" />
-
+            href="https://cdn.datatables.net/v/dt/jq-3.3.1/jszip-2.5.0/dt-1.10.24/af-2.3.6/b-1.7.0/b-colvis-1.7.0/b-html5-1.7.0/b-print-1.7.0/cr-1.5.3/date-1.0.3/fc-3.3.2/fh-3.1.8/kt-2.6.1/r-2.2.7/rg-1.1.2/rr-1.2.7/sc-2.0.3/sb-1.0.1/sp-1.2.2/sl-1.3.3/datatables.min.css" />
         <link type="text/css"
-            href="https://gyrocode.github.io/jquery-datatables-checkboxes/1.2.12/css/dataTables.checkboxes.css"
+            href="//gyrocode.github.io/jquery-datatables-checkboxes/1.2.12/css/dataTables.checkboxes.css"
             rel="stylesheet" />
-
     </div>
     <div metal:fill-slot="menu" tal:omit-tag="True">
         <div metal:use-macro="load: _menu.pt"></div>
     </div>
     <div metal:fill-slot="content" tal:omit-tag="True">
 
-        <!-- storage table -->
-        <table id="storagelist" class="table table-striped nowrap" style="width:100%">
+        <!-- parts table -->
+        <table id="partlist" class="table table-striped nowrap" style="width:100%">
+
             <thead>
                 <tr>
                     <th></th>
@@ -553,6 +552,7 @@
                 </tr>
             </tfoot>
         </table>
+
     </div>
     <div metal:fill-slot="additional-js" tal:omit-tag="True">
         <!-- DataTable -->
@@ -566,7 +566,7 @@
             src="https://gyrocode.github.io/jquery-datatables-checkboxes/1.2.12/js/dataTables.checkboxes.min.js"></script>
         <script>
             $(document).ready(function () {
-                var table = $('#storagelist').DataTable({
+                var table = $('#partlist').DataTable({
                     'columnDefs': [
                         {
                             'targets': 0,
