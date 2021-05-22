@@ -1,3 +1,68 @@
+[tool.poetry]
+name = "maker-hub"
+version = "2021.0.0"
+description = "Makers Hub for Inventory and Projects"
+authors = ["Stephen Eaton <seaton@strobotics.com.au>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = "^0.63.0"
+pydantic = { version = "^1.6", extras = ["email"] }
+pyjwt = "^1.7"
+uvicorn = "^0.13.4"
+SQLAlchemy = "^1.4.13"
+aiofiles = "^0.6.0"
+python-multipart = "^0.0.5"
+progressbar2 = "^3.53.1"
+passlib = { version = "^1.7", extras = ["bcrypt"] }
+python-dateutil = "^2.8.1"
+aiosqlite = "^0.17.0"
+fastapi-chameleon = {git = "https://github.com/mikeckennedy/fastapi-chameleon", rev = "main"}
+starlette = "0.13.6"
+alembic = "^1.4"
+python-slugify = "^4.0"
+Unidecode = "^1.1"
+loguru = "^0.5.1"
+python-dotenv = "^0.17.1"
+gunicorn = "^20.1.0"
+uvloop = "^0.15.2"
+httptools = "^0.2.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.3"
+pytest-cov = "^2.10"
+pytest-asyncio = "^0.14.0"
+pytest-env = "^0.6.2"
+black = "^21.4b2"
+docker = "^5.0.0"
+mypy = "^0.812"
+mkdocs-material = "^7.1.4"
+mkdocs-macros-plugin = "^0.5.5"
+mkdocs-mermaid2-plugin = "^0.5.1"
+
 [tool.isort]
 profile = "black"
-skip_glob = ["migrations/*"]
+src_paths = ["app", "tests"]
+combine_as_imports = true
+
+[tool.pytest.ini_options]
+testpaths = "tests"
+filterwarnings = "error"
+addopts = '''
+  --strict-markers
+  --tb=short
+  --cov=app
+  --cov=tests
+  --cov-branch
+  --cov-report=term-missing
+  --cov-report=html
+  --cov-report=xml
+  --no-cov-on-fail
+  --cov-fail-under=100
+'''
+env = ["SECRET_KEY=secret"]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

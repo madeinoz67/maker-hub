@@ -56,3 +56,20 @@ env/
 
 # Development database
 *.db
+
+.vscode/*
+# !.vscode/settings.json
+# !.vscode/tasks.json
+# !.vscode/launch.json
+# !.vscode/extensions.json
+*.code-workspace
+
+# Local History for Visual Studio Code
+.history/
+maker_hub/static/cache_manifest.json
+
+!app/*/parts/
+
+!.vscode/launch.json
+
+site/*
