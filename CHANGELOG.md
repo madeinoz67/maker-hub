@@ -1,6 +1,6 @@
 # Changelog
 
-## [Unreleased](https://github.com/madeinoz67/maker-hub/tree/HEAD)
+## [v2021.0.0-dev1](https://github.com/madeinoz67/maker-hub/tree/v2021.0.0-dev1) (2021-05-22)
 
 **Implemented enhancements:**
 
@@ -11,6 +11,22 @@
 **Fixed bugs:**
 
 - Fix changelog page in docs [\#49](https://github.com/madeinoz67/maker-hub/issues/49)
+
+**Merged pull requests:**
+
+- Fixes issue \#49 [\#50](https://github.com/madeinoz67/maker-hub/pull/50)
+- Fixes issue \#46 and issue \#47 [\#48](https://github.com/madeinoz67/maker-hub/pull/48)
+- FastAPI Migration [\#39](https://github.com/madeinoz67/maker-hub/pull/39)
+- Bump flake8-docstrings from 1.5.0 to 1.6.0 [\#14](https://github.com/madeinoz67/maker-hub/pull/14)
+- Bump flask-caching from 1.9.0 to 1.10.0 [\#9](https://github.com/madeinoz67/maker-hub/pull/9)
+- Bump supervisor from 4.2.1 to 4.2.2 [\#8](https://github.com/madeinoz67/maker-hub/pull/8)
+- Bump actions/setup-node from v2.1.4 to v2.1.5 [\#7](https://github.com/madeinoz67/maker-hub/pull/7)
+- Bump flask-migrate from 2.6.0 to 2.7.0 [\#6](https://github.com/madeinoz67/maker-hub/pull/6)
+- Bump concurrently from 5.3.0 to 6.0.0 [\#5](https://github.com/madeinoz67/maker-hub/pull/5)
+- Bump less-loader from 7.3.0 to 8.0.0 [\#4](https://github.com/madeinoz67/maker-hub/pull/4)
+- Bump less from 3.13.1 to 4.1.1 [\#3](https://github.com/madeinoz67/maker-hub/pull/3)
+- Bump actions/setup-node from v2.1.2 to v2.1.4 [\#2](https://github.com/madeinoz67/maker-hub/pull/2)
+- CI Working [\#1](https://github.com/madeinoz67/maker-hub/pull/1)
 
 
 
