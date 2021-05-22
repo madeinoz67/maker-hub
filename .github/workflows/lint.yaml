@@ -19,7 +19,7 @@ jobs:
       - name: Install Python dependencies
         run: |
           pip install poetry
-          poetry install -D
+          poetry install -no-dev
       - run: cp .env.example .env
       # TODO: FastAPI migration
       # - name: Run Python lints
