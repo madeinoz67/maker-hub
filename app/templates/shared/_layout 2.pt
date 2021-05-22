@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Maker Hub</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+    <!-- MDB -->
+    <link rel="stylesheet" href="static/external/css/mdb.min.css" />
+
+    <!-- Custom css -->
+    <div metal:define-slot="additional-css" tal:omit-tag="True"></div>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+
+            <!-- Navbar brand -->
+            <a class="navbar-brand" href="/"><img src="/static/img/logo.svg" /></a>
+
+            <!-- Toggle button -->
+            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+                data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Collapsible wrapper -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li>
+                        <!-- Link -->
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/parts"><i class="fas fa-microchip"></i> Parts</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="/storage"><i class="fas fa-boxes"></i> Storage</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="/projects"><i class="fas fa-tools"></i> Projects</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="/reports"><i class="fas fa-chart-line"></i>
+                            Reports</a>
+                    </li>
+                    </li>
+                </ul>
+
+                <!-- Icons -->
+                <ul class="navbar-nav d-flex flex-row me-1">
+                    <li class="nav-item me-3 me-lg-0">
+                        <a class="nav-link" href="/about"><i class="fas fa-info fa-lg"></i></a>
+                    </li>
+                    <li class="nav-item me-3 me-lg-0">
+                        <a class="nav-link" href="/help"><i class="fas fa-question-circle fa-lg"></i></a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+        <!-- Container wrapper -->
+    </nav>
+
+
+    <!-- Content-->
+    <div class="container-fluid">
+        <div class="row m-sm-0 m-md-3 m-lg-4">
+            <!-- Menu Bar-->
+            <div class="col-12">
+                <div metal:define-slot="menu" tal:omit-tag="True">menu goes here</div>
+            </div>
+            <div class="col-12">
+                <!-- Main Content-->
+                <div class="main_content">
+                    <div metal:define-slot="content" tal:omit-tag="True">No content</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Content -->
+
+    <!-- Footer -->
+    <footer class="bg-primary text-center text-white">
+        <!-- Grid container -->
+        <div class="container p-4 pb-1">
+
+            <!-- Section: Social media -->
+            <section class="mb-4">
+
+                <!-- Twitter -->
+                <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee"
+                    href="https://twitter.com/madeinoz" role="button" rel="noopener noreferrer" target="_blank"
+                    data-mdb-toggle="tooltip" data-mdb-placement="top" title="Find me on Twitter">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </a>
+
+                <!-- Gitlab -->
+                <a class="btn btn-primary btn-floating m-1" style="background-color: #fc6d26"
+                    href="https://gitlab.com/madeinoz67/maker-hub" role="button" rel="noopener noreferrer"
+                    target="_blank" data-mdb-toggle="tooltip" data-mdb-placement="top" title="Project Source">
+                    <i class="fab fa-gitlab fa-2x"></i>
+                </a>
+
+                <!-- issues -->
+                <a class="btn btn-primary btn-floating m-1 bg-warning"
+                    href="https://gitlab.com/madeinoz67/maker-hub/issues" role="button" rel="noopener noreferrer"
+                    target="_blank" data-mdb-toggle="tooltip" data-mdb-placement="top" title="Issues">
+                    <i class="fas fa-bug fa-lg"></i>
+                </a>
+
+                <!-- contributors -->
+                <a class="btn btn-primary btn-floating m-1 bg-info" href="#!" role="button" rel="noopener noreferrer"
+                    target="_blank" data-mdb-toggle="tooltip" data-mdb-placement="top" title="Contributers">
+                    <i class="fas fa-users fa-lg"></i>
+                </a>
+
+                <!-- License -->
+                <a class="btn btn-primary btn-floating m-1 bg-success" href="https://choosealicense.com/licenses/mit/"
+                    role="button" rel="noopener noreferrer" target="_blank" data-mdb-toggle="tooltip"
+                    data-mdb-placement="top" title="License">
+                    <i class="fas fa-file-contract fa-lg"></i>
+                </a>
+            </section>
+            <!-- Section: Social media -->
+
+            <!-- Section: Text -->
+            <section class="mb-4">
+                <p>
+                <H3 class="text-uppercase">Maker Hub</H3>
+                </p>
+                <p>
+                    Parts, Project management, and more for Makers.
+                </p>
+                <p><em>
+                        Build for Makers by Makers.
+                    </em>
+                </p>
+            </section>
+            <!-- Section: Text -->
+        </div>
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+            © 2021 Copyright:
+            <a class="text-white" href="https://gitlab.com/madeinoz67/maker-hub">Stephen Eaton</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+
+
+
+    <!-- MDB -->
+    <script type="text/javascript" src="static/external/js/mdb.min.js"></script>
+
+    <!-- Custom scripts -->
+    <div metal:define-slot="additional-js" tal:omit-tag="True"></div>
+
+</body>
+
+</html>
