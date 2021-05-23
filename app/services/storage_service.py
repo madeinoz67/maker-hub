@@ -1,10 +1,6 @@
-import datetime
-from typing import List, Optional
-
-
-def location_count() -> int:
+def get_location_count() -> int:
     return 234
 
 
-def locations_used() -> int:
+def get_locations_used() -> int:
     return 230

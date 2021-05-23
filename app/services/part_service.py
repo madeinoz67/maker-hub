@@ -1,21 +1,19 @@
-import datetime
-from typing import List, Optional
-from starlette.requests import Request
+from typing import List
 
 
-def part_count() -> int:
+def get_part_count() -> int:
     return 283
 
 
-def total_stock() -> int:
+def get_total_stock() -> int:
     return 1_00
 
 
-def stock_value() -> int:
+def get_stock_value() -> int:
     return 1_500
 
 
-def latest_parts(limit: int = 5) -> List:
+def get_latest_parts(limit: int = 5) -> List:
     return [
         {
             "id": "cfc3w1ypx6g6x81ftygyzhk4ak",

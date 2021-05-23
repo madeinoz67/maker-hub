@@ -1,5 +1,3 @@
-from typing import List
-
 from starlette.requests import Request
 
 from app.services import part_service, storage_service, project_service
@@ -11,13 +9,13 @@ class OverviewViewModel(ViewModelBase):
         super().__init__(request)
 
         # Parts Stats
-        self.total_parts: int = part_service.part_count()
-        self.total_stock: int = part_service.total_stock()
-        self.stock_value: float = part_service.stock_value()
+        self.total_parts: int = part_service.get_part_count()
+        self.total_stock: int = part_service.get_total_stock()
+        self.stock_value: float = part_service.get_stock_value()
 
         # Location Stats
-        self.locations_total: int = storage_service.location_count()
-        self.locations_used: int = storage_service.locations_used()
+        self.locations_total: int = storage_service.get_location_count()
+        self.locations_used: int = storage_service.get_locations_used()
 
         # Project Stats
-        self.project_count: int = project_service.project_count()
+        self.project_count: int = project_service.get_project_count()

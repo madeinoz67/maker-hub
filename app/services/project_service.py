@@ -1,12 +1,11 @@
-import datetime
-from typing import List, Optional
+from typing import List
 
 
-def project_count() -> int:
+def get_project_count() -> int:
     return 34
 
 
-def latest_projects(limit: int = 5) -> List:
+def get_latest_projects(limit: int = 5) -> List:
     return [
         {
             "id": "5z2v341ypg4f6b684n4gra3myk",

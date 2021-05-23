@@ -9,5 +9,5 @@ class PartslistViewModel(ViewModelBase):
     def __init__(self, request: Request):
         super().__init__(request)
 
-        self.part_count: int = part_service.part_count()
-        self.parts = part_service.latest_parts(limit=30)
+        self.part_count: int = part_service.get_part_count()
+        self.parts = part_service.get_latest_parts(limit=30)

@@ -1,5 +1,3 @@
-from typing import List
-
 from starlette.requests import Request
 
 from app.services import project_service
@@ -10,5 +8,5 @@ class ProjectlistViewModel(ViewModelBase):
     def __init__(self, request: Request):
         super().__init__(request)
 
-        self.project_count: int = project_service.project_count()
-        self.projects = project_service.latest_projects(limit=30)
+        self.project_count: int = project_service.get_project_count()
+        self.projects = project_service.get_latest_projects(limit=30)
