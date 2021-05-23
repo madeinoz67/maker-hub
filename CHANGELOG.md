@@ -1,5 +1,11 @@
 # Changelog
 
+## [Unreleased](https://github.com/madeinoz67/maker-hub/tree/HEAD)
+
+**Documentation:**
+
+- Add pages site \(docs\) link to README [\#51](https://github.com/madeinoz67/maker-hub/issues/51)
+
 ## [v2021.0.0-dev1](https://github.com/madeinoz67/maker-hub/tree/v2021.0.0-dev1) (2021-05-22)
 
 **Implemented enhancements:**
