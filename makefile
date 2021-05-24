@@ -12,3 +12,6 @@ docs-serve: docs-build
 
 docs-clean:
 	rm -rf site/
+
+test:
+	pytest --no-cov

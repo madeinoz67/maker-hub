@@ -10,8 +10,9 @@ router = fastapi.APIRouter()
 
 @router.get("/storage")
 @template()
-def storagelist(request: Request):
+async def storagelist(request: Request):
     vm = StoragelistViewModel(request)
+    vm.load()
     return vm.to_dict()
 
 

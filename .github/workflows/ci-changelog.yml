@@ -14,13 +14,13 @@ jobs:
         with:
           ref: master
       - name: Update Changelog
-        uses: heinrichreimer/github-changelog-generator-action@v2.1.1
+        uses: heinrichreimer/github-changelog-generator-action@v2.2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           issues: true
           issuesWoLabels: true
-          pullRequests: false
-          prWoLabels: false
+          pullRequests: true
+          prWoLabels: true
           unreleased: true
           addSections: '{"documentation":{"prefix":"**Documentation:**","labels":["documentation"]}}'
       - uses: stefanzweifel/git-auto-commit-action@v4
