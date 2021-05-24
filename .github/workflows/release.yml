@@ -53,7 +53,7 @@ jobs:
 
       - name: Get Changelog Entry
         id: changelog_reader
-        uses: mindsers/changelog-reader-action@v1
+        uses: mindsers/changelog-reader-action@v2
         with:
           version: ${{ env.CURRENT_VERSION }}
           path: ./CHANGELOG.md
