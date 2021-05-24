@@ -9,7 +9,7 @@ license = "MIT"
 python = "^3.9"
 fastapi = "^0.64.0"
 pydantic = { version = "^1.6", extras = ["email"] }
-pyjwt = "^1.7"
+pyjwt = "^2.1"
 uvicorn = "^0.13.4"
 SQLAlchemy = "^1.4.13"
 aiofiles = "^0.7.0"
