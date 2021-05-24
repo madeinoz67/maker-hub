@@ -5,10 +5,24 @@
 **Documentation:**
 
 - Add pages site \(docs\) link to README [\#51](https://github.com/madeinoz67/maker-hub/issues/51)
+- fixes issue \#51 [\#52](https://github.com/madeinoz67/maker-hub/pull/52)
 
 **Closed issues:**
 
 - Update About page with new Repo [\#59](https://github.com/madeinoz67/maker-hub/issues/59)
+
+**Merged pull requests:**
+
+- Parts DataTable now working with dummy data via API callbacks [\#69](https://github.com/madeinoz67/maker-hub/pull/69)
+- Bump pyjwt from 1.7.1 to 2.1.0 [\#68](https://github.com/madeinoz67/maker-hub/pull/68)
+- Bump fastapi from 0.63.0 to 0.64.0 [\#67](https://github.com/madeinoz67/maker-hub/pull/67)
+- Bump aiofiles from 0.6.0 to 0.7.0 [\#66](https://github.com/madeinoz67/maker-hub/pull/66)
+- Bump pytest-asyncio from 0.14.0 to 0.15.1 [\#65](https://github.com/madeinoz67/maker-hub/pull/65)
+- Bump python-slugify from 4.0.1 to 5.0.2 [\#64](https://github.com/madeinoz67/maker-hub/pull/64)
+- Bump abatilo/actions-poetry from 2.1.0 to 2.1.2 [\#63](https://github.com/madeinoz67/maker-hub/pull/63)
+- Bump mindsers/changelog-reader-action from 1 to 2 [\#62](https://github.com/madeinoz67/maker-hub/pull/62)
+- Bump heinrichreimer/github-changelog-generator-action from 2.1.1 to 2.2 [\#61](https://github.com/madeinoz67/maker-hub/pull/61)
+- Code Cleanup and minor fixes [\#58](https://github.com/madeinoz67/maker-hub/pull/58)
 
 ## [v2021.0.0-dev1](https://github.com/madeinoz67/maker-hub/tree/v2021.0.0-dev1) (2021-05-22)
 
@@ -21,6 +35,22 @@
 **Fixed bugs:**
 
 - Fix changelog page in docs [\#49](https://github.com/madeinoz67/maker-hub/issues/49)
+
+**Merged pull requests:**
+
+- Fixes issue \#49 [\#50](https://github.com/madeinoz67/maker-hub/pull/50)
+- Fixes issue \#46 and issue \#47 [\#48](https://github.com/madeinoz67/maker-hub/pull/48)
+- FastAPI Migration [\#39](https://github.com/madeinoz67/maker-hub/pull/39)
+- Bump flake8-docstrings from 1.5.0 to 1.6.0 [\#14](https://github.com/madeinoz67/maker-hub/pull/14)
+- Bump flask-caching from 1.9.0 to 1.10.0 [\#9](https://github.com/madeinoz67/maker-hub/pull/9)
+- Bump supervisor from 4.2.1 to 4.2.2 [\#8](https://github.com/madeinoz67/maker-hub/pull/8)
+- Bump actions/setup-node from v2.1.4 to v2.1.5 [\#7](https://github.com/madeinoz67/maker-hub/pull/7)
+- Bump flask-migrate from 2.6.0 to 2.7.0 [\#6](https://github.com/madeinoz67/maker-hub/pull/6)
+- Bump concurrently from 5.3.0 to 6.0.0 [\#5](https://github.com/madeinoz67/maker-hub/pull/5)
+- Bump less-loader from 7.3.0 to 8.0.0 [\#4](https://github.com/madeinoz67/maker-hub/pull/4)
+- Bump less from 3.13.1 to 4.1.1 [\#3](https://github.com/madeinoz67/maker-hub/pull/3)
+- Bump actions/setup-node from v2.1.2 to v2.1.4 [\#2](https://github.com/madeinoz67/maker-hub/pull/2)
+- CI Working [\#1](https://github.com/madeinoz67/maker-hub/pull/1)
 
 
 
