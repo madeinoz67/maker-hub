@@ -21,7 +21,7 @@ aiosqlite = "^0.17.0"
 fastapi-chameleon = {git = "https://github.com/mikeckennedy/fastapi-chameleon", rev = "main"}
 starlette = "0.13.6"
 alembic = "^1.4"
-python-slugify = "^4.0"
+python-slugify = "^5.0"
 Unidecode = "^1.1"
 loguru = "^0.5.1"
 python-dotenv = "^0.17.1"
