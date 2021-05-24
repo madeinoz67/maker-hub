@@ -1,6 +1,6 @@
 # Changelog
 
-## [Unreleased](https://github.com/madeinoz67/maker-hub/tree/HEAD)
+## [v2021.0.0-dev2](https://github.com/madeinoz67/maker-hub/tree/v2021.0.0-dev2) (2021-05-24)
 
 **Documentation:**
 
