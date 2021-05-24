@@ -13,6 +13,7 @@
 
 **Merged pull requests:**
 
+- updates help page [\#70](https://github.com/madeinoz67/maker-hub/pull/70)
 - Parts DataTable now working with dummy data via API callbacks [\#69](https://github.com/madeinoz67/maker-hub/pull/69)
 - Bump pyjwt from 1.7.1 to 2.1.0 [\#68](https://github.com/madeinoz67/maker-hub/pull/68)
 - Bump fastapi from 0.63.0 to 0.64.0 [\#67](https://github.com/madeinoz67/maker-hub/pull/67)
