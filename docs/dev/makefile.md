@@ -10,8 +10,10 @@
 
 `make docs-clean` - cleans documentation build artifacts.
 
+`make test` - Runs python tests.
+
 ## Makefile Contents
 
 ```
---8<-- "././Makefile"
+--8<-- "././makefile"
 ```
