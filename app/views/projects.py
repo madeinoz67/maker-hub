@@ -10,8 +10,9 @@ router = fastapi.APIRouter()
 
 @router.get("/projects")
 @template()
-def projectlist(request: Request):
+async def projectlist(request: Request):
     vm = ProjectlistViewModel(request)
+    vm.load()
     return vm.to_dict()
 
 

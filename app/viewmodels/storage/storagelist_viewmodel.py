@@ -8,4 +8,7 @@ class StoragelistViewModel(ViewModelBase):
     def __init__(self, request: Request):
         super().__init__(request)
 
-        self.project_count: int = storage_service.get_location_count()
+        self.project_count: int = 0
+
+    async def load(self):
+        self.project_count = await storage_service.get_location_count()

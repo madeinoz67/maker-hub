@@ -3,13 +3,13 @@ from fastapi_chameleon import template
 from starlette.requests import Request
 
 from app.viewmodels.reports.overview_viewmodel import OverviewViewModel
-from app.viewmodels.shared.viewmodel import ViewModelBase
 
 router = fastapi.APIRouter()
 
 
 @router.get("/reports")
 @template()
-def overview(request: Request):
+async def overview(request: Request):
     vm = OverviewViewModel(request)
+    await vm.load()
     return vm.to_dict()

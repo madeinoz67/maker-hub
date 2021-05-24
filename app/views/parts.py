@@ -10,8 +10,9 @@ router = fastapi.APIRouter()
 
 @router.get("/parts")
 @template()
-def partslist(request: Request):
+async def partslist(request: Request):
     vm = PartslistViewModel(request)
+    await vm.load()
     return vm.to_dict()
 
 
