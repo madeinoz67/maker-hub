@@ -14,4 +14,4 @@ docs-clean:
 	rm -rf site/
 
 test:
-	pytest --no-cov
+	poetry run pytest --no-cov
