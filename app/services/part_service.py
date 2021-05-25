@@ -28,6 +28,9 @@ from nanoid import generate
 #         await session.commit()
 #     return []
 
+_alphabet = "0123456789abcdefghijklmnopqrstuvwxyz"
+_size = 26
+
 
 async def create_part(
     name: str,
@@ -47,7 +50,7 @@ async def create_part(
         part (Part): the new Part created with a unique Id
     """
     part = Part()
-    part.id = generate(size=16)
+    part.id = generate(_alphabet, _size)
     part.name = name
     part.description = description
     part.notes = notes

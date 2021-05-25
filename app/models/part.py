@@ -9,7 +9,7 @@ class Part(SqlAlchemyBase):
 
     id: str = sa.Column(sa.String, primary_key=True)
     name: str = sa.Column(sa.String, index=True)
-    description: str = sa.Column(sa.String, index=True)
+    description: str = sa.Column(sa.String, nullable=True, index=True)
     created_date: datetime.datetime = sa.Column(
         sa.DateTime, default=datetime.datetime.now, index=True
     )
