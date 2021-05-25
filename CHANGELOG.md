@@ -8,6 +8,7 @@
 
 **Merged pull requests:**
 
+- Bump alembic from 1.6.3 to 1.6.4 [\#76](https://github.com/madeinoz67/maker-hub/pull/76)
 - Fixes \#71 - Makefile not being included in generated docs [\#73](https://github.com/madeinoz67/maker-hub/pull/73)
 
 ## [v2021.0.0-dev2](https://github.com/madeinoz67/maker-hub/tree/v2021.0.0-dev2) (2021-05-24)
