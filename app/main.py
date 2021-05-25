@@ -1,9 +1,12 @@
 import os
 import fastapi
 import fastapi_chameleon
+from pathlib import Path
 
 from starlette.staticfiles import StaticFiles
 from dotenv import load_dotenv
+
+from app.models import db_session
 
 from app.views import home
 from app.views import parts
@@ -15,7 +18,8 @@ from app.api import part_api
 
 app = fastapi.FastAPI(
     title="Maker Hub",
-    description="Personal Hub for makers: Manage Parts, projects, ideas, documentation, parts and footprints etc",
+    description="Open Source Personal Hub for Makers: Manage Parts, \
+        projects, ideas, documentation, parts and footprints etc",
     version="2021.0.0-dev1",
 )
 
@@ -27,6 +31,12 @@ def main():
 def configure(dev_mode: bool):
     configure_templates(dev_mode)
     configure_routes()
+    configure_db(dev_mode)
+
+
+def configure_db(dev_mode: bool):
+    file = (Path(__file__).parent / "db" / "maker-hub.sqlite").absolute()
+    db_session.global_init(file.as_posix())
 
 
 def configure_templates(dev_mode: bool):

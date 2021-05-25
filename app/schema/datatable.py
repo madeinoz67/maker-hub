@@ -35,11 +35,14 @@ class DataTableRequest(DataTableBase):
     columns: List[Column]
 
 
-class DataTableResponse(DataTableBase):
+class DataTableResponseBase(DataTableBase):
     recordsTotal: int
     recordsFiltered: int
-    data: List[Part]
     error: Optional[str] = None
+
+
+class PartDataTableResponse(DataTableBase):
+    data: List[Part]
 
 
 # Example DataTable generated Query

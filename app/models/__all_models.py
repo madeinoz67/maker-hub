@@ -1,6 +1,9 @@
-from data.part import Part
-from data.location import Location
-from data.project import Project
-from data.stock import Stock
-from data.stock_order import StockOrder
-from data.stock_history import StockHistory
+# flake8: noqa
+
+from app.models.part import Part
+
+# from app.models.location import Location
+# from app.models.project import Project
+# from app.models.stock import Stock
+# from app.models.stock_order import StockOrder
+# from app.models.stock_history import StockHistory

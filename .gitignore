@@ -76,3 +76,4 @@ site/*
 app/coverage.xml
 coverage.xml
 htmlcov
+app/db/maker-hub.sqlite
