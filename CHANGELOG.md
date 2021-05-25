@@ -2,7 +2,7 @@
 
 ## [Unreleased](https://github.com/madeinoz67/maker-hub/tree/HEAD)
 
-**Fixed bugs:**
+**Closed issues:**
 
 - makefile not being included in the docs build on release [\#71](https://github.com/madeinoz67/maker-hub/issues/71)
 
@@ -12,14 +12,11 @@
 
 ## [v2021.0.0-dev2](https://github.com/madeinoz67/maker-hub/tree/v2021.0.0-dev2) (2021-05-24)
 
-**Documentation:**
-
-- Add pages site \(docs\) link to README [\#51](https://github.com/madeinoz67/maker-hub/issues/51)
-- fixes issue \#51 [\#52](https://github.com/madeinoz67/maker-hub/pull/52)
-
 **Closed issues:**
 
 - Update About page with new Repo [\#59](https://github.com/madeinoz67/maker-hub/issues/59)
+- Update applications Documents page to display github documents page [\#57](https://github.com/madeinoz67/maker-hub/issues/57)
+- Add pages site \(docs\) link to README [\#51](https://github.com/madeinoz67/maker-hub/issues/51)
 
 **Merged pull requests:**
 
@@ -34,18 +31,16 @@
 - Bump mindsers/changelog-reader-action from 1 to 2 [\#62](https://github.com/madeinoz67/maker-hub/pull/62)
 - Bump heinrichreimer/github-changelog-generator-action from 2.1.1 to 2.2 [\#61](https://github.com/madeinoz67/maker-hub/pull/61)
 - Code Cleanup and minor fixes [\#58](https://github.com/madeinoz67/maker-hub/pull/58)
+- fixes issue \#51 [\#52](https://github.com/madeinoz67/maker-hub/pull/52)
 
 ## [v2021.0.0-dev1](https://github.com/madeinoz67/maker-hub/tree/v2021.0.0-dev1) (2021-05-22)
 
-**Implemented enhancements:**
+**Closed issues:**
 
+- Fix changelog page in docs [\#49](https://github.com/madeinoz67/maker-hub/issues/49)
 - add docs to projects pages site [\#47](https://github.com/madeinoz67/maker-hub/issues/47)
 - Add release actions and workflows [\#46](https://github.com/madeinoz67/maker-hub/issues/46)
 - Migrate to FastAPI [\#38](https://github.com/madeinoz67/maker-hub/issues/38)
-
-**Fixed bugs:**
-
-- Fix changelog page in docs [\#49](https://github.com/madeinoz67/maker-hub/issues/49)
 
 **Merged pull requests:**
 
