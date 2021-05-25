@@ -38,7 +38,7 @@ class DataTableRequest(DataTableBase):
 class DataTableResponse(DataTableBase):
     recordsTotal: int
     recordsFiltered: int
-    data: List[Part] = []
+    data: List[Part]
     error: Optional[str] = None
 
 

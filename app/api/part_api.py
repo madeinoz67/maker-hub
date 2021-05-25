@@ -6,7 +6,7 @@ from app.services import part_service
 api = fastapi.APIRouter()
 
 
-@api.post("/api/part/datatable")
+@api.post("/api/part/datatable", response_model=DataTableResponse)
 async def table_datasource(request: DataTableRequest) -> DataTableResponse:
     """Parts Datatable Source
 

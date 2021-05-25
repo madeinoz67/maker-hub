@@ -8,7 +8,7 @@ from app.viewmodels.shared.viewmodel import ViewModelBase
 router = fastapi.APIRouter()
 
 
-@router.get("/parts")
+@router.get("/parts", include_in_schema=False)
 @template()
 async def partslist(request: Request):
     vm = PartslistViewModel(request)
@@ -16,7 +16,7 @@ async def partslist(request: Request):
     return vm.to_dict()
 
 
-@router.get("/parts/create")
+@router.get("/parts/create", include_in_schema=False)
 @template()
 def create(request: Request):
     vm = ViewModelBase(request)
