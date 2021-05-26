@@ -4,6 +4,7 @@
 
 **Closed issues:**
 
+- Add issue and PR Templates [\#74](https://github.com/madeinoz67/maker-hub/issues/74)
 - makefile not being included in the docs build on release [\#71](https://github.com/madeinoz67/maker-hub/issues/71)
 
 **Merged pull requests:**
