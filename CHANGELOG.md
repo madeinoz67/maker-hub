@@ -4,13 +4,16 @@
 
 **Closed issues:**
 
+- \[FEATURE\] - Add fav icon [\#80](https://github.com/madeinoz67/maker-hub/issues/80)
 - Add issue and PR Templates [\#74](https://github.com/madeinoz67/maker-hub/issues/74)
 - makefile not being included in the docs build on release [\#71](https://github.com/madeinoz67/maker-hub/issues/71)
 
 **Merged pull requests:**
 
+- resolved issue \# 80 by adding in a favicon.ico and editing \_layout template [\#83](https://github.com/madeinoz67/maker-hub/pull/83)
 - Bump alembic from 1.6.3 to 1.6.4 [\#76](https://github.com/madeinoz67/maker-hub/pull/76)
 - Fixes \#71 - Makefile not being included in generated docs [\#73](https://github.com/madeinoz67/maker-hub/pull/73)
+- Bump pytest-asyncio from 0.14.0 to 0.15.1 [\#65](https://github.com/madeinoz67/maker-hub/pull/65)
 
 ## [v2021.0.0-dev2](https://github.com/madeinoz67/maker-hub/tree/v2021.0.0-dev2) (2021-05-24)
 
@@ -27,7 +30,6 @@
 - Bump pyjwt from 1.7.1 to 2.1.0 [\#68](https://github.com/madeinoz67/maker-hub/pull/68)
 - Bump fastapi from 0.63.0 to 0.64.0 [\#67](https://github.com/madeinoz67/maker-hub/pull/67)
 - Bump aiofiles from 0.6.0 to 0.7.0 [\#66](https://github.com/madeinoz67/maker-hub/pull/66)
-- Bump pytest-asyncio from 0.14.0 to 0.15.1 [\#65](https://github.com/madeinoz67/maker-hub/pull/65)
 - Bump python-slugify from 4.0.1 to 5.0.2 [\#64](https://github.com/madeinoz67/maker-hub/pull/64)
 - Bump abatilo/actions-poetry from 2.1.0 to 2.1.2 [\#63](https://github.com/madeinoz67/maker-hub/pull/63)
 - Bump mindsers/changelog-reader-action from 1 to 2 [\#62](https://github.com/madeinoz67/maker-hub/pull/62)
