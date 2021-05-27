@@ -1,20 +1,15 @@
 import os
-import fastapi
-import fastapi_chameleon
 from pathlib import Path
 
+import fastapi
+import fastapi_chameleon
+from loguru import logger
 from starlette.staticfiles import StaticFiles
-from dotenv import load_dotenv
-
-from app.models import db_session
-
-from app.views import home
-from app.views import parts
-from app.views import projects
-from app.views import storage
-from app.views import reports
 
 from app.api import part_api
+from app.core import config
+from app.models import db_session
+from app.views import home, parts, projects, reports, storage
 
 app = fastapi.FastAPI(
     title="Maker Hub",
@@ -67,8 +62,7 @@ def configure_routes():
 if __name__ == "__main__":
     main()
 else:
-    load_dotenv()
 
-    DEV_MODE = os.getenv("DEV_MODE", "False") == "True"
-
+    DEV_MODE = config.get_settings().DEV_MODE
     configure(dev_mode=DEV_MODE)
+    logger.info(f"Dev Mode is: {DEV_MODE}")

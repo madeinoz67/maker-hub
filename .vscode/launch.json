@@ -13,9 +13,6 @@
                 "app.main:app",
                 "--reload",
             ],
-            "env": {
-                "DEV_MODE": "True",
-            }
         }
     ]
 }

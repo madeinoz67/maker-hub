@@ -12,9 +12,12 @@ nav:
       - dev/documentation.md
       - dev/makefile.md
       - dev/python.md
+      - dev/env.md
       - dev/docker.md
       - dev/contributing.md
-
+  - User Guide:
+    - ug/getting_started.md
+    - ug/troubleshooting.md
   - Contributors: authors.md
   - Change Log: changelog.md
   - License: license.md

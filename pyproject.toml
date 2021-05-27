@@ -8,7 +8,7 @@ license = "MIT"
 [tool.poetry.dependencies]
 python = "^3.9"
 fastapi = "^0.64.0"
-pydantic = { version = "^1.6", extras = ["email"] }
+pydantic = { version = "^1.6", extras = ["email","env"] }
 pyjwt = "^2.1"
 uvicorn = "^0.13.4"
 SQLAlchemy = "^1.4.13"
@@ -42,11 +42,12 @@ mkdocs-material = "^7.1.4"
 mkdocs-macros-plugin = "^0.5.5"
 mkdocs-mermaid2-plugin = "^0.5.1"
 Faker = "^8.2.1"
+mdx-truly-sane-lists = "^1.2"
+isort = "^5.8.0"
 
 [tool.isort]
 profile = "black"
 src_paths = ["app", "tests"]
-combine_as_imports = true
 
 [tool.pytest.ini_options]
 testpaths = "tests"

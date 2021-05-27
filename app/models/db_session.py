@@ -3,9 +3,11 @@ from typing import Callable, Optional
 
 import sqlalchemy as sa
 import sqlalchemy.orm as orm
-from sqlalchemy.ext.asyncio import AsyncEngine, create_async_engine, AsyncSession
+from loguru import logger
+from sqlalchemy.ext.asyncio import AsyncEngine, AsyncSession, create_async_engine
 from sqlalchemy.orm import Session
 
+from app.core import config
 from app.models.modelbase import SqlAlchemyBase
 
 __factory: Optional[Callable[[], Session]] = None
@@ -31,16 +33,20 @@ def global_init(db_file: str):
     # if this would be the case. We need to explicitly switch to aiosqlite as below.
     conn_str = "sqlite+pysqlite:///" + db_file.strip()
     async_conn_str = "sqlite+aiosqlite:///" + db_file.strip()
-    print("Connecting to DB with {}".format(async_conn_str))
+    logger.info("Connecting to DB with {}".format(async_conn_str))
+    # print("Connecting to DB with {}".format(async_conn_str))
 
     # Adding check_same_thread = False after the recording. This can be an issue about
     # creating / owner thread when cleaning up sessions, etc. This is a sqlite restriction
     # that we probably don't care about in this example.
+    enable_sql_logging = config.get_settings().ENABLE_SQL_LOGGING
     engine = sa.create_engine(
-        conn_str, echo=False, connect_args={"check_same_thread": False}
+        conn_str, echo=enable_sql_logging, connect_args={"check_same_thread": False}
     )
     __async_engine = create_async_engine(
-        async_conn_str, echo=False, connect_args={"check_same_thread": False}
+        async_conn_str,
+        echo=enable_sql_logging,
+        connect_args={"check_same_thread": False},
     )
     __factory = orm.sessionmaker(bind=engine)
 
