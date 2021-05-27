@@ -3,7 +3,7 @@ import sys
 from functools import lru_cache
 
 from loguru import logger
-from pydantic import BaseSettings, Field
+from pydantic import BaseSettings
 
 from app.core.logging import InterceptHandler
 
@@ -14,23 +14,19 @@ def get_settings():
 
 
 class Settings(BaseSettings):
-    DEV_MODE: bool = Field(..., env="DEV_MODE")
-    DEBUG: bool = Field(..., env="DEBUG")
-    # db_connection: str
-    LOGFILE: str = Field(..., env="LOGFILE")
-    ENABLE_SQL_LOGGING: bool = Field(..., env="ENABLE_SQL_LOGGING")
-    # # enable_sql_logging: bool = False
+
+    DEV_MODE: bool = False
+    DEBUG: bool = False
+    # DB_CONNECTION: str =
+    LOGFILE: str = "maker-hub.log"
+    ENABLE_SQL_LOGGING: bool = False
+
+    nanoid_alphabet: str = "0123456789abcdefghijklmnopqrstuvwxyz"
+    nanoid_size: int = 26
 
     class Config:
         env_file = ".env"
         env_file_encoding = "utf-8"
-        # fields = {
-        #     "DEV_MODE": {"env": "DEV_MODE"},
-        #     "DEBUG": {"env": "DEBUG"},
-        #     "DB_CONNECTION": {"env": "DB_CONNECTION"},
-        #     "LOGFILE": {"env": "LOGFILE"},
-        #     "ENABLE_SQL_LOGGING": {"env": "ENABLE_SQL_LOGGING"},
-        # }
 
 
 # Logging Configuration

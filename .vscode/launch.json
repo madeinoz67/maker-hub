@@ -13,6 +13,11 @@
                 "app.main:app",
                 "--reload",
             ],
+            "env": {
+                "DEV_MODE": "True",
+                "DEBUG": "True",
+                "ENABLE_SQL_LOGGING": "True",
+            }
         }
     ]
 }

@@ -7,6 +7,9 @@ site_url: https://madeinoz67.github.io/maker-hub/
 # Page Tree
 nav:
   - Home: index.md
+  - User Guide:
+    - ug/getting_started.md
+    - ug/troubleshooting.md
   - Development:
       - dev/getting_started.md
       - dev/documentation.md
@@ -15,9 +18,7 @@ nav:
       - dev/env.md
       - dev/docker.md
       - dev/contributing.md
-  - User Guide:
-    - ug/getting_started.md
-    - ug/troubleshooting.md
+  #- Reference:  # placeholder for API reference documentation
   - Contributors: authors.md
   - Change Log: changelog.md
   - License: license.md
