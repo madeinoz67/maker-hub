@@ -21,6 +21,7 @@ nav:
 
 # Configuration
 theme:
+  favicon: img/favicon.ico
   name: material
   features:
     - navigation.tabs
