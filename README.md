@@ -38,11 +38,11 @@ make install       # install project dependencies for the first time
 make docs-serve    # make and view documentation
 ```
 
-Open your browser: <http://localhost:8000>
+Open your browser: <http://localhost:5000>
 
 ### Docker
 
-currently this image is not available on docker hub due to the project status, however can be build locally.
+Currently this image is not available on docker hub due to the project status, however can be build locally.
 
 1. docker must be installed on the local machine
 2. clone this repo and make install dependencies (or make update if you already have a clone of the repo).

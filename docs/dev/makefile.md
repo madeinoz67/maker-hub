@@ -6,7 +6,7 @@
 
 `make docs-build` - builds project documentation.
 
-`make docs-serve` - builds and serves project documentation on <https://localhost:8000>.
+`make docs-serve` - builds and serves project documentation on <https://localhost:5000>.
 
 `make docs-clean` - cleans documentation build artifacts.
 
@@ -15,5 +15,5 @@
 ## Makefile Contents
 
 ```
---8<-- "././makefile"
+--8<-- "././Makefile"
 ```

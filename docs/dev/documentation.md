@@ -47,7 +47,7 @@ make docs-serve
 ```
 This will start up the mkdocs local server and your projects documentation will be available in your browser.
 
-`http://localhost:8000`
+`http://localhost:5000`
 
 ## Making changes
 

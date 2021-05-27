@@ -2,6 +2,7 @@
 site_name: "Maker Hub"
 site_author: "Stephen Eaton"
 site_description: "Parts, Project builds and more for Makers"
+site_url: https://madeinoz67.github.io/maker-hub/
 
 # Page Tree
 nav:
@@ -31,7 +32,9 @@ theme:
 # Repository
 repo_name: "madeinoz67/maker-hub"
 repo_url: "https://github.com/madeinoz67/maker-hub"
-edit_uri: ""
+google_analytics:
+  - 'UA-190797511-2'
+  - 'auto'
 
 # plugins
 plugins:
@@ -53,6 +56,7 @@ markdown_extensions:
   - pymdownx.tabbed
   - pymdownx.tilde
   - pymdownx.highlight
+  
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
