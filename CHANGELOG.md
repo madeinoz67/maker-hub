@@ -4,14 +4,17 @@
 
 **Closed issues:**
 
+- \[FEATURE\] - Add favicon to Docs site [\#85](https://github.com/madeinoz67/maker-hub/issues/85)
 - \[FEATURE\] - Add fav icon [\#80](https://github.com/madeinoz67/maker-hub/issues/80)
 - Add issue and PR Templates [\#74](https://github.com/madeinoz67/maker-hub/issues/74)
 - makefile not being included in the docs build on release [\#71](https://github.com/madeinoz67/maker-hub/issues/71)
 
 **Merged pull requests:**
 
+- adds favicon and logo to the docs site [\#86](https://github.com/madeinoz67/maker-hub/pull/86)
 - resolved issue \# 80 by adding in a favicon.ico and editing \_layout template [\#83](https://github.com/madeinoz67/maker-hub/pull/83)
 - Bump alembic from 1.6.3 to 1.6.4 [\#76](https://github.com/madeinoz67/maker-hub/pull/76)
+- Fixes \#71 - Makefile not being included in generated docs [\#73](https://github.com/madeinoz67/maker-hub/pull/73)
 
 ## [v2021.0.0-dev2](https://github.com/madeinoz67/maker-hub/tree/v2021.0.0-dev2) (2021-05-24)
 
@@ -23,7 +26,6 @@
 
 **Merged pull requests:**
 
-- Fixes \#71 - Makefile not being included in generated docs [\#73](https://github.com/madeinoz67/maker-hub/pull/73)
 - updates help page [\#70](https://github.com/madeinoz67/maker-hub/pull/70)
 - Parts DataTable now working with dummy data via API callbacks [\#69](https://github.com/madeinoz67/maker-hub/pull/69)
 - Bump pyjwt from 1.7.1 to 2.1.0 [\#68](https://github.com/madeinoz67/maker-hub/pull/68)
@@ -36,6 +38,7 @@
 - Bump heinrichreimer/github-changelog-generator-action from 2.1.1 to 2.2 [\#61](https://github.com/madeinoz67/maker-hub/pull/61)
 - Code Cleanup and minor fixes [\#58](https://github.com/madeinoz67/maker-hub/pull/58)
 - fixes issue \#51 [\#52](https://github.com/madeinoz67/maker-hub/pull/52)
+- FastAPI Migration [\#39](https://github.com/madeinoz67/maker-hub/pull/39)
 
 ## [v2021.0.0-dev1](https://github.com/madeinoz67/maker-hub/tree/v2021.0.0-dev1) (2021-05-22)
 
@@ -50,7 +53,6 @@
 
 - Fixes issue \#49 [\#50](https://github.com/madeinoz67/maker-hub/pull/50)
 - Fixes issue \#46 and issue \#47 [\#48](https://github.com/madeinoz67/maker-hub/pull/48)
-- FastAPI Migration [\#39](https://github.com/madeinoz67/maker-hub/pull/39)
 - Bump flake8-docstrings from 1.5.0 to 1.6.0 [\#14](https://github.com/madeinoz67/maker-hub/pull/14)
 - Bump flask-caching from 1.9.0 to 1.10.0 [\#9](https://github.com/madeinoz67/maker-hub/pull/9)
 - Bump supervisor from 4.2.1 to 4.2.2 [\#8](https://github.com/madeinoz67/maker-hub/pull/8)
