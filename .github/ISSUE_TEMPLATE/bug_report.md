@@ -1,7 +1,7 @@
 ---
 name: Bug report
 about: Create a report to help us improve Maker-Hub
-title: ":beetle: Issue Description Goes Here(leave :beetle: at start of title)"
+title: Description of Issue here
 labels: 'triage, type: bug'
 assignees: ''
 
