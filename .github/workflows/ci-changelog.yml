@@ -22,7 +22,7 @@ jobs:
           pullRequests: false
           prWoLabels: false
           unreleased: true
-          addSections: '{"bugs": {"prefix": "**Bugs:**", "labels":["type: bug"]}, "features": {"prefix":"**Features: **", "labels":["type: enhancement"]},  "documentation":{"prefix":"**Documentation: **","labels":["type: documentation"]}, "dependencies": {"prefix": "**Dependencies: **",labels":["pr_dependencies"]}}'
+          addSections: '{"bugs": {"prefix": "**Bugs:**", "labels":["type: bug"]}, "features": {"prefix":"**Features: **", "labels":["type: enhancement"]},  "documentation":{"prefix":"**Documentation: **","labels":["type: documentation"]}, "dependencies": {"prefix": "**Dependencies: **", "labels":["pr_dependencies"]}}'
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Update Changelog for PR
