@@ -13,6 +13,7 @@
 
 **Dependencies Updated:**
 
+- Bump alembic from 1.6.4 to 1.6.5 [\#87](https://github.com/madeinoz67/maker-hub/pull/87)
 - Bump alembic from 1.6.3 to 1.6.4 [\#76](https://github.com/madeinoz67/maker-hub/pull/76)
 
 **Closed issues:**
