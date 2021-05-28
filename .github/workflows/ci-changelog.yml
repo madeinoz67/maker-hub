@@ -17,12 +17,12 @@ jobs:
         uses: heinrichreimer/github-changelog-generator-action@v2.2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          issues: true
-          issuesWoLabels: true
-          pullRequests: true
+          issues: false
+          issuesWoLabels: false
+          pullRequests: false
           prWoLabels: false
           unreleased: true
-          addSections: '{"bugs": {"prefix": "[BUG]", "labels":["type: bug"]}, "features": {"prefix":"[FEATURE]", "labels":["type: enhancement"]},  "documentation":{"prefix":"[DOC]","labels":["type: documentation"]}, "dependencies": {"prefix": "Bump", "labels":["pr: dependencies"]}}'
+          addSections: '{"bugs": {"prefix": "**Bugs Fixed:**", "labels":["type: bug"]}, "features": {"prefix":"**Features Added:**", "labels":["type: enhancement"]},  "documentation":{"prefix":"**Documentation Changes:**","labels":["type: documentation"]}, "dependencies": {"prefix": "**Dependencies Updated:**", "labels":["pr: dependencies"]}}'
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Update Changelog for PR
