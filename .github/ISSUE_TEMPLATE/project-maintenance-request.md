@@ -1,7 +1,7 @@
 ---
 name: Project Maintenance Request
 about: Any project maintenance issues
-title: "[MAINT] - Description of Maintence request"
+title: ":wrench: Description of Maintenance request (leave :wrench: at start of title)"
 labels: 'triage, type: Maintenance'
 assignees: ''
 

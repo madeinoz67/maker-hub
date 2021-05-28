@@ -1,7 +1,7 @@
 ---
 name: Document Change Request
 about: Documentation Errors, Additions or Change Request
-title: "[DOC] - Title of document change"
+title: ":books: Title of document change (leave :books: at start of title)"
 labels: 'triage, type: documentation'
 assignees: ''
 
