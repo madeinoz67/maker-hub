@@ -2,7 +2,8 @@ import os
 from typing import Any, Generator
 
 import pytest
-from example.routers.utils.db import get_db
+
+# from example.routers.utils.db import get_db
 from fastapi import FastAPI
 from fastapi.testclient import TestClient
 from sqlalchemy import create_engine

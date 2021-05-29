@@ -18,7 +18,7 @@ class Settings(BaseSettings):
 
     DEV_MODE: bool = False
     DEBUG: bool = False
-    DATABASE_URL: str = "sqlite:///./maker-hub.db"
+    DATABASE_URL: str = "sqlite:///./app/db/maker-hub.db"
     LOGFILE: str = "maker-hub.log"
     ENABLE_SQL_LOGGING: bool = False
     VERSION: str = "2021.0.0-Dev2"

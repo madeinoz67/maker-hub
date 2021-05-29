@@ -12,8 +12,14 @@
 
 `make test` - Runs python tests.
 
+`make schema-revision` - creates a new revision of the current schema
+
+`make schema-upgrade` - will perform schema upgrade to the latest version
+
+`make schema-downgrade` - will perform schema downgrade to the previous version [data may be lost]
+
 ## Makefile Contents
 
 ```
---8<-- "././Makefile"
+--8<-- "././makefile"
 ```

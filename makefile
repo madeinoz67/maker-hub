@@ -15,3 +15,12 @@ docs-clean:
 
 test:
 	poetry run pytest --no-cov
+
+schema-revision:
+	poetry run alembic revision -m "$(message)"
+
+schema-upgrade:
+	poetry run alembic upgrade head
+
+schema-downgrade:
+	poetry run alembic downgrade -1

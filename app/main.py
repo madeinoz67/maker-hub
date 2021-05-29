@@ -36,7 +36,7 @@ def configure(dev_mode: bool):
     configure_event_handlers()
     configure_templates(dev_mode)
     configure_routes()
-    # configure_db(dev_mode)
+    configure_db(dev_mode)
 
 
 def configure_event_handlers():
@@ -55,7 +55,7 @@ def configure_middleware():
 
 
 def configure_db(dev_mode: bool):
-    file = (Path(__file__).parent / "db").absolute()
+    file = (Path(__file__).parent / "db" / "maker-hub.db").absolute()
     db_session.global_init(file.as_posix())
 
 

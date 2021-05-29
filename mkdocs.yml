@@ -14,7 +14,9 @@ nav:
       - dev/getting_started.md
       - dev/documentation.md
       - dev/makefile.md
-      - dev/python.md
+      - Python: 
+        - dev/python/python.md 
+        - dev/python/database.md
       - dev/env.md
       - dev/docker.md
       - dev/contributing.md

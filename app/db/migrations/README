@@ -1,1 +1,13 @@
 Generic single-database configuration.
+
+
+## To make a new version 
+`poetry run alembic revision -m "notes about changes being made"`
+
+
+## To Update database to latest 
+`poetry run alembic upgrade head`
+
+
+## To rollback to previous version 
+`poetry run alembic downgrade -1`

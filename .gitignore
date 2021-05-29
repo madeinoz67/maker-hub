@@ -78,3 +78,4 @@ coverage.xml
 htmlcov
 app/db/maker-hub.sqlite
 *.log
+.coverage*
