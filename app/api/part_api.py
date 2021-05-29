@@ -3,11 +3,10 @@ from typing import Optional
 import fastapi
 from fastapi import Depends, HTTPException, Response, status
 from sqlalchemy.exc import IntegrityError
-from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.api.exceptions import DuplicatedEntryError
 from app.core import config
-from app.models.db_session import get_session
+from app.db import db_session
 from app.schema.datatable import DataTableRequest, PartDataTableResponse
 from app.schema.part import PartCreate, PartPublic, PartUpdate
 from app.services import part_service

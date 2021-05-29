@@ -2,6 +2,7 @@ import logging
 import sys
 from functools import lru_cache
 
+from databases import DatabaseURL
 from loguru import logger
 from pydantic import BaseSettings
 
@@ -17,9 +18,10 @@ class Settings(BaseSettings):
 
     DEV_MODE: bool = False
     DEBUG: bool = False
-    # DB_CONNECTION: str =
+    DATABASE_URL: str = "sqlite:///./maker-hub.db"
     LOGFILE: str = "maker-hub.log"
     ENABLE_SQL_LOGGING: bool = False
+    VERSION: str = "2021.0.0-Dev2"
 
     nanoid_alphabet: str = "0123456789abcdefghijklmnopqrstuvwxyz"
     nanoid_size: int = 26

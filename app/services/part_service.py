@@ -6,11 +6,9 @@ from loguru import logger
 from nanoid import generate
 from sqlalchemy import delete, func, update
 from sqlalchemy.exc import IntegrityError
-from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy.future import select
 
 from app.core import config
-from app.models import db_session
+from app.db import db_session
 from app.models.part import PartModel
 from app.schema.datatable import DataTableRequest, PartDataTableResponse
 from app.schema.part import PartCreate, PartUpdate
@@ -114,7 +112,7 @@ async def create_part(details: PartCreate) -> PartModel:
     part.manufacturer = details.manufacturer
     part.mpn = details.mpn
 
-    async with db_session.create_async_session() as session:
+    async with db_session.create_session() as session:
         session.add(part)
         try:
             await session.commit()
@@ -128,7 +126,7 @@ async def create_part(details: PartCreate) -> PartModel:
 
 async def get_part_count() -> int:
 
-    async with db_session.create_async_session() as session:
+    async with db_session.create_session() as session:
         query = select(func.count(PartModel.id))
         results = await session.execute(query)
 

@@ -3,20 +3,28 @@ from pathlib import Path
 
 import fastapi
 import fastapi_chameleon
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from loguru import logger
 from starlette.staticfiles import StaticFiles
 
 from app.api import part_api
-from app.core import config
-from app.models import db_session
+from app.core import config, tasks
+from app.db import db_session
 from app.views import home, parts, projects, reports, storage
 
-app = fastapi.FastAPI(
-    title="Maker Hub",
-    description="Open Source Personal Hub for Makers: Manage Parts, \
+
+def get_application() -> FastAPI:
+    return FastAPI(
+        title="Maker Hub",
+        description="Open Source Personal Hub for Makers: Manage Parts, \
         projects, ideas, documentation, parts and footprints etc",
-    version="2021.0.0-dev1",
-)
+        debug=config.get_settings().DEBUG,
+        version=config.get_settings().VERSION,
+    )
+
+
+app = get_application()
 
 
 def main():
@@ -24,13 +32,30 @@ def main():
 
 
 def configure(dev_mode: bool):
+    configure_middleware()
+    configure_event_handlers()
     configure_templates(dev_mode)
     configure_routes()
-    configure_db(dev_mode)
+    # configure_db(dev_mode)
+
+
+def configure_event_handlers():
+    app.add_event_handler("startup", tasks.create_start_app_handler(app))
+    app.add_event_handler("shutdown", tasks.create_stop_app_handler(app))
+
+
+def configure_middleware():
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=["*"],
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
 
 
 def configure_db(dev_mode: bool):
-    file = (Path(__file__).parent / "db" / "maker-hub.sqlite").absolute()
+    file = (Path(__file__).parent / "db").absolute()
     db_session.global_init(file.as_posix())
 
 

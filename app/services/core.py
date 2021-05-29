@@ -1,3 +1,6 @@
+from databases import Database
+
+
 class CoreService:
     """CoreService
 
@@ -5,7 +8,7 @@ class CoreService:
 
     """
 
-    def __init__(self):
+    def __init__(self) -> None:
         pass
 
 
@@ -16,8 +19,9 @@ class BaseDBService(CoreService):
 
     """
 
-    def __init__(self):
+    def __init__(self, db: Database) -> None:
         super().__init__()
+        self.db
 
 
 class BaseRemoteService(CoreService):
@@ -27,5 +31,5 @@ class BaseRemoteService(CoreService):
 
     """
 
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__()
