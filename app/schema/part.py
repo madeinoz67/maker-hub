@@ -1,16 +1,14 @@
-from pydantic import BaseModel
-
+import datetime
 from typing import Optional
 
-import datetime
+from pydantic import HttpUrl
+
+from app.schema.core import CoreSchema, IDSchemaMixin
 
 
-class Part(BaseModel):
-    id: str
-    name: str
-    description: str
-    created_date: datetime.datetime
-    last_updated: datetime.datetime
+class PartBase(CoreSchema):
+    name: Optional[str] = None
+    description: Optional[str] = None
     notes: Optional[str] = None
     footprint: Optional[str] = None
     manufacturer: Optional[str] = None
@@ -18,3 +16,21 @@ class Part(BaseModel):
 
     class Config:
         orm_mode = True
+
+
+class PartCreate(PartBase):
+    name: str
+
+
+class PartUpdate(PartBase):
+    pass
+
+
+class PartInDB(IDSchemaMixin, PartBase):
+    name: str
+
+
+class PartPublic(IDSchemaMixin, PartBase):
+    href: Optional[HttpUrl] = None
+    created_at: datetime.datetime
+    updated_at: datetime.datetime

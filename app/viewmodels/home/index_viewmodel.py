@@ -1,8 +1,8 @@
-from starlette.requests import Request
-
 from typing import List
 
-from app.schema.part import Part
+from starlette.requests import Request
+
+from app.schema.part import PartPublic
 from app.services import part_service, project_service, storage_service
 from app.viewmodels.shared.viewmodel import ViewModelBase
 
@@ -14,9 +14,9 @@ class IndexViewModel(ViewModelBase):
         self.part_count: int = 0
         self.location_count: int = 0
         self.project_count: int = 0
-        self.latest_parts: List[Part] = []
+        self.latest_parts: List[PartPublic] = []
         self.latest_projects: List[
-            Part
+            PartPublic
         ] = []  # Todo: Change to correct Type once Project schema has been completed
 
     async def load(self):

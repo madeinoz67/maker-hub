@@ -24,6 +24,9 @@ class Settings(BaseSettings):
     nanoid_alphabet: str = "0123456789abcdefghijklmnopqrstuvwxyz"
     nanoid_size: int = 26
 
+    host: str = "http://127.0.0.1"
+    port: int = 8000
+
     class Config:
         env_file = ".env"
         env_file_encoding = "utf-8"

@@ -5,7 +5,7 @@ import sqlalchemy as sa
 import sqlalchemy.orm as orm
 from loguru import logger
 from sqlalchemy.ext.asyncio import AsyncEngine, AsyncSession, create_async_engine
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session, sessionmaker
 
 from app.core import config
 from app.models.modelbase import SqlAlchemyBase
@@ -77,3 +77,14 @@ def create_async_session() -> AsyncSession:
     session.sync_session.expire_on_commit = False
 
     return session
+
+
+async_session = sessionmaker(
+    __async_engine, class_=AsyncSession, expire_on_commit=False
+)
+
+
+async def get_session() -> AsyncSession:
+    async_session: AsyncSession = create_async_session()
+    async with async_session as session:
+        yield session

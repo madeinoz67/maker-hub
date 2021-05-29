@@ -1,15 +1,20 @@
-from app.schema.datatable import PartDataTableResponse
+import datetime
 from typing import List, Optional
 
-from app.models import db_session
-from app.models.part import Part
-
-from sqlalchemy import func
-from sqlalchemy.future import select
-from app.schema.datatable import DataTableRequest, PartDataTableResponse
-
+from fastapi import Depends
+from loguru import logger
 from nanoid import generate
+from sqlalchemy import delete, func, update
+from sqlalchemy.exc import IntegrityError
+from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy.future import select
 
+from app.core import config
+from app.models import db_session
+from app.models.part import PartModel
+from app.schema.datatable import DataTableRequest, PartDataTableResponse
+from app.schema.part import PartCreate, PartUpdate
+from app.services.core import BaseDBService
 
 # async def get_part_datatable(request: DataTableRequest) -> PartDataTableResponse:
 #     """generates data for the datatable request
@@ -28,45 +33,103 @@ from nanoid import generate
 #         await session.commit()
 #     return []
 
-_alphabet = "0123456789abcdefghijklmnopqrstuvwxyz"
-_size = 26
+_alphabet = config.get_settings().nanoid_alphabet
+_size = config.get_settings().nanoid_size
 
 
-async def create_part(
-    name: str,
-    description: str,
-    notes: Optional[str] = None,
-    footprint: Optional[str] = None,
-    manufacturer: Optional[str] = None,
-    mpn: Optional[str] = None,
-) -> Part:
+def PartService(BaseDBService):
+    """Part Service
+
+    Defines the Parts Service
+
+    """
+
+    __instance = None
+
+    def getInstance() -> PartService:
+        """Static access method"""
+
+        if PartService.__instance is None:
+            PartService()
+        return PartService.__instance
+
+    def __init__(self):
+        super(PartService, self).__init__()
+        if PartService.__instance is not None:
+            raise Exception(
+                "This class is a singleon, you must call PartService.getInstance() to return its instance"
+            )
+        else:
+            PartService.__instance = self
+
+
+async def update_part(part_id: str, part: PartUpdate):
+
+    part.last_updated = datetime.datetime.now()
+    async with db_session.create_async_session() as session:
+        results = await session.execute(select(Part).filter(Part.id == part_id))
+
+        part = results.scalar_one_or_none()
+        # part.name
+        # part_to_update.description = part.description
+
+        stmt = update(Part).where(Part.id == part_id)
+        results = await session.execute(stmt)
+        await session.commit()
+    return results
+
+
+async def delete_part(part_id: str):
+    with db_session.create_async_session() as session:
+
+        try:
+            stmt = delete(Part).where(Part.id == part_id)
+            result = session.execute(stmt)
+            await session.commit()
+            return result
+        except IntegrityError as ex:
+            await session.rollback()
+            logger.error("Part does not exist", ex)
+
+
+async def create_part(details: PartCreate) -> PartModel:
     """Creates a new Part and saves to db
 
     Args:
-        name (str): name of the part
-        description (str): description of the part
+        details (PartCreate): details of Part to create
 
     Returns:
-        part (Part): the new Part created with a unique Id
+        part (PartPublic): the newly created Part
     """
-    part = Part()
+    part = PartModel()
+
     part.id = generate(_alphabet, _size)
-    part.name = name
-    part.description = description
-    part.notes = notes
-    part.footprint = footprint
-    part.manufacturer = manufacturer
-    part.mpn = mpn
+
+    if details.name is None:
+        details.name = part.id
+    part.name = details.name
+    part.description = details.description
+    part.notes = details.notes
+    part.footprint = details.footprint
+    part.manufacturer = details.manufacturer
+    part.mpn = details.mpn
 
     async with db_session.create_async_session() as session:
         session.add(part)
-        await session.commit()
+        try:
+            await session.commit()
+
+        except IntegrityError as ex:
+            await session.rollback()
+            logger.error("Part ID already exists in the database", ex)
+
     return part
 
 
 async def get_part_count() -> int:
+
     async with db_session.create_async_session() as session:
-        query = select(func.count(Part.id))
+        query = select(func.count(PartModel.id))
         results = await session.execute(query)
 
     return results.scalar()
@@ -82,15 +145,16 @@ async def get_stock_value() -> float:
     return 1_500.00
 
 
-async def get_latest_parts(start: int = 0, limit: int = 5) -> List[Part]:
+async def get_latest_parts(start: int = 0, limit: int = 5) -> List[PartModel]:
 
     start = max(0, start)
     limit = max(0, limit)
 
+    logger.debug("Entering - get_latest_parts()")
     async with db_session.create_async_session() as session:
-        query = select(Part).order_by(Part.created_date.desc()).limit(limit)
+        query = select(PartModel).order_by(PartModel.created_at.desc()).limit(limit)
 
         results = await session.execute(query)
         parts = results.scalars()
 
-        return list(parts)
+    return list(parts)
