@@ -28,6 +28,8 @@ nav:
 
 # Configuration
 theme:
+  favicon: img/favicon.ico
+  logo: img/logo.svg
   name: material
   features:
     - navigation.tabs

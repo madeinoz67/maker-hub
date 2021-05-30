@@ -18,11 +18,11 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           issues: true
-          issuesWoLabels: true
+          issuesWoLabels: false
           pullRequests: true
-          prWoLabels: true
+          prWoLabels: false
           unreleased: true
-          addSections: '{"documentation":{"prefix":"**Documentation:**","labels":["documentation"]}}'
+          addSections: '{"bugs": {"prefix": "**Bugs Fixed:**", "labels":["type: bug"]}, "features": {"prefix":"**Features Added:**", "labels":["type: enhancement"]},  "documentation":{"prefix":"**Documentation Changes:**","labels":["type: documentation"]}, "dependencies": {"prefix": "**Dependencies Updated:**", "labels":["pr: dependencies"]}}'
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Update Changelog for PR
