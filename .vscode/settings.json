@@ -1,0 +1,19 @@
+{
+    "python.pythonPath": "/Users/seaton/Library/Caches/pypoetry/virtualenvs/maker-hub-CgMQY1m9-py3.9/bin/python",
+    "pythonTestExplorer.testFramework": "pytest",
+    "python.testing.pytestEnabled": true,
+    "python.testing.cwd": "",
+    "python.testing.pytestArgs": [
+        "tests"
+    ],
+    "python.sortImports.args": [
+        "--profile=black",
+    ],
+    "[python]": {
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        }
+    },
+    "python.testing.unittestEnabled": false,
+    "python.testing.nosetestsEnabled": false
+}
