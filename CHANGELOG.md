@@ -10,6 +10,7 @@
 
 - \[FEATURE\] - Add favicon to Docs site [\#85](https://github.com/madeinoz67/maker-hub/issues/85)
 - \[FEATURE\] - Add fav icon to main app [\#80](https://github.com/madeinoz67/maker-hub/issues/80)
+- Adds VSCode remote development container [\#89](https://github.com/madeinoz67/maker-hub/pull/89)
 
 **Dependencies Updated:**
 
