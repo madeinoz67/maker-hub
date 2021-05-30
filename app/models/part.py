@@ -29,6 +29,5 @@ class PartModel(SqlAlchemyBase):
     #     Stock, order_by=[Stock.last_updated], back_populates="part"
     # )
 
-
-def __repr__(self):
-    return "<Part {}>".format(self.id)
+    def __repr__(self):
+        return "<Part {}>".format(self.id)

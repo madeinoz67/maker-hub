@@ -58,9 +58,9 @@ env/
 *.db
 
 .vscode/*
-# !.vscode/settings.json
+!.vscode/settings.json
 # !.vscode/tasks.json
-# !.vscode/launch.json
+!.vscode/launch.json
 # !.vscode/extensions.json
 *.code-workspace
 
@@ -69,8 +69,6 @@ env/
 maker_hub/static/cache_manifest.json
 
 !app/*/parts/
-
-!.vscode/launch.json
 
 site/*
 app/coverage.xml

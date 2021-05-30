@@ -1,4 +1,4 @@
-The project currently uses the light weight SQLite
+The project currently uses the light weight SQLite as its underlying database.
 
 ## Schema
 
@@ -13,13 +13,16 @@ make schema-revision message="some notes about the changes to the schema revisio
 ```
 or
 ```shell
-poetry run alembic revision -m "some notes about the changes to the schema revision"
+poetry run alembic revision --autogenerate -m "some notes about the changes to the schema revision"
 ```
 
-A new script will be created in the alembic migrations directory
+A new script will be created in the alembic migrations directory, encompassing all the schema changes to the underlying application models.
 
 !!! example
     `...maker_hub/app/db/migrations/versions/82154bb5bc9a_.py ...  done`
+
+!!! important note
+    This new revision file should be added to git as soon as possible.
 
 ### 2. Editing the 'upgrade' and 'downgrade' functions in the new revision script
 

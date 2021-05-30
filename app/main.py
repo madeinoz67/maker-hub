@@ -9,7 +9,7 @@ from loguru import logger
 from starlette.staticfiles import StaticFiles
 
 from app.api import part_api
-from app.core import config, tasks
+from app.core import config, tasks, utils
 from app.db import db_session
 from app.views import home, parts, projects, reports, storage
 
@@ -44,7 +44,7 @@ def configure_event_handlers():
     app.add_event_handler("shutdown", tasks.create_stop_app_handler(app))
 
 
-def configure_middleware():
+def configure_middleware() -> None:
     app.add_middleware(
         CORSMiddleware,
         allow_origins=["*"],
@@ -54,12 +54,14 @@ def configure_middleware():
     )
 
 
-def configure_db(dev_mode: bool):
-    file = (Path(__file__).parent / "db" / "maker-hub.db").absolute()
+def configure_db(dev_mode: bool) -> None:
+
+    filepath = utils.get_database_path(config.get_settings().DATABASE_URL)
+    file = (Path(__file__).parent / "data" / "maker-hub.db").absolute()
     db_session.global_init(file.as_posix())
 
 
-def configure_templates(dev_mode: bool):
+def configure_templates(dev_mode: bool) -> None:
 
     folder = os.path.dirname(__file__)
     template_folder = os.path.join(folder, "templates")
@@ -67,7 +69,7 @@ def configure_templates(dev_mode: bool):
     fastapi_chameleon.global_init(template_folder, auto_reload=dev_mode)
 
 
-def configure_routes():
+def configure_routes() -> None:
     folder = os.path.dirname(__file__)
     static_folder = os.path.join(folder, "static")
     static_folder = os.path.abspath(static_folder)

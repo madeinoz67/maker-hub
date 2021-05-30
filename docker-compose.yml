@@ -1,8 +1,14 @@
-version: '3'
+version: '3.4'
 
 services:
-  app:
-    build: .
-    restart: on-failure
+  makerhub:
+    image: makerhub
+    build:
+      context: .
+      restart: on-failure
+      dockerfile: ./Dockerfile
     ports:
-      - "8080:8080"
+      - 8080:8000
+
+
+

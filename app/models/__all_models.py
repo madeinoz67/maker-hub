@@ -1,6 +1,6 @@
 # flake8: noqa
 
-from app.models.part import PartModel
+import app.models.part
 
 # from app.models.location import LocationModel
 # from app.models.project import ProjectModel

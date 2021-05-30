@@ -17,7 +17,7 @@ test:
 	poetry run pytest --no-cov
 
 schema-revision:
-	poetry run alembic revision -m "$(message)"
+	poetry run alembic revision --autogenerate -m "$(message)"
 
 schema-upgrade:
 	poetry run alembic upgrade head
