@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "maker-hub"
-version = "2021.0.0-dev1"
+version = "2021.0.0-dev3"
 description = "Makers Hub for Inventory and Projects"
 authors = ["Stephen Eaton <seaton@strobotics.com.au>"]
 license = "MIT"
