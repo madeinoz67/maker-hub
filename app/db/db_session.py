@@ -49,7 +49,7 @@ def create_session() -> Session:
     return session
 
 
-async def get_session() -> Session:
+async def get_async_session() -> Session:
     session: Session = create_session()
     async with session:
         yield session

@@ -1,5 +1,4 @@
 import logging
-import os
 import pathlib
 import sys
 from logging.config import fileConfig
@@ -26,13 +25,20 @@ logger = logging.getLogger("alembic.env")
 
 DATABASE_URL = cfg.get_settings().DATABASE_URL  # maker-hub environment variable
 
+# we don't need to run alembic sqlite in async mode so strip out sqlite async driver
 if DATABASE_URL:
+    if DATABASE_URL.__contains__("sqlite+aiosqlite"):
+        logger.info(
+            "DETECTED aiosqlite driver, stripping from DATABASE_URL for migration"
+        )
+        DATABASE_URL = DATABASE_URL.replace("+aiosqlite", "")
+
     config.set_main_option("sqlalchemy.url", DATABASE_URL)
 else:
     logger.warning(
         "Environment variable DATABASE_URL is missing - use default alembic.ini configuration"
     )
-
+logger.info(f"Database URL: {DATABASE_URL}")
 
 target_metadata = SqlAlchemyBase.metadata
 

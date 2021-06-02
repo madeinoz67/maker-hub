@@ -1,7 +1,6 @@
 import os
 from pathlib import Path
 
-import fastapi
 import fastapi_chameleon
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
@@ -33,15 +32,9 @@ def main():
 
 def configure(dev_mode: bool):
     configure_middleware()
-    configure_event_handlers()
     configure_templates(dev_mode)
     configure_routes()
     configure_db(dev_mode)
-
-
-def configure_event_handlers():
-    app.add_event_handler("startup", tasks.create_start_app_handler(app))
-    app.add_event_handler("shutdown", tasks.create_stop_app_handler(app))
 
 
 def configure_middleware() -> None:
