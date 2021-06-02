@@ -31,7 +31,6 @@ httptools = "^0.2.0"
 nanoid = "^2.0.0"
 async-exit-stack = "^1.0.1"
 async_generator = "^1.10"
-databases = {extras = ["sqlite", "postgres"], version = "^0.4.3"}
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.3"
