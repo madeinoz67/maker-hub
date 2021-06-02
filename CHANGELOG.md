@@ -14,6 +14,9 @@
 
 **Dependencies Updated:**
 
+- Bump black from 21.5b1 to 21.5b2 [\#92](https://github.com/madeinoz67/maker-hub/pull/92)
+- Bump sqlalchemy from 1.4.15 to 1.4.17 [\#91](https://github.com/madeinoz67/maker-hub/pull/91)
+- Bump mkdocs-material from 7.1.5 to 7.1.6 [\#90](https://github.com/madeinoz67/maker-hub/pull/90)
 - Bump alembic from 1.6.4 to 1.6.5 [\#87](https://github.com/madeinoz67/maker-hub/pull/87)
 - Bump alembic from 1.6.3 to 1.6.4 [\#76](https://github.com/madeinoz67/maker-hub/pull/76)
 
