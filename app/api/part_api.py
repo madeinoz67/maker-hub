@@ -1,12 +1,9 @@
-from typing import Optional
-
 import fastapi
-from fastapi import Depends, HTTPException, Response, status
+from fastapi import Response, status
 from sqlalchemy.exc import IntegrityError
 
 from app.api.exceptions import DuplicatedEntryError
 from app.core import config
-from app.db import db_session
 from app.schema.datatable import DataTableRequest, PartDataTableResponse
 from app.schema.part import PartCreate, PartPublic, PartUpdate
 from app.services import part_service
@@ -33,7 +30,7 @@ async def table_datasource(request: DataTableRequest) -> PartDataTableResponse:
     )
 
 
-@api.post("/api/parts/add", response_model=PartPublic, tags=["Parts"])
+@api.put("/api/parts", response_model=PartPublic, tags=["Parts"])
 async def add_part(details: PartCreate, __body: bool = True) -> PartPublic:
     """Adds a new part
 
@@ -61,7 +58,7 @@ async def add_part(details: PartCreate, __body: bool = True) -> PartPublic:
         raise DuplicatedEntryError("The Part ID already exists")
 
 
-@api.delete("/api/parts/delete/{part_id}", tags=["Parts"])
+@api.delete("/api/parts/{part_id}", tags=["Parts"])
 async def delete_part(part_id: str) -> Response:
 
     result = await part_service.delete_part(part_id)
@@ -79,7 +76,7 @@ async def get_part(part_id: str) -> PartPublic:
     return Response(status_code=status.HTTP_204_NO_CONTENT, content=[])
 
 
-@api.patch("/api/parts/update/{part_id}", response_model=PartPublic, tags=["Parts"])
+@api.patch("/api/parts/{part_id}", response_model=PartPublic, tags=["Parts"])
 async def update_part(
     part_id: str,
     details: PartUpdate,

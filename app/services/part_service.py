@@ -1,5 +1,4 @@
 import datetime
-from typing import List, Optional
 
 from fastapi import Depends
 from loguru import logger
@@ -10,9 +9,7 @@ from sqlalchemy.exc import IntegrityError
 from app.core import config
 from app.db import db_session
 from app.models.part import PartModel
-from app.schema.datatable import DataTableRequest, PartDataTableResponse
 from app.schema.part import PartCreate, PartUpdate
-from app.services.core import BaseDBService
 
 # async def get_part_datatable(request: DataTableRequest) -> PartDataTableResponse:
 #     """generates data for the datatable request
@@ -124,7 +121,7 @@ async def create_part(details: PartCreate) -> PartModel:
     return part
 
 
-async def get_part_count() -> int:
+def get_part_count() -> int:
 
     async with db_session.create_session() as session:
         query = select(func.count(PartModel.id))
