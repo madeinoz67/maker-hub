@@ -10,7 +10,7 @@ python = "^3.9"
 fastapi = "^0.64.0"
 pydantic = { version = "^1.6", extras = ["email"] }
 pyjwt = "^2.1"
-uvicorn = "^0.13.4"
+uvicorn = "^0.14.0"
 SQLAlchemy = "^1.4.17"
 aiofiles = "^0.7.0"
 python-multipart = "^0.0.5"
