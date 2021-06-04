@@ -29,12 +29,12 @@
                         <div class="card bg-gradient" style="background-color: #ECEFF1">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between px-md-1">
+                                    <div class="align-self-center">
+                                        <i class="fas fa-microchip fa-3x" style="color:#448AFF"></i>
+                                    </div>
                                     <div>
                                         <h3 class="" style="color:#448AFF">${'{:,}'.format(part_count)}</h3>
                                         <p class="mb-0">Parts</p>
-                                    </div>
-                                    <div class="align-self-center">
-                                        <i class="fas fa-microchip fa-3x" style="color:#448AFF"></i>
                                     </div>
                                 </div>
                             </div>
@@ -45,13 +45,14 @@
                         <div class="card bg-gradient" style="background-color: #ECEFF1">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between px-md-1">
+                                    <div class="align-self-center">
+                                        <i class="fas fa-boxes fa-3x" style="color:#448AFF"></i>
+                                    </div>
                                     <div>
                                         <h3 class="" style="color:#448AFF">${'{:,}'.format(location_count)}</h3>
                                         <p class="mb-0">Locations</p>
                                     </div>
-                                    <div class="align-self-center">
-                                        <i class="fas fa-boxes fa-3x" style="color:#448AFF"></i>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -62,12 +63,12 @@
                             <div class="card-body">
 
                                 <div class="d-flex justify-content-between px-md-1">
+                                    <div class="align-self-center">
+                                        <i class="fas fa-tools fa-3x" style="color:#448AFF"></i>
+                                    </div>
                                     <div>
                                         <h3 class="" style="color:#448AFF">${'{:,}'.format(project_count)}</h3>
                                         <p class="mb-0">Projects</p>
-                                    </div>
-                                    <div class="align-self-center">
-                                        <i class="fas fa-tools fa-3x" style="color:#448AFF"></i>
                                     </div>
                                 </div>
                             </div>
