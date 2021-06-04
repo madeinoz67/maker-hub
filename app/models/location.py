@@ -1,10 +1,9 @@
 import sqlalchemy as sa
-import sqlalchemy.orm as orm
 
 from app.models.modelbase import SqlAlchemyBase
 
 
-class Location(SqlAlchemyBase):
+class LocationModel(SqlAlchemyBase):
     __tablename__ = "locations"
 
     id: str = sa.Column(sa.String, primary_key=True)

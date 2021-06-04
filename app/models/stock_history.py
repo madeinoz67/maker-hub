@@ -1,10 +1,13 @@
-from app.models.location import Location
-from app.models.part import Part
-import datetime
+from app.models.location import LocationModel
+from app.models.modelbase import SqlAlchemyBase
+from app.models.part import PartModel
 
 
-class StockHistory:
-    def __init__(self, part: Part, price, quantity: int, location: Location):
+class StockHistoryModel(SqlAlchemyBase):
+    __tablename__ = "stockhistory"
+
+    def __init__(self, part: PartModel, price, quantity: int, location: LocationModel):
         self.price = price
         self.quantity = quantity
         self.locations = location
+        self.part = part

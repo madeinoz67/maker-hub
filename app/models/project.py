@@ -1,14 +1,12 @@
 import datetime
-from typing import List
 
 import sqlalchemy as sa
-import sqlalchemy.orm as orm
 
 from app.models.modelbase import SqlAlchemyBase
 
 
-class Project(SqlAlchemyBase):
-    __tablename__ = "projects"
+class ProjectModel(SqlAlchemyBase):
+    __tablename__ = "project"
 
     id: str = sa.Column(sa.String, primary_key=True)
     created_date: datetime.datetime = sa.Column(

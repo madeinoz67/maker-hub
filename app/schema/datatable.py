@@ -2,7 +2,7 @@ from typing import List, Optional
 
 from pydantic import BaseModel
 
-from app.schema.part import PartPublic
+from app.schema.part import PartPublicSchema
 
 
 class Search(BaseModel):
@@ -42,7 +42,7 @@ class DataTableResponseBase(DataTableBase):
 
 
 class PartDataTableResponse(DataTableBase):
-    data: List[PartPublic]
+    data: List[PartPublicSchema]
 
 
 # Example DataTable generated Query

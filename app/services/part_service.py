@@ -1,15 +1,18 @@
 import datetime
+from typing import List
 
-from fastapi import Depends
 from loguru import logger
 from nanoid import generate
 from sqlalchemy import delete, func, update
 from sqlalchemy.exc import IntegrityError
+from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy.future import select
 
 from app.core import config
-from app.db import db_session
+from app.db.session import db_session_context
 from app.models.part import PartModel
-from app.schema.part import PartCreate, PartUpdate
+from app.schema.datatable import DataTableRequest, PartDataTableResponse
+from app.schema.part import PartCreateSchema, PartUpdateSchema
 
 # async def get_part_datatable(request: DataTableRequest) -> PartDataTableResponse:
 #     """generates data for the datatable request
@@ -32,53 +35,39 @@ _alphabet = config.get_settings().nanoid_alphabet
 _size = config.get_settings().nanoid_size
 
 
-def PartService(BaseDBService):
-    """Part Service
-
-    Defines the Parts Service
-
-    """
-
-    __instance = None
-
-    def getInstance() -> PartService:
-        """Static access method"""
-
-        if PartService.__instance is None:
-            PartService()
-        return PartService.__instance
-
-    def __init__(self):
-        super(PartService, self).__init__()
-        if PartService.__instance is not None:
-            raise Exception(
-                "This class is a singleon, you must call PartService.getInstance() to return its instance"
-            )
-        else:
-            PartService.__instance = self
+async def get_part_datatable(request: DataTableRequest) -> PartDataTableResponse:
+    return PartDataTableResponse()
 
 
-async def update_part(part_id: str, part: PartUpdate):
+async def update_part(part_id: str, part: PartUpdateSchema):
 
-    part.last_updated = datetime.datetime.now()
-    async with db_session.create_async_session() as session:
-        results = await session.execute(select(Part).filter(Part.id == part_id))
+    part.updated_at = datetime.datetime.now()
+
+    # get our db_session dependency
+    db_session: AsyncSession = db_session_context.get()
+    async with db_session as session:
+        results = await session.execute(
+            select(PartModel).filter(PartModel.id == part_id)
+        )
 
         part = results.scalar_one_or_none()
         # part.name
         # part_to_update.description = part.description
 
-        stmt = update(Part).where(Part.id == part_id)
+        stmt = update(PartModel).where(PartModel.id == part_id)
         results = await session.execute(stmt)
         await session.commit()
     return results
 
 
 async def delete_part(part_id: str):
-    with db_session.create_async_session() as session:
+
+    # get our db_session dependency
+    db_session: AsyncSession = db_session_context.get()
+    with db_session as session:
 
         try:
-            stmt = delete(Part).where(Part.id == part_id)
+            stmt = delete(PartModel).where(PartModel.id == part_id)
             result = session.execute(stmt)
             await session.commit()
             return result
@@ -87,7 +76,7 @@ async def delete_part(part_id: str):
             logger.error("Part does not exist", ex)
 
 
-async def create_part(details: PartCreate) -> PartModel:
+async def create_part(details: PartCreateSchema) -> PartModel:
     """Creates a new Part and saves to db
 
     Args:
@@ -96,6 +85,7 @@ async def create_part(details: PartCreate) -> PartModel:
     Returns:
         part (PartPublic): the newly created Part
     """
+
     part = PartModel()
 
     part.id = generate(_alphabet, _size)
@@ -109,7 +99,9 @@ async def create_part(details: PartCreate) -> PartModel:
     part.manufacturer = details.manufacturer
     part.mpn = details.mpn
 
-    async with db_session.create_session() as session:
+    # get our db_session dependency
+    db_session: AsyncSession = db_session_context.get()
+    async with db_session as session:
         session.add(part)
         try:
             await session.commit()
@@ -121,9 +113,11 @@ async def create_part(details: PartCreate) -> PartModel:
     return part
 
 
-def get_part_count() -> int:
+async def get_part_count() -> int:
 
-    async with db_session.create_session() as session:
+    # get our db_session dependency
+    db_session: AsyncSession = db_session_context.get()
+    async with db_session as session:
         query = select(func.count(PartModel.id))
         results = await session.execute(query)
 
@@ -146,7 +140,10 @@ async def get_latest_parts(start: int = 0, limit: int = 5) -> List[PartModel]:
     limit = max(0, limit)
 
     logger.debug("Entering - get_latest_parts()")
-    async with db_session.create_async_session() as session:
+
+    # get our db_session dependency
+    db_session: AsyncSession = db_session_context.get()
+    async with db_session as session:
         query = select(PartModel).order_by(PartModel.created_at.desc()).limit(limit)
 
         results = await session.execute(query)

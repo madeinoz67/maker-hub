@@ -11,10 +11,10 @@ sys.path.append(str(pathlib.Path(__file__).resolve().parents[3]))
 
 # app specific imports
 import app.models.__all_models  # noqa:
-from app.core import config as cfg
+from app.core import config as cfg  # noqa: E402
 
 # noinspection PyUnresolvedReferences
-from app.models.modelbase import SqlAlchemyBase
+from app.models.modelbase import SqlAlchemyBase  # noqa: E402
 
 # Alembic Config object, which provides access to values within the .ini file
 config = context.config

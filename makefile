@@ -13,7 +13,10 @@ docs-serve: docs-build
 docs-clean:
 	rm -rf site/
 
-test:
+lint:
+	poetry run flake8
+
+test: lint
 	poetry run pytest --no-cov
 
 schema-revision:

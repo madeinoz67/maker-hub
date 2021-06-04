@@ -6,31 +6,32 @@ from pydantic import HttpUrl
 from app.schema.core import CoreSchema, IDSchemaMixin
 
 
-class PartBase(CoreSchema):
+class PartBaseSchema(CoreSchema):
     name: Optional[str] = None
     description: Optional[str] = None
     notes: Optional[str] = None
     footprint: Optional[str] = None
     manufacturer: Optional[str] = None
     mpn: Optional[str] = None
+    created_at: Optional[datetime.datetime] = None
+    updated_at: Optional[datetime.datetime] = None
 
     class Config:
         orm_mode = True
 
 
-class PartCreate(PartBase):
+class PartCreateSchema(PartBaseSchema):
     name: str
 
 
-class PartUpdate(PartBase):
+class PartUpdateSchema(PartBaseSchema):
     pass
 
 
-class PartInDB(IDSchemaMixin, PartBase):
+class PartInDBSchema(IDSchemaMixin, PartBaseSchema):
     name: str
 
 
-class PartPublic(IDSchemaMixin, PartBase):
+class PartPublicSchema(IDSchemaMixin, PartBaseSchema):
+    id: str
     href: Optional[HttpUrl] = None
-    created_at: datetime.datetime
-    updated_at: datetime.datetime

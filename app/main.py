@@ -8,8 +8,8 @@ from loguru import logger
 from starlette.staticfiles import StaticFiles
 
 from app.api import part_api
-from app.core import config, tasks, utils
-from app.db import db_session
+from app.core import config
+from app.db import session
 from app.views import home, parts, projects, reports, storage
 
 
@@ -49,9 +49,9 @@ def configure_middleware() -> None:
 
 def configure_db(dev_mode: bool) -> None:
 
-    filepath = utils.get_database_path(config.get_settings().DATABASE_URL)
-    file = (Path(__file__).parent / "data" / "maker-hub.db").absolute()
-    db_session.global_init(file.as_posix())
+    # TODO filepath = utils.get_database_path(config.get_settings().DATABASE_URL)
+    file = (Path(__file__).parent / "dbdata" / "maker-hub.db").absolute()
+    session.global_init(file.as_posix())
 
 
 def configure_templates(dev_mode: bool) -> None:
