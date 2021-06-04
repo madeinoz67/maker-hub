@@ -14,6 +14,7 @@
 
 **Dependencies Updated:**
 
+- Bump pytest-cov from 2.12.0 to 2.12.1 [\#93](https://github.com/madeinoz67/maker-hub/pull/93)
 - Bump black from 21.5b1 to 21.5b2 [\#92](https://github.com/madeinoz67/maker-hub/pull/92)
 - Bump sqlalchemy from 1.4.15 to 1.4.17 [\#91](https://github.com/madeinoz67/maker-hub/pull/91)
 - Bump mkdocs-material from 7.1.5 to 7.1.6 [\#90](https://github.com/madeinoz67/maker-hub/pull/90)
