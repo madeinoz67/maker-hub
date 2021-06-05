@@ -8,7 +8,7 @@ from sqlalchemy.exc import IntegrityError
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 
-from app.core import config
+from app.core.config import settings
 from app.db.session import db_session_context
 from app.models.part import PartModel
 from app.schema.datatable import DataTableRequest, PartDataTableResponse
@@ -31,8 +31,8 @@ from app.schema.part import PartCreateSchema, PartUpdateSchema
 #         await session.commit()
 #     return []
 
-_alphabet = config.get_settings().nanoid_alphabet
-_size = config.get_settings().nanoid_size
+_alphabet = settings.NANOID_ALPHABET
+_size = settings.NANOID_SIZE
 
 
 async def get_part_datatable(request: DataTableRequest) -> PartDataTableResponse:

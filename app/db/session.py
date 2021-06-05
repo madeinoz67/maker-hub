@@ -5,7 +5,7 @@ from typing import Callable, Optional
 from loguru import logger
 from sqlalchemy.ext.asyncio import AsyncEngine, AsyncSession, create_async_engine
 
-from app.core import config
+from app.core.config import settings
 from app.models.modelbase import SqlAlchemyBase  # noqa:
 
 __async_engine: Optional[Callable[[], AsyncEngine]] = None
@@ -27,7 +27,7 @@ def global_init(db_file: str):
 
     logger.info(f"DB URL: {conn_str}")
 
-    enable_sql_logging = config.get_settings().ENABLE_SQL_LOGGING
+    enable_sql_logging = settings.ENABLE_SQL_LOGGING
 
     __async_engine = create_async_engine(
         conn_str, echo=enable_sql_logging, connect_args={"check_same_thread": False}

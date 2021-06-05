@@ -7,8 +7,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from loguru import logger
 from starlette.staticfiles import StaticFiles
 
-from app.api import part_api
-from app.core import config
+from app.api.api_v1.api import api_router
+from app.core.config import settings
 from app.db import session
 from app.views import home, parts, projects, reports, storage
 
@@ -18,8 +18,9 @@ def get_application() -> FastAPI:
         title="Maker Hub",
         description="Open Source Personal Hub for Makers: Manage Parts, \
         projects, ideas, documentation, parts and footprints etc",
-        debug=config.get_settings().DEBUG,
-        version=config.get_settings().VERSION,
+        debug=settings.DEBUG,
+        version=settings.VERSION,
+        openapi_url=f"{settings.API_V1_STR}/openapi.json",
     )
 
 
@@ -69,7 +70,7 @@ def configure_routes() -> None:
     app.mount("/static", StaticFiles(directory=static_folder), name="static")
 
     # API endpoints
-    app.include_router(part_api.api)
+    app.include_router(api_router, prefix=settings.API_V1_STR)
 
     # Webpages
     app.include_router(home.router)
@@ -83,6 +84,6 @@ if __name__ == "__main__":
     main()
 else:
 
-    DEV_MODE = config.get_settings().DEV_MODE
+    DEV_MODE = settings.DEV_MODE
     configure(dev_mode=DEV_MODE)
     logger.info(f"Dev Mode is: {DEV_MODE}")

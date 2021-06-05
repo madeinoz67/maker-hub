@@ -5,20 +5,20 @@ from sqlalchemy.exc import IntegrityError
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.api.exceptions import DuplicatedEntryError
-from app.core import config
+from app.core.config import settings
 from app.db.session import db_session_context, get_db_session
 from app.schema.datatable import DataTableRequest, PartDataTableResponse
 from app.schema.part import PartCreateSchema, PartPublicSchema, PartUpdateSchema
 from app.services import part_service
 
-api = fastapi.APIRouter()
+router = fastapi.APIRouter()
 
-__host = config.get_settings().host
-__port = config.get_settings().port
+__host = settings.HOST
+__port = settings.PORT
 
 
-@api.put("/api/parts", response_model=PartPublicSchema, tags=["Parts"])
-async def add_part(
+@router.post("/", response_model=PartPublicSchema, name="part:create", tags=["Parts"])
+async def create_one(
     details: PartCreateSchema,
     __body: bool = True,
     db_session: AsyncSession = Depends(get_db_session),
@@ -42,7 +42,9 @@ async def add_part(
             # mpn=partDetail.mpn,
         )
 
-        part.href = f'{__host}:{__port}{api.url_path_for("get_part", part_id=part.id)}'
+        part.href = (
+            f'{__host}:{__port}{router.url_path_for("get_part", part_id=part.id)}'
+        )
         if __body:
             return part
         else:
@@ -53,7 +55,9 @@ async def add_part(
         raise DuplicatedEntryError("The Part ID already exists")
 
 
-@api.post("/api/parts/datatable", response_model=PartDataTableResponse, tags=["Parts"])
+@router.post(
+    "/datatable", response_model=PartDataTableResponse, name="part:tablesource"
+)
 async def table_datasource(
     request: DataTableRequest,
     db_session: AsyncSession = Depends(get_db_session),
@@ -74,7 +78,7 @@ async def table_datasource(
     )
 
 
-@api.delete("/api/parts/{part_id}", tags=["Parts"])
+@router.delete("/{part_id}", name="part:delete")
 async def delete_part(
     part_id: str, db_session: AsyncSession = Depends(get_db_session)
 ) -> Response:
@@ -88,7 +92,12 @@ async def delete_part(
     return Response(status_code=status.HTTP_204_NO_CONTENT, content=result)
 
 
-@api.get("/api/parts/{part_id}", response_model=PartPublicSchema, tags=["Parts"])
+@router.get("/", response_model=PartPublicSchema, name="part:getall")
+async def get_all():
+    return Response(status_code=status.HTTP_204_NO_CONTENT, content=[])
+
+
+@router.get("/{part_id}", response_model=PartPublicSchema, name="part:get")
 async def get_part(
     part_id: str, db_session: AsyncSession = Depends(get_db_session)
 ) -> PartPublicSchema:
@@ -101,7 +110,7 @@ async def get_part(
     return Response(status_code=status.HTTP_204_NO_CONTENT, content=[])
 
 
-@api.patch("/api/parts/{part_id}", response_model=PartPublicSchema, tags=["Parts"])
+@router.patch("/{part_id}", response_model=PartPublicSchema, name="part:update")
 async def update_part(
     part_id: str,
     details: PartUpdateSchema,
@@ -112,5 +121,5 @@ async def update_part(
     db_session_context.set(db_session)
 
     part = await part_service.update_part(part_id, details)
-    part.href = f'{__host}:{__port}{api.url_path_for("get_part", part_id=part.id)}'
+    part.href = f'{__host}:{__port}{router.url_path_for("get_part", part_id=part.id)}'
     return Response(status_code=status.HTTP_204_NO_CONTENT, content=part)
