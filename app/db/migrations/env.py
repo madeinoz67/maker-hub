@@ -11,7 +11,7 @@ sys.path.append(str(pathlib.Path(__file__).resolve().parents[3]))
 
 # app specific imports
 import app.models.__all_models  # noqa:
-from app.core import config as cfg  # noqa: E402
+from app.core.config import settings  # noqa: E402
 
 # noinspection PyUnresolvedReferences
 from app.models.modelbase import SqlAlchemyBase  # noqa: E402
@@ -23,7 +23,7 @@ config = context.config
 fileConfig(config.config_file_name)
 logger = logging.getLogger("alembic.env")
 
-DATABASE_URL = cfg.get_settings().DATABASE_URL  # maker-hub environment variable
+DATABASE_URL = settings.DATABASE_URL  # maker-hub environment variable
 
 # we don't need to run alembic sqlite in async mode so strip out sqlite async driver
 if DATABASE_URL:
