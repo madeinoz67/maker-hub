@@ -3,10 +3,11 @@ site_name: "Maker Hub"
 site_author: "Stephen Eaton"
 site_description: "Parts, Project builds and more for Makers"
 site_url: https://madeinoz67.github.io/maker-hub/
+edit_uri: ''
 
 # Page Tree
 nav:
-  - Home: index.md
+  - Overview: index.md
   - User Guide:
     - ug/getting_started.md
     - ug/troubleshooting.md
@@ -22,9 +23,9 @@ nav:
       - dev/contributing.md
   #- Reference:  # placeholder for API reference documentation
   - Contributors: authors.md
-  - Change Log: changelog.md
   - License: license.md
   - Help Wanted: helpwanted.md
+  - Release Notes: changelog.md
 
 # Configuration
 theme:
@@ -32,17 +33,19 @@ theme:
   logo: img/logo.svg
   name: material
   features:
-    - navigation.tabs
-    - navigation.indexes
-    - navigation.expand
-    - header.autohide
+  #   - navigation.tabs
+  #   - navigation.indexes
+  #   - navigation.expand
+  #   - header.autohide
+    - search.suggest
+    - search.highlight
 
 # Repository
 repo_name: "madeinoz67/maker-hub"
 repo_url: "https://github.com/madeinoz67/maker-hub"
 google_analytics:
-  - 'UA-190797511-2'
-  - 'auto'
+  - UA-190797511-2
+  - auto
 
 # plugins
 plugins:
@@ -69,7 +72,7 @@ markdown_extensions:
       custom_fences:
         - name: mermaid
           class: mermaid
-          format: !!python/name:mermaid2.fence_mermaid
+          format: !!python/name:pymdownx.superfences.fence_div_format ''
   - pymdownx.keys
   - pymdownx.tasklist:
       custom_checkbox: true
@@ -93,3 +96,11 @@ extra:
       link: "https://gitlab.com/madeinoz67"
     - icon: fontawesome/brands/twitter
       link: "https://twitter.com/madeinoz"
+
+extra_css:
+- css/termynal.css
+- css/custom.css
+extra_javascript:
+- https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js
+- js/termynal.js
+- js/custom.js
