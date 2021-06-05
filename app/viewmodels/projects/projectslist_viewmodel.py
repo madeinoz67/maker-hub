@@ -1,9 +1,9 @@
+from typing import List
+
 from starlette.requests import Request
 
 from app.services import project_service
 from app.viewmodels.shared.viewmodel import ViewModelBase
-
-from typing import List
 
 
 class ProjectlistViewModel(ViewModelBase):
@@ -13,6 +13,6 @@ class ProjectlistViewModel(ViewModelBase):
         self.project_count: int = 0
         self.projects: List = []
 
-    def load(self):
-        self.project_count: int = project_service.get_project_count()
-        self.projects = project_service.get_latest_projects(limit=30)
+    async def load(self):
+        self.project_count: int = await project_service.get_project_count()
+        self.projects = await project_service.get_latest_projects(limit=30)
