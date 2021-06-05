@@ -47,6 +47,7 @@ Faker = "^8.2.1"
 mdx-truly-sane-lists = "^1.2"
 isort = "^5.8.0"
 flake8-bugbear = "^21.4.3"
+httpx = "^0.18.1"
 
 [tool.isort]
 profile = "black"

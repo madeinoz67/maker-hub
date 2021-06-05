@@ -1,77 +1,89 @@
 import os
-from typing import Any, Generator
+import warnings
+from contextvars import ContextVar
+from unittest import mock
 
+import alembic
 import pytest
+from alembic.config import Config
 
 # from example.routers.utils.db import get_db
 from fastapi import FastAPI
-from fastapi.testclient import TestClient
-from sqlalchemy import create_engine
+from httpx import AsyncClient  # noqa:
+from sqlalchemy.ext.asyncio import AsyncEngine, AsyncSession, create_async_engine
 from sqlalchemy.orm import sessionmaker
-
-from app.main import get_application
-from app.models.modelbase import SqlAlchemyBase
 
 # Default to using sqlite in memory for fast tests.
 # Can be overridden by environment variable for testing in CI against other
 # database engines
-SQLALCHEMY_DATABASE_URL = os.getenv("TEST_DATABASE_URL", "sqlite://")
 
-engine = create_engine(
-    SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False}
-)
+SQLALCHEMY_DATABASE_URL = os.getenv("TEST_DATABASE_URL", "sqlite+aiosqlite://")
 
-Session = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+db_session_context: ContextVar[AsyncSession] = ContextVar("db_session_context")
 
 
-@pytest.fixture(autouse=True)
-def app() -> Generator[FastAPI, Any, None]:
-    """
-    Create a fresh database on each test case.
-    """
-    SqlAlchemyBase.metadata.create_all(engine)  # Create the tables.
-    _app = get_application()
-    yield _app
-    SqlAlchemyBase.metadata.drop_all(engine)
+@pytest.fixture(scope="session")
+def engine() -> AsyncEngine:
+    return create_async_engine(
+        SQLALCHEMY_DATABASE_URL, echo=True, connect_args={"check_same_thread": False}
+    )
 
 
-@pytest.fixture
-def db_session(app: FastAPI) -> Generator[Session, Any, None]:
-    """
-    Creates a fresh sqlalchemy session for each test that operates in a
-    transaction. The transaction is rolled back at the end of each test ensuring
-    a clean state.
-    """
+@pytest.fixture(scope="session")
+def session(engine) -> AsyncSession:
+    return sessionmaker(engine, expire_on_commit=False, _class=AsyncSession)
 
-    # connect to the database
-    connection = engine.connect()
-    # begin a non-ORM transaction
-    transaction = connection.begin()
-    # bind an individual Session to the connection
-    session = Session(bind=connection)
-    yield session  # use the session in tests.
-    session.close()
-    # rollback - everything that happened with the
-    # Session above (including calls to commit())
-    # is rolled back.
-    transaction.rollback()
-    # return connection to the Engine
-    connection.close()
+
+# Apply migrations at beginning and end of testing session
+@pytest.fixture(scope="session")
+def apply_migrations(engine):
+    with mock.patch.dict(
+        os.environ, {"DATABASE_URL": SQLALCHEMY_DATABASE_URL}, clear=True
+    ):
+        warnings.filterwarnings("ignore", category=DeprecationWarning)
+        config = Config("alembic.ini")
+        alembic.command.upgrade(config, "head")
+        yield
+        alembic.command.downgrade(config, "base")
 
 
 @pytest.fixture()
-def client(app: FastAPI, db_session: Session) -> Generator[TestClient, Any, None]:
+def app(apply_migrations: None) -> FastAPI:
     """
-    Create a new FastAPI TestClient that uses the `db_session` fixture to override
-    the `get_db` dependency that is injected into routes.
+    Create a fresh database on each test case.
     """
+    from app.main import get_application
 
-    def _get_test_db():
-        try:
-            yield db_session
-        finally:
-            pass
+    return get_application()
 
-    app.dependency_overrides[get_db] = _get_test_db
-    with TestClient(app) as client:
-        yield client
+
+# @pytest.fixture()
+# async def client(app: FastAPI, engine) -> AsyncClient:
+#     """
+#     Create a new Httpx AsyncClient that uses the `db_session` fixture to override
+#     the `get_db` dependency that is injected into routes.
+#     """
+
+#     def _get_test_db():
+#         try:
+#             db_session: AsyncSession = AsyncSession(engine)
+#             async with db_session as session:
+#                 yield session
+#         finally:
+#             session.rollback()
+#             session.close()
+
+#     app.dependency_overrides["get_db_session"] = _get_test_db
+
+#     with AsyncClient(app) as client:
+#         yield client
+
+
+@pytest.fixture()
+def db_session(apply_migrations: None, engine: AsyncEngine):
+
+    db_session: AsyncSession = AsyncSession(engine)
+
+    # Set the injected db_session dependency to the db_session context object
+    db_session_context.set(db_session)
+    yield db_session
