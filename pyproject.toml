@@ -51,6 +51,9 @@ httpx = "^0.18.1"
 factory-boy = "^3.2.0"
 faker-optional = "^0.1.0"
 pytest-factoryboy = "^2.1.0"
+pytest-clarity = "^0.3.0-alpha.0"
+pytest-sugar = "^0.9.4"
+hypothesis = "^6.13.14"
 
 [tool.isort]
 profile = "black"

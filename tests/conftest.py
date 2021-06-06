@@ -46,7 +46,7 @@ def apply_context(ctx):
 
 
 # Apply migrations at beginning and end of testing session
-@pytest.fixture(scope="session")
+@pytest.fixture(scope="function")
 def apply_migrations():
     with mock.patch.dict(
         os.environ, {"DATABASE_URL": SQLALCHEMY_DATABASE_URL}, clear=True
@@ -69,7 +69,8 @@ def app(apply_migrations: None) -> FastAPI:
 
 
 # @pytest.fixture()
-# async def client(app: FastAPI, engine) -> AsyncClient:
+# @pytest.mark.asyncio
+# def client(app: FastAPI, engine) -> AsyncClient:
 #     """
 #     Create a new Httpx AsyncClient that uses the `db_session` fixture to override
 #     the `get_db` dependency that is injected into routes.
@@ -77,7 +78,7 @@ def app(apply_migrations: None) -> FastAPI:
 
 #     def _get_test_db():
 #         try:
-#             db_session: AsyncSession = AsyncSession(engine)
+#             db_session: AsyncSession = async_session()
 #             async with db_session as session:
 #                 yield session
 #         finally:

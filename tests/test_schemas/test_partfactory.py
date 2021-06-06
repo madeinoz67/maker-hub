@@ -1,4 +1,11 @@
-def test_new_part(part_create_schema_factory):
+import factory
 
-    print(f"Name:{part_create_schema_factory.name}")
-    assert True
+from tests.factories import PartCreateSchemaFactory
+
+
+def test_new_part_create_schema(capsys):
+    part = factory.build(dict, FACTORY_CLASS=PartCreateSchemaFactory)
+    print(f"{part}")
+    captured = capsys.readouterr()
+    assert part is not None
+    assert "'name':" in captured.out

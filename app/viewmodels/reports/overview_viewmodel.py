@@ -1,13 +1,15 @@
+from sqlalchemy.ext.asyncio import AsyncSession
 from starlette.requests import Request
 
-from app.services import part_service, storage_service, project_service
+from app.services import part_service, project_service, storage_service
 from app.viewmodels.shared.viewmodel import ViewModelBase
 
 
 class OverviewViewModel(ViewModelBase):
-    def __init__(self, request: Request):
+    def __init__(self, request: Request, db: AsyncSession) -> None:
         super().__init__(request)
 
+        self.db = db
         # Parts Stats
         self.total_parts: int = 0
         self.total_stock: int = 0
@@ -21,7 +23,7 @@ class OverviewViewModel(ViewModelBase):
 
     async def load(self):
         # Parts Stats
-        self.total_parts = await part_service.get_part_count()
+        self.total_parts = await part_service.get_part_count(self.db)
         self.total_stock = await part_service.get_total_stock()
         self.stock_value = await part_service.get_stock_value()
 

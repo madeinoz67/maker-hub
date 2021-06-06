@@ -109,15 +109,18 @@ async def create_part(db: AsyncSession, details: PartCreateSchema) -> PartModel:
 
         except IntegrityError as ex:
             await session.rollback()
-            logger.error("Part ID already exists in the database", ex)
+            logger.error(f"Part ID {part.id} already exists in the database", ex)
+            raise ex
 
     return part
 
 
-async def get_part_count() -> int:
+async def get_part_count(db: AsyncSession) -> int:
 
+    # TODO: use contextvar for db dependencies when https://github.com/pytest-dev/pytest-asyncio/pull/161 is merged
     # get our db_session dependency
-    db_session: AsyncSession = db_session_context.get()
+    # db_session: AsyncSession = db_session_context.get()
+    db_session = db
     async with db_session as session:
         query = select(func.count(PartModel.id))
         results = await session.execute(query)

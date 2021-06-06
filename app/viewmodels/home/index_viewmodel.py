@@ -11,7 +11,7 @@ from app.viewmodels.shared.viewmodel import ViewModelBase
 class IndexViewModel(ViewModelBase):
     def __init__(self, request: Request, db: AsyncSession) -> None:
         super().__init__(request)
-
+        self.db = db
         self.part_count: int = 0
         self.location_count: int = 0
         self.project_count: int = 0
@@ -21,7 +21,7 @@ class IndexViewModel(ViewModelBase):
         ] = []  # Todo: Change to correct Type once Project schema has been completed
 
     async def load(self) -> None:
-        self.part_count = await part_service.get_part_count()
+        self.part_count = await part_service.get_part_count(self.db)
         self.location_count = await storage_service.get_location_count()
         self.project_count = await project_service.get_project_count()
         self.latest_parts = await part_service.get_latest_parts(limit=7)

@@ -17,6 +17,6 @@ async def overview(
 ):
     # Set the injected db_session dependency to the db_session context object
     db_session_context.set(db_session)
-    vm = OverviewViewModel(request)
+    vm = OverviewViewModel(request, db_session)
     await vm.load()
     return vm.to_dict()

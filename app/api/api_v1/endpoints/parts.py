@@ -17,8 +17,14 @@ __host = settings.HOST
 __port = settings.PORT
 
 
-@router.post("/", response_model=PartPublicSchema, name="part:create", tags=["Parts"])
-async def create_one(
+@router.post(
+    "/",
+    response_model=PartPublicSchema,
+    status_code=status.HTTP_201_CREATED,
+    name="add_part",
+    tags=["Parts"],
+)
+async def add_one(
     details: PartCreateSchema,
     __body: bool = True,
     db: AsyncSession = Depends(get_db_session),
@@ -45,21 +51,18 @@ async def create_one(
             # mpn=partDetail.mpn,
         )
 
-        part.href = (
-            f'{__host}:{__port}{router.url_path_for("get_part", part_id=part.id)}'
-        )
+        part.href = f'{__host}:{__port}{router.url_path_for("add_part")}'  # TODO: Reverse lookup not working
         if __body:
             return part
         else:
             return Response()
     except IntegrityError as ex:
-        # await session.rollback()
         logger.error(f"The Part ID ({part.part_id}) already exists.", ex)
-        raise DuplicatedEntryError("The Part ID already exists")
+        raise DuplicatedEntryError(f"The Part with Id='{part.part_id}' already exists.")
 
 
 @router.post(
-    "/datatable", response_model=PartDataTableResponse, name="part:tablesource"
+    "/datatable", response_model=PartDataTableResponse, name="part_tablesource"
 )
 async def table_datasource(
     request: DataTableRequest,
@@ -81,7 +84,7 @@ async def table_datasource(
     )
 
 
-@router.delete("/{part_id}", name="part:delete")
+@router.delete("/{part_id}", name="delete_part")
 async def delete_part(
     part_id: str, db_session: AsyncSession = Depends(get_db_session)
 ) -> Response:
@@ -95,12 +98,12 @@ async def delete_part(
     return Response(status_code=status.HTTP_204_NO_CONTENT, content=result)
 
 
-@router.get("/", response_model=PartPublicSchema, name="part:getall")
+@router.get("/", response_model=PartPublicSchema, name="get all parts")
 async def get_all():
     return Response(status_code=status.HTTP_204_NO_CONTENT, content=[])
 
 
-@router.get("/{part_id}", response_model=PartPublicSchema, name="part:get")
+@router.get("/{part_id}", response_model=PartPublicSchema, name="get part")
 async def get_part(
     part_id: str, db_session: AsyncSession = Depends(get_db_session)
 ) -> PartPublicSchema:
@@ -113,7 +116,7 @@ async def get_part(
     return Response(status_code=status.HTTP_204_NO_CONTENT, content=[])
 
 
-@router.patch("/{part_id}", response_model=PartPublicSchema, name="part:update")
+@router.patch("/{part_id}", response_model=PartPublicSchema, name="update part")
 async def update_part(
     part_id: str,
     details: PartUpdateSchema,
