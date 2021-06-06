@@ -77,3 +77,4 @@ htmlcov
 app/db/maker-hub.sqlite
 *.log
 .coverage*
+.hypothesis/unicode_data/13.0.0/charmap.json.gz
