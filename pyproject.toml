@@ -48,6 +48,9 @@ mdx-truly-sane-lists = "^1.2"
 isort = "^5.8.0"
 flake8-bugbear = "^21.4.3"
 httpx = "^0.18.1"
+factory-boy = "^3.2.0"
+faker-optional = "^0.1.0"
+pytest-factoryboy = "^2.1.0"
 
 [tool.isort]
 profile = "black"

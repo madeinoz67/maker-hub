@@ -3,20 +3,21 @@
 # from unittest import mock
 
 import pytest
+from loguru import logger  # noqa:
 from sqlalchemy.ext.asyncio import AsyncSession  # noqa:
 
 from app.models.part import PartModel
-from app.schema.part import PartCreateSchema
 from app.services import part_service
 
 
 @pytest.mark.asyncio
-async def test_part_get(
+async def test_add_art(
+    part_create_schema_factory,
     db_session,
 ):
-    obj_in = PartCreateSchema(name="testpart")
 
-    item: PartModel = await part_service.create_part(obj_in)  # noqa:
+    obj_in = part_create_schema_factory
 
-    # assert item == item2
-    pass
+    item: PartModel = await part_service.create_part(db_session, obj_in)  # noqa:
+
+    assert item.name == obj_in.name

@@ -13,10 +13,10 @@ router = fastapi.APIRouter()
 
 @router.get("/", include_in_schema=False)
 @template()
-async def index(request: Request, db_session: AsyncSession = Depends(get_db_session)):
+async def index(request: Request, db: AsyncSession = Depends(get_db_session)):
     # Set the injected db_session dependency to the db_session context object
-    db_session_context.set(db_session)
-    vm = IndexViewModel(request)
+    db_session_context.set(db)
+    vm = IndexViewModel(request, db)
     await vm.load()
     return vm.to_dict()
 

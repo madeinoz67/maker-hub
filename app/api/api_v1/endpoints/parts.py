@@ -21,18 +21,21 @@ __port = settings.PORT
 async def create_one(
     details: PartCreateSchema,
     __body: bool = True,
-    db_session: AsyncSession = Depends(get_db_session),
+    db: AsyncSession = Depends(get_db_session),
 ) -> PartPublicSchema:
     """Adds a new part
 
-    This will create a new part and assign it a unique string Id.
+    This will create a new part and assign it a unique string Id at a minimum.
+    if no name is given the id will be assigned to the name.
     """
 
+    # TODO: use contextvar for db dependencies when https://github.com/pytest-dev/pytest-asyncio/pull/161 is merged
     # Set the injected db_session dependency to the db_session context object
-    db_session_context.set(db_session)
+    # db_session_context.set(db_session)
 
     try:
         part = await part_service.create_part(
+            db,
             details
             # name,
             # description,

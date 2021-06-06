@@ -1,5 +1,6 @@
 from typing import List
 
+from sqlalchemy.ext.asyncio import AsyncSession
 from starlette.requests import Request
 
 from app.schema.part import PartPublicSchema
@@ -8,7 +9,7 @@ from app.viewmodels.shared.viewmodel import ViewModelBase
 
 
 class IndexViewModel(ViewModelBase):
-    def __init__(self, request: Request) -> None:
+    def __init__(self, request: Request, db: AsyncSession) -> None:
         super().__init__(request)
 
         self.part_count: int = 0

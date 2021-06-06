@@ -76,7 +76,7 @@ async def delete_part(part_id: str):
             logger.error("Part does not exist", ex)
 
 
-async def create_part(details: PartCreateSchema) -> PartModel:
+async def create_part(db: AsyncSession, details: PartCreateSchema) -> PartModel:
     """Creates a new Part and saves to db
 
     Args:
@@ -99,8 +99,9 @@ async def create_part(details: PartCreateSchema) -> PartModel:
     part.manufacturer = details.manufacturer
     part.mpn = details.mpn
 
-    # get our db_session dependency
-    db_session: AsyncSession = db_session_context.get()
+    # TODO: use contextvar for db dependencies when https://github.com/pytest-dev/pytest-asyncio/pull/161 is merged
+    # db_session: AsyncSession = db_session_context.get()
+    db_session: AsyncSession = db
     async with db_session as session:
         session.add(part)
         try:
