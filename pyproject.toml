@@ -37,7 +37,7 @@ pytest-env = "^0.6.2"
 black = "^21.5b2"
 docker = "^5.0.0"
 mypy = "^0.812"
-mkdocs-material = "^7.1.6"
+mkdocs-material = "^7.1.7"
 mkdocs-macros-plugin = "^0.5.5"
 mkdocs-mermaid2-plugin = "^0.5.1"
 
