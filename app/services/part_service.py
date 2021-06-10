@@ -2,13 +2,11 @@ import datetime
 from typing import List
 
 from loguru import logger
-from nanoid import generate
 from sqlalchemy import delete, func, update
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 
-from app.core.config import settings
 from app.db.session import db_session_context
 from app.models.part import PartModel
 from app.schema.datatable import DataTableRequest, PartDataTableResponse
@@ -30,9 +28,6 @@ from app.schema.part import PartCreateSchema, PartUpdateSchema
 #         # session.add(part)
 #         await session.commit()
 #     return []
-
-_alphabet = settings.NANOID_ALPHABET
-_size = settings.NANOID_SIZE
 
 
 async def get_part_datatable(request: DataTableRequest) -> PartDataTableResponse:
@@ -88,10 +83,6 @@ async def create_part(db: AsyncSession, details: PartCreateSchema) -> PartModel:
 
     part = PartModel()
 
-    part.id = generate(_alphabet, _size)
-
-    if details.name is None:
-        details.name = part.id
     part.name = details.name
     part.description = details.description
     part.notes = details.notes
