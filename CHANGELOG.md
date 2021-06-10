@@ -14,6 +14,7 @@
 
 **Dependencies Updated:**
 
+- Bump mypy from 0.812 to 0.901 [\#97](https://github.com/madeinoz67/maker-hub/pull/97)
 - Bump mkdocs-material from 7.1.6 to 7.1.7 [\#96](https://github.com/madeinoz67/maker-hub/pull/96)
 - Bump uvicorn from 0.13.4 to 0.14.0 [\#94](https://github.com/madeinoz67/maker-hub/pull/94)
 - Bump pytest-cov from 2.12.0 to 2.12.1 [\#93](https://github.com/madeinoz67/maker-hub/pull/93)
