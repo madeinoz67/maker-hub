@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/Users/seaton/Library/Caches/pypoetry/virtualenvs/maker-hub-CgMQY1m9-py3.9/bin/python",
+    "python.pythonPath": "${workspaceRoot}/.venv/bin/python3",
     "pythonTestExplorer.testFramework": "pytest",
     "python.testing.pytestEnabled": true,
     "python.testing.cwd": "",
