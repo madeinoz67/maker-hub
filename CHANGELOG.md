@@ -14,6 +14,7 @@
 
 **Dependencies Updated:**
 
+- Bump sqlalchemy from 1.4.17 to 1.4.18 [\#99](https://github.com/madeinoz67/maker-hub/pull/99)
 - Bump mypy from 0.901 to 0.902 [\#98](https://github.com/madeinoz67/maker-hub/pull/98)
 - Bump mypy from 0.812 to 0.901 [\#97](https://github.com/madeinoz67/maker-hub/pull/97)
 - Bump mkdocs-material from 7.1.6 to 7.1.7 [\#96](https://github.com/madeinoz67/maker-hub/pull/96)
@@ -23,6 +24,8 @@
 - Bump sqlalchemy from 1.4.15 to 1.4.17 [\#91](https://github.com/madeinoz67/maker-hub/pull/91)
 - Bump mkdocs-material from 7.1.5 to 7.1.6 [\#90](https://github.com/madeinoz67/maker-hub/pull/90)
 - Bump alembic from 1.6.4 to 1.6.5 [\#87](https://github.com/madeinoz67/maker-hub/pull/87)
+- Bump alembic from 1.6.3 to 1.6.4 [\#76](https://github.com/madeinoz67/maker-hub/pull/76)
+- Bump fastapi from 0.63.0 to 0.64.0 [\#67](https://github.com/madeinoz67/maker-hub/pull/67)
 
 **Closed issues:**
 
@@ -45,9 +48,7 @@
 
 **Dependencies Updated:**
 
-- Bump alembic from 1.6.3 to 1.6.4 [\#76](https://github.com/madeinoz67/maker-hub/pull/76)
 - Bump pyjwt from 1.7.1 to 2.1.0 [\#68](https://github.com/madeinoz67/maker-hub/pull/68)
-- Bump fastapi from 0.63.0 to 0.64.0 [\#67](https://github.com/madeinoz67/maker-hub/pull/67)
 - Bump aiofiles from 0.6.0 to 0.7.0 [\#66](https://github.com/madeinoz67/maker-hub/pull/66)
 - Bump pytest-asyncio from 0.14.0 to 0.15.1 [\#65](https://github.com/madeinoz67/maker-hub/pull/65)
 - Bump python-slugify from 4.0.1 to 5.0.2 [\#64](https://github.com/madeinoz67/maker-hub/pull/64)
