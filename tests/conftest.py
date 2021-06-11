@@ -1,6 +1,6 @@
 import os
 import warnings
-from contextvars import ContextVar
+from contextvars import ContextVar  # noqa:
 from typing import AsyncGenerator
 from unittest import mock
 
@@ -12,29 +12,33 @@ from alembic.config import Config
 from fastapi import FastAPI
 from httpx import AsyncClient  # noqa:
 from pytest_factoryboy import register
-from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.ext.asyncio import AsyncSession
 
-from tests.factories import PartCreateSchemaFactory
+from .common import SQLALCHEMY_DATABASE_URL, async_session
+from .factories import PartCreateSchemaFactory, PartModelFactory
 
 # Default to using sqlite in memory for fast tests.
 # Can be overridden by environment variable for testing in CI against other
 # database engines
 
-SQLALCHEMY_DATABASE_URL = os.getenv(
-    "TEST_DATABASE_URL", "sqlite+aiosqlite:///./tests/files/test.db"
-)
+# SQLALCHEMY_DATABASE_URL = os.getenv(
+#     "TEST_DATABASE_URL", "sqlite+aiosqlite:///./tests/files/test.db"
+# )
 
-db_session_context: ContextVar[AsyncSession] = ContextVar("db_session_context")
+# db_session_context: ContextVar[AsyncSession] = ContextVar("db_session_context")
+
+
+# engine = create_async_engine(
+#     SQLALCHEMY_DATABASE_URL, echo=True, connect_args={"check_same_thread": False}
+# )
+
+# async_session = scoped_session(
+#     sessionmaker(engine, expire_on_commit=False, class_=AsyncSession)
+# )
 
 # Register factories
 register(PartCreateSchemaFactory)
-
-engine = create_async_engine(
-    SQLALCHEMY_DATABASE_URL, echo=True, connect_args={"check_same_thread": False}
-)
-
-async_session = sessionmaker(engine, expire_on_commit=False, class_=AsyncSession)
+register(PartModelFactory)
 
 # see https://linw1995.com/en/blog/How-To-Write-Asynchronous-Code-With-Contextvars-Properly/
 def apply_context(ctx):
@@ -101,6 +105,14 @@ async def db_session(apply_migrations) -> AsyncGenerator[AsyncSession, None]:
         finally:
             await session.rollback()
             await session.close()
+
+
+@pytest.fixture
+@pytest.mark.asyncio
+async def populate_part_tbl(part_model_factory) -> None:
+    part = part_model_factory.create_batch(10)  # noqa:
+
+    # await async_session.commit()
 
 
 # @pytest.fixture(scope="function")

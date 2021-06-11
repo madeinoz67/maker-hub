@@ -10,10 +10,24 @@ _alphabet = settings.NANOID_ALPHABET
 _size = settings.NANOID_SIZE
 
 
+def nanoid() -> str:
+    """Wrapper for nanoid generation
+
+    Returns:
+        str: nanoid
+    """
+    return generate(_alphabet, _size)
+
+
 class PartModel(SqlAlchemyBase):
     __tablename__ = "part"
 
-    id: str = sa.Column(sa.String, primary_key=True, default=generate(_alphabet, _size))
+    id: str = sa.Column(
+        sa.String(length=settings.NANOID_SIZE),
+        primary_key=True,
+        autoincrement=False,
+        default=nanoid,
+    )
     name: str = sa.Column(sa.String, index=True, default=id)
     description: str = sa.Column(sa.String, nullable=True, index=True)
     created_at: datetime.datetime = sa.Column(
