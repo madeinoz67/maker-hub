@@ -1,9 +1,14 @@
 {
-    "python.pythonPath": "${workspaceRoot}/.venv/bin/python3",
+    "python.pythonPath": "${workspaceFolder}/.venv/bin/python3",
     "pythonTestExplorer.testFramework": "pytest",
     "python.testing.pytestEnabled": true,
     "python.testing.cwd": "",
     "python.testing.pytestArgs": [
+        "-v",
+        "--cov=app",
+        "-r a",
+        "--cov-fail-under=30",
+        "--cov-report=html",
         "tests"
     ],
     "python.sortImports.args": [
@@ -15,5 +20,15 @@
         }
     },
     "python.testing.unittestEnabled": false,
-    "python.testing.nosetestsEnabled": false
+    "python.testing.nosetestsEnabled": false,
+    "terminal.integrated.env.osx": {
+        "PYTHONPATH": "${env:PYTHONPATH}:${workspaceFolder}/app;${workspaceFolder}/tests",
+    },
+    "terminal.integrated.env.linux": {
+        "PYTHONPATH": "${env:PYTHONPATH}:${workspaceFolder}/app;${workspaceFolder}/tests",
+    },
+    "terminal.integrated.env.windows": {
+        "PYTHONPATH": "${env:PYTHONPATH};${workspaceFolder}/app;${workspaceFolder}/tests",
+    },
+    "python.envFile": "${workspaceFolder}/.env",
 }
