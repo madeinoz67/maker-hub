@@ -31,6 +31,8 @@ httptools = "^0.2.0"
 nanoid = "^2.0.0"
 async-exit-stack = "^1.0.1"
 async_generator = "^1.10"
+pytest-mock = "^3.6.1"
+toolz = "^0.11.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.3"
@@ -72,13 +74,27 @@ addopts = '''
   --cov-report=html
   --cov-report=xml
   --no-cov-on-fail
-  --cov-fail-under=100
+  --cov-fail-under=30
 '''
 env = ["SECRET_KEY=secret"]
 markers = [
     'slow: slow running test'
 ]
 python_files = 'test_*.py'
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "if __name__ == .__main__.:",
+    "nocov",
+    "if TYPE_CHECKING:",
+]
+
+[tool.coverage.run]
+# Activating branch coverage is super important
+branch = true
+omit = [
+  # add your files to omit here
+    ]
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
