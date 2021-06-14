@@ -56,6 +56,14 @@ async def update_part(part_id: str, part: PartUpdateSchema):
 
 
 async def delete_part(part_id: str):
+    """Deletes a part by ID .
+
+    Args:
+        part_id (str): [ID Of Part being deleted]
+
+    Returns:
+        [type]: [description]
+    """
 
     # get our db_session dependency
     db_session: AsyncSession = db_session_context.get()
@@ -72,13 +80,18 @@ async def delete_part(part_id: str):
 
 
 async def create_part(db: AsyncSession, details: PartCreateSchema) -> PartModel:
-    """Creates a new Part and saves to db
+    """Create a Part model in the database .
 
     Args:
-        details (PartCreate): details of Part to create
+        db (AsyncSession): [databases session]
+        details (PartCreateSchema): [schema containing new part details]
+
+    Raises:
+        ex: [IntegrityError - if a part with teh same ID already exists in the
+            database]
 
     Returns:
-        part (PartPublic): the newly created Part
+        PartModel: [newly created part model]
     """
 
     part = PartModel()
@@ -107,7 +120,14 @@ async def create_part(db: AsyncSession, details: PartCreateSchema) -> PartModel:
 
 
 async def get_part_count(db: AsyncSession) -> int:
+    """Returns the number of part models in the database .
 
+    Args:
+        db (AsyncSession): [db session]
+
+    Returns:
+        int: [count of parts in the database]
+    """
     # TODO: use contextvar for db dependencies when https://github.com/pytest-dev/pytest-asyncio/pull/161 is merged
     # get our db_session dependency
     # db_session: AsyncSession = db_session_context.get()
@@ -130,6 +150,15 @@ async def get_stock_value() -> float:
 
 
 async def get_latest_parts(start: int = 0, limit: int = 5) -> List[PartModel]:
+    """Get latest parts sorted by date.
+
+    Args:
+        start (int, optional): [pagination parts being returned]. Defaults to 0.
+        limit (int, optional): [number of parts to return]. Defaults to 5.
+
+    Returns:
+        List[PartModel]: [list of latest parts sorted by date]
+    """
 
     start = max(0, start)
     limit = max(0, limit)
