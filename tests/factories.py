@@ -11,6 +11,7 @@ from app.models.part import PartModel
 from app.schema.part import PartPublicSchema  # noqa:
 from app.schema.part import PartUpdateSchema  # noqa:
 from app.schema.part import PartCreateSchema
+from tests import common
 
 _alphabet = settings.NANOID_ALPHABET
 _size = settings.NANOID_SIZE
@@ -30,6 +31,7 @@ def nanoid() -> str:
 class PartModelFactory(factory.alchemy.SQLAlchemyModelFactory):
     class Meta:
         model = PartModel
+        sqlalchemy_session = common.async_session
 
     id: str = factory.LazyFunction(nanoid)
     name: str = factory.Sequence(lambda n: f"part-{n}")
@@ -39,7 +41,7 @@ class PartModelFactory(factory.alchemy.SQLAlchemyModelFactory):
     mpn: str = factory.Faker("bothify", text="???-####-###-???")
     notes: str = factory.Faker("text", max_nb_chars=random.randint(50, 300))
     created_at = factory.Faker("past_datetime", start_date="-60d")
-    updated_at = datetime.datetime.now
+    updated_at = datetime.datetime.now()
 
 
 class PartCreateSchemaFactory(factory.Factory):

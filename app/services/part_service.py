@@ -55,28 +55,28 @@ async def update_part(part_id: str, part: PartUpdateSchema):
     return results
 
 
-async def delete_part(part_id: str):
-    """Deletes a part by ID .
+async def delete_part(db: AsyncSession, part_id: str):
+    """Deletes a part by ID.
 
     Args:
-        part_id (str): [ID Of Part being deleted]
+        part_id (str): NanoId Of Part being deleted
 
     Returns:
         [type]: [description]
     """
 
     # get our db_session dependency
-    db_session: AsyncSession = db_session_context.get()
-    with db_session as session:
-
+    # db_session: AsyncSession = db_session_context.get()
+    async with db as session:
         try:
             stmt = delete(PartModel).where(PartModel.id == part_id)
-            result = session.execute(stmt)
+            result = await session.execute(stmt)
             await session.commit()
             return result
         except IntegrityError as ex:
             await session.rollback()
             logger.error("Part does not exist", ex)
+            raise ex
 
 
 async def create_part(db: AsyncSession, details: PartCreateSchema) -> PartModel:

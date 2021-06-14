@@ -5,9 +5,11 @@
 import pytest
 from loguru import logger  # noqa:
 from sqlalchemy.ext.asyncio import AsyncSession  # noqa:
+from sqlalchemy.future import select
 
 from app.models.part import PartModel
 from app.services import part_service
+from tests.factories import PartModelFactory
 
 
 class TestPartService:
@@ -60,7 +62,19 @@ class TestPartService:
 
         assert await part_service.get_part_count(db_session) == 1
 
-    # @pytest.mark.asyncio
-    # async def test_count(self, db_session, populate_part_tbl):
+    @pytest.mark.asyncio
+    async def test_part_delete(self, db_session, part_model_factory: PartModelFactory):
 
-    #     assert await part_service.get_part_count(db_session) == 10
+        async with db_session as session:
+            part_model_factory._meta.sqlalchemy_session = session
+
+            part: PartModel = part_model_factory.create()
+            result = await session.execute(
+                select(PartModel).where(PartModel.id == part.id)
+            )
+            assert result.scalar_one() is not None
+
+            await part_service.delete_part(session, part.id)
+
+            result = await session.execute(select(PartModel))
+            assert result.scalar_one_or_none() is None

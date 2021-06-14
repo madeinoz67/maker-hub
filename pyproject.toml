@@ -81,6 +81,8 @@ markers = [
     'slow: slow running test'
 ]
 python_files = 'test_*.py'
+
+[report]
 exclude_lines = [
     "pragma: no cover",
     "def __repr__",
