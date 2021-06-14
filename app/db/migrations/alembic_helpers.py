@@ -9,9 +9,4 @@ def table_has_column(table, column):
         config.get_section(config.config_ini_section), prefix="sqlalchemy."
     )
     insp = reflection.Inspector.from_engine(engine)
-    has_column = False
-    for col in insp.get_columns(table):
-        if column not in col["name"]:
-            continue
-        has_column = True
-    return has_column
+    return any(column in col["name"] for col in insp.get_columns(table))
