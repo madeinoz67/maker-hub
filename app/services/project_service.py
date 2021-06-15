@@ -21,11 +21,6 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-"""project_service .
-
-Underlying functions for Project related Services
-"""
-
 from typing import List
 
 

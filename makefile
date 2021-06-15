@@ -25,7 +25,6 @@ lint:  ## Run linting
 	poetry run black --check .
 	poetry run isort -c .
 	poetry run flake8 .
-	poetry run pydocstyle .
 .PHONY: lint
 
 lint-fix:  ## Run autoformatters

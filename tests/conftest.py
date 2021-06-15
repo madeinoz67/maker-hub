@@ -21,12 +21,6 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-"""conftest.py.
-
-Pytest setup
-
-"""
-
 import os
 import warnings
 from contextvars import ContextVar  # noqa:

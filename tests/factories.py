@@ -21,11 +21,6 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-"""factory.py.
-
-Factory module to create the required model and schema factories for testing
-"""
-
 import datetime
 import random
 
@@ -84,7 +79,8 @@ class PartCreateSchemaFactory(factory.Factory):
     """Factory for creating PartCreateSchema object instances for testing.
 
     Returns:
-        [PartCreateSchema]: A PartCreateSchema object instance
+        PartCreateSchema: A PartCreateSchema object instance
+
     """
 
     class Meta:
@@ -103,6 +99,7 @@ class PartCreateSchemaFactory(factory.Factory):
         """To string.
 
         Returns:
-            [str]:
+            str:String representation of this object
+
         """
-        return f"{self.name}"
+        return f"{self.name}, {self.description}, {self.footprint}, {self.manufacturer}, {self.mpn}, {self.notes}"

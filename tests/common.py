@@ -21,11 +21,6 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-"""common.py.
-
-Create a sqlalchemy engine that will be used to load the database .
-"""
-
 import os
 
 from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine

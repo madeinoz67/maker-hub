@@ -21,20 +21,13 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-"""core.py .
-
-Core Services Classes
-
-"""
-
 from sqlalchemy.ext.asyncio import AsyncSession
 
 
 class CoreService:
-    """CoreService.
+    """CoreService Class.
 
     Any common logic to be shared with all Services goes here
-
     """
 
     def __init__(self) -> None:

@@ -21,11 +21,6 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-"""part_service.
-
-All underlying functionality relating to Parts
-"""
-
 import datetime
 from typing import List
 
@@ -190,6 +185,7 @@ async def get_total_stock() -> int:
 
     Returns:
         int: [description]
+
     """
     return 1_000
 

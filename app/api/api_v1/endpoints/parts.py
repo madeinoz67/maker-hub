@@ -21,10 +21,6 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-"""parts
-
-V1 parts api routes
-"""
 
 import fastapi
 from fastapi import Depends, Response, status
@@ -57,17 +53,14 @@ async def add_one(
     __body: bool = True,
     db: AsyncSession = Depends(get_db_session),
 ) -> PartPublicSchema:
-
     """Add a new part.
 
     This will create a new part and assign it a unique string Id at a minimum.
     if no name is given the id will be assigned to the name.
     """
-
     # TODO: use contextvar for db dependencies when https://github.com/pytest-dev/pytest-asyncio/pull/161 is merged
     # Set the injected db_session dependency to the db_session context object
     # db_session_context.set(db_session)
-
     try:
         part = await part_service.create_part(db, details)
 
@@ -88,7 +81,7 @@ async def table_datasource(
     request: DataTableRequest,
     db_session: AsyncSession = Depends(get_db_session),
 ) -> PartDataTableResponse:
-    """Servers side processing for Parts List Datatable
+    """Servers side processing for Parts List Datatable .
 
     This performs the server-side processing for the Part List Datatable
 
@@ -108,7 +101,15 @@ async def table_datasource(
 async def delete_part(
     part_id: str, db_session: AsyncSession = Depends(get_db_session)
 ) -> Response:
+    """Delete a part .
 
+    Args:
+        part_id (str): Id of part to delete.
+        db_session (AsyncSession, optional): DB dependency injection. Defaults to Depends(get_db_session).
+
+    Returns:
+        Response:
+    """
     # Set the injected db_session dependency to the db_session context object
     db_session_context.set(db_session)
 
@@ -119,7 +120,12 @@ async def delete_part(
 
 
 @router.get("/", response_model=PartPublicSchema, name="get all parts")
-async def get_all():
+async def get_all() -> Response:
+    """Get all parts .
+
+    Returns:
+        Response:
+    """
     return Response(status_code=status.HTTP_204_NO_CONTENT, content=[])
 
 
@@ -127,6 +133,15 @@ async def get_all():
 async def get_part(
     part_id: str, db_session: AsyncSession = Depends(get_db_session)
 ) -> PartPublicSchema:
+    """Get part by id .
+
+    Args:
+        part_id (str): Id of part to retrieve
+        db_session (AsyncSession, optional): DB dependency injection. Defaults to Depends(get_db_session).
+
+    Returns:
+        PartPublicSchema:
+    """
     # Set the injected db_session dependency to the db_session context object
     db_session_context.set(db_session)
 
@@ -143,6 +158,17 @@ async def update_part(
     __body: bool = True,
     db_session: AsyncSession = Depends(get_db_session),
 ) -> PartPublicSchema:
+    """Update a part .
+
+    Args:
+        part_id (str): Id of part to update
+        details (PartUpdateSchema): details to updated
+        __body (bool, optional): returns all infomation. Defaults to True.
+        db_session (AsyncSession, optional): DB dependency injection. Defaults to Depends(get_db_session).
+
+    Returns:
+        PartPublicSchema:
+    """
     # Set the injected db_session dependency to the db_session context object
     db_session_context.set(db_session)
 

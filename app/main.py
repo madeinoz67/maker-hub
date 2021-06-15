@@ -21,9 +21,6 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-"""The main Maker-Hub Main Application."""
-
-
 import os
 from pathlib import Path
 
@@ -64,10 +61,11 @@ def main():
 
 
 def configure(dev_mode: bool):
-    """Configure the application and configure the FastAPI application .
+    """Configure the application and configure the FastAPI application.
 
     Args:
         dev_mode (bool): Enables FastAPI development mode
+
     """
     configure_middleware()
     configure_templates(dev_mode)
@@ -91,8 +89,8 @@ def configure_db(dev_mode: bool) -> None:
 
     Args:
         dev_mode (bool): Enables FastAPI development mode
-    """
 
+    """
     # TODO filepath = utils.get_database_path(config.get_settings().DATABASE_URL)
     file = (Path(__file__).parent / "dbdata" / "maker-hub.db").absolute()
     session.global_init(file.as_posix())

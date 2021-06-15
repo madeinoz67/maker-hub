@@ -21,13 +21,6 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-"""home.
-
-homepage views
-
-"""
-
-
 import fastapi
 from fastapi import Depends
 from fastapi_chameleon import template

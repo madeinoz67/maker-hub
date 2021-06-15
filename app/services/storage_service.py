@@ -21,12 +21,6 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-"""storage_service.py.
-
-Manages all things realted to parts storage and locations
-
-"""
-
 
 async def get_location_count() -> int:
     """Return the number of storage location.

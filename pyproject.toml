@@ -57,6 +57,7 @@ pytest-sugar = "^0.9.4"
 hypothesis = "^6.13.14"
 flake8 = "^3.9.2"
 pydocstyle = "^6.1.1"
+toml = "^0.10.2"
 
 [tool.isort]
 profile = "black"
@@ -98,6 +99,10 @@ branch = true
 omit = [
   # add your files to omit here
     ]
+
+[tool.pydocstyle]
+ignore = ["D104","D406"]
+convention="pep257"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
