@@ -1,3 +1,31 @@
+#
+# Copyright 2021 Stephen Eaton
+#
+# This file is part of Maker-Hub.
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the 'Software'), to deal
+# in the Software without restriction, including without limitation the rights,
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
+"""parts
+
+V1 parts api routes
+"""
+
 import fastapi
 from fastapi import Depends, Response, status
 from loguru import logger
@@ -29,7 +57,8 @@ async def add_one(
     __body: bool = True,
     db: AsyncSession = Depends(get_db_session),
 ) -> PartPublicSchema:
-    """Adds a new part
+
+    """Add a new part.
 
     This will create a new part and assign it a unique string Id at a minimum.
     if no name is given the id will be assigned to the name.
@@ -40,16 +69,7 @@ async def add_one(
     # db_session_context.set(db_session)
 
     try:
-        part = await part_service.create_part(
-            db,
-            details
-            # name,
-            # description,
-            # notes=partDetail.notes,
-            # footprint=partDetail.footprint,
-            # manufacturer=partDetail.manufacturer,
-            # mpn=partDetail.mpn,
-        )
+        part = await part_service.create_part(db, details)
 
         part.href = f'{__host}:{__port}{router.url_path_for("add_part")}'  # TODO: Reverse lookup not working
         if __body:
@@ -92,7 +112,7 @@ async def delete_part(
     # Set the injected db_session dependency to the db_session context object
     db_session_context.set(db_session)
 
-    result = await part_service.delete_part(part_id)
+    result = await part_service.delete_part(db_session, part_id)
     # if result != part_id:
     #     raise HTTPException(status_code=404, detail="part not deleted")
     return Response(status_code=status.HTTP_204_NO_CONTENT, content=result)

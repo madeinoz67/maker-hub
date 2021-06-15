@@ -1,3 +1,32 @@
+#
+# Copyright 2021 Stephen Eaton
+#
+# This file is part of Maker-Hub.
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the 'Software'), to deal
+# in the Software without restriction, including without limitation the rights,
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
+"""conftest.py.
+
+Pytest setup
+
+"""
+
 import os
 import warnings
 from contextvars import ContextVar  # noqa:
@@ -42,9 +71,7 @@ register(PartModelFactory)
 
 # see https://linw1995.com/en/blog/How-To-Write-Asynchronous-Code-With-Contextvars-Properly/
 def apply_context(ctx):
-    """
-    Update the current context
-    """
+    """Update the current context."""
     for var in ctx:
         var.set(ctx[var])
 
@@ -52,6 +79,7 @@ def apply_context(ctx):
 # Apply migrations at beginning and end of testing session
 @pytest.fixture(scope="function")
 def apply_migrations():
+    """Fixture to Apply SQLAlchemy migrations to the current test environment."""
     with mock.patch.dict(
         os.environ, {"DATABASE_URL": SQLALCHEMY_DATABASE_URL}, clear=True
     ):
@@ -64,8 +92,13 @@ def apply_migrations():
 
 @pytest.fixture()
 def app(apply_migrations: None) -> FastAPI:
-    """
-    Create a fresh database on each test case.
+    """Fixture to Return the application object .
+
+    Args:
+        apply_migrations (None): fixture that applies DB migrations
+
+    Returns:
+        FastAPI:  application object
     """
     from app.main import get_application
 
@@ -98,7 +131,17 @@ def app(apply_migrations: None) -> FastAPI:
 @pytest.fixture(scope="function")
 @pytest.mark.asyncio
 async def db_session(apply_migrations) -> AsyncGenerator[AsyncSession, None]:
+    """Create a session for use with asyncio session .
 
+    Args:
+        apply_migrations ([type]): fixture used to perform migrations to DB
+
+    Returns:
+        AsyncGenerator[AsyncSession, None]:
+
+    Yields:
+        Iterator[AsyncGenerator[AsyncSession, None]]:
+    """
     async with async_session() as session:
         try:
             yield session
@@ -110,6 +153,11 @@ async def db_session(apply_migrations) -> AsyncGenerator[AsyncSession, None]:
 @pytest.fixture
 @pytest.mark.asyncio
 async def populate_part_tbl(part_model_factory) -> None:
+    """Populate the part table Fixture.
+
+    Args:
+        part_model_factory ([PartModelFactory]): Factory used to generate parts
+    """
     part = part_model_factory.create_batch(10)  # noqa:
 
     # await async_session.commit()

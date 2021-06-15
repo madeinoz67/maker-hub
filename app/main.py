@@ -1,3 +1,29 @@
+#
+# Copyright 2021 Stephen Eaton
+#
+# This file is part of Maker-Hub.
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
+"""The main Maker-Hub Main Application."""
+
+
 import os
 from pathlib import Path
 
@@ -14,6 +40,11 @@ from app.views import home, parts, projects, reports, storage
 
 
 def get_application() -> FastAPI:
+    """Return a new application that will be used to instantiate the application .
+
+    Returns:
+        FastAPI: FastAPI Application
+    """
     return FastAPI(
         title="Maker Hub",
         description="Open Source Personal Hub for Makers: Manage Parts, \
@@ -28,10 +59,16 @@ app = get_application()
 
 
 def main():
+    """The Main function for running the dev server ."""
     configure(dev_mode=True)
 
 
 def configure(dev_mode: bool):
+    """Configure the application and configure the FastAPI application .
+
+    Args:
+        dev_mode (bool): Enables FastAPI development mode
+    """
     configure_middleware()
     configure_templates(dev_mode)
     configure_routes()
@@ -39,6 +76,7 @@ def configure(dev_mode: bool):
 
 
 def configure_middleware() -> None:
+    """Configure the middleware to use for the application ."""
     app.add_middleware(
         CORSMiddleware,
         allow_origins=["*"],
@@ -49,6 +87,11 @@ def configure_middleware() -> None:
 
 
 def configure_db(dev_mode: bool) -> None:
+    """Configure the DB.
+
+    Args:
+        dev_mode (bool): Enables FastAPI development mode
+    """
 
     # TODO filepath = utils.get_database_path(config.get_settings().DATABASE_URL)
     file = (Path(__file__).parent / "dbdata" / "maker-hub.db").absolute()
@@ -56,7 +99,11 @@ def configure_db(dev_mode: bool) -> None:
 
 
 def configure_templates(dev_mode: bool) -> None:
+    """Configure the templates for the application.
 
+    Args:
+        dev_mode (bool): Enables FastAPI development mode
+    """
     folder = os.path.dirname(__file__)
     template_folder = os.path.join(folder, "templates")
     template_folder = os.path.abspath(template_folder)
@@ -64,6 +111,7 @@ def configure_templates(dev_mode: bool) -> None:
 
 
 def configure_routes() -> None:
+    """Configure routes to the application."""
     folder = os.path.dirname(__file__)
     static_folder = os.path.join(folder, "static")
     static_folder = os.path.abspath(static_folder)

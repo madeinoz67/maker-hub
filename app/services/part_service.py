@@ -1,3 +1,31 @@
+#
+# Copyright 2021 Stephen Eaton
+#
+# This file is part of Maker-Hub.
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the 'Software'), to deal
+# in the Software without restriction, including without limitation the rights,
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
+"""part_service.
+
+All underlying functionality relating to Parts
+"""
+
 import datetime
 from typing import List
 
@@ -31,11 +59,30 @@ from app.schema.part import PartCreateSchema, PartUpdateSchema
 
 
 async def get_part_datatable(request: DataTableRequest) -> PartDataTableResponse:
+    """Retrieve a part datatable response .
+
+    Used by the datatable component on the parts page
+    see: (https://datatables.net/)
+
+    Args:
+        request (DataTableRequest):
+
+    Returns:
+        PartDataTableResponse:
+    """
     return PartDataTableResponse()
 
 
-async def update_part(part_id: str, part: PartUpdateSchema):
+async def update_part(part_id: str, part: PartUpdateSchema) -> PartModel:
+    """Update a part .
 
+    Args:
+        part_id (str): NanoId of Part to update
+        part (PartUpdateSchema): Information to update
+
+    Returns:
+        [PartModel]: update Part
+    """
     part.updated_at = datetime.datetime.now()
 
     # get our db_session dependency
@@ -56,7 +103,7 @@ async def update_part(part_id: str, part: PartUpdateSchema):
 
 
 async def delete_part(db: AsyncSession, part_id: str):
-    """Deletes a part by ID.
+    """Delete a part by ID.
 
     Args:
         part_id (str): NanoId Of Part being deleted
@@ -64,7 +111,6 @@ async def delete_part(db: AsyncSession, part_id: str):
     Returns:
         [type]: [description]
     """
-
     # get our db_session dependency
     # db_session: AsyncSession = db_session_context.get()
     async with db as session:
@@ -80,20 +126,19 @@ async def delete_part(db: AsyncSession, part_id: str):
 
 
 async def create_part(db: AsyncSession, details: PartCreateSchema) -> PartModel:
-    """Create a Part model in the database .
+    """Create a Part in the database .
 
     Args:
         db (AsyncSession): [databases session]
         details (PartCreateSchema): [schema containing new part details]
 
     Raises:
-        ex: [IntegrityError - if a part with teh same ID already exists in the
+        ex: [IntegrityError - if a part with the same ID already exists in the
             database]
 
     Returns:
         PartModel: [newly created part model]
     """
-
     part = PartModel()
 
     part.name = details.name
@@ -120,7 +165,7 @@ async def create_part(db: AsyncSession, details: PartCreateSchema) -> PartModel:
 
 
 async def get_part_count(db: AsyncSession) -> int:
-    """Returns the number of part models in the database .
+    """Return the number of parts in the database .
 
     Args:
         db (AsyncSession): [db session]
@@ -141,11 +186,21 @@ async def get_part_count(db: AsyncSession) -> int:
 
 # TODO: Finish get total stock
 async def get_total_stock() -> int:
+    """Get the total stock for a part.
+
+    Returns:
+        int: [description]
+    """
     return 1_000
 
 
 # TODO: Finish get part stock
 async def get_stock_value() -> float:
+    """Get stock value .
+
+    Returns:
+        float: [description]
+    """
     return 1_500.00
 
 
@@ -153,13 +208,12 @@ async def get_latest_parts(start: int = 0, limit: int = 5) -> List[PartModel]:
     """Get latest parts sorted by date.
 
     Args:
-        start (int, optional): [pagination parts being returned]. Defaults to 0.
-        limit (int, optional): [number of parts to return]. Defaults to 5.
+        start (int, optional): pagination parts being returned. Defaults to 0.
+        limit (int, optional): number of parts to return. Defaults to 5.
 
     Returns:
-        List[PartModel]: [list of latest parts sorted by date]
+        List[PartModel]: list of latest parts to be added, sorted by date.
     """
-
     start = max(0, start)
     limit = max(0, limit)
 
