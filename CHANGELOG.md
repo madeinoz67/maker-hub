@@ -14,6 +14,7 @@
 
 **Dependencies Updated:**
 
+- Bump python-dotenv from 0.17.1 to 0.18.0 [\#104](https://github.com/madeinoz67/maker-hub/pull/104)
 - Bump mkdocs-macros-plugin from 0.5.5 to 0.5.12 [\#103](https://github.com/madeinoz67/maker-hub/pull/103)
 - Bump mkdocs-material from 7.1.7 to 7.1.8 [\#102](https://github.com/madeinoz67/maker-hub/pull/102)
 - Bump black from 21.5b2 to 21.6b0 [\#100](https://github.com/madeinoz67/maker-hub/pull/100)
