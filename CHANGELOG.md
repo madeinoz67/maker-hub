@@ -14,6 +14,7 @@
 
 **Dependencies Updated:**
 
+- Bump mypy from 0.902 to 0.910 [\#105](https://github.com/madeinoz67/maker-hub/pull/105)
 - Bump python-dotenv from 0.17.1 to 0.18.0 [\#104](https://github.com/madeinoz67/maker-hub/pull/104)
 - Bump mkdocs-macros-plugin from 0.5.5 to 0.5.12 [\#103](https://github.com/madeinoz67/maker-hub/pull/103)
 - Bump mkdocs-material from 7.1.7 to 7.1.8 [\#102](https://github.com/madeinoz67/maker-hub/pull/102)
