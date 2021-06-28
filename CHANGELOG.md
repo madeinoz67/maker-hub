@@ -14,6 +14,7 @@
 
 **Dependencies Updated:**
 
+- Bump sqlalchemy from 1.4.19 to 1.4.20 [\#108](https://github.com/madeinoz67/maker-hub/pull/108)
 - Bump mkdocs-material from 7.1.8 to 7.1.9 [\#107](https://github.com/madeinoz67/maker-hub/pull/107)
 - Bump sqlalchemy from 1.4.18 to 1.4.19 [\#106](https://github.com/madeinoz67/maker-hub/pull/106)
 - Bump mypy from 0.902 to 0.910 [\#105](https://github.com/madeinoz67/maker-hub/pull/105)
@@ -62,7 +63,6 @@
 - Bump abatilo/actions-poetry from 2.1.0 to 2.1.2 [\#63](https://github.com/madeinoz67/maker-hub/pull/63)
 - Bump mindsers/changelog-reader-action from 1 to 2 [\#62](https://github.com/madeinoz67/maker-hub/pull/62)
 - Bump heinrichreimer/github-changelog-generator-action from 2.1.1 to 2.2 [\#61](https://github.com/madeinoz67/maker-hub/pull/61)
-- Bump flake8-docstrings from 1.5.0 to 1.6.0 [\#14](https://github.com/madeinoz67/maker-hub/pull/14)
 
 ## [v2021.0.0-dev1](https://github.com/madeinoz67/maker-hub/tree/v2021.0.0-dev1) (2021-05-22)
 
@@ -78,6 +78,7 @@
 
 **Dependencies Updated:**
 
+- Bump flake8-docstrings from 1.5.0 to 1.6.0 [\#14](https://github.com/madeinoz67/maker-hub/pull/14)
 - Bump flask-caching from 1.9.0 to 1.10.0 [\#9](https://github.com/madeinoz67/maker-hub/pull/9)
 - Bump supervisor from 4.2.1 to 4.2.2 [\#8](https://github.com/madeinoz67/maker-hub/pull/8)
 - Bump actions/setup-node from v2.1.4 to v2.1.5 [\#7](https://github.com/madeinoz67/maker-hub/pull/7)
