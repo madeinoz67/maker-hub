@@ -14,6 +14,7 @@
 
 **Dependencies Updated:**
 
+- Bump python from 3.9.5-slim to 3.9.6-slim [\#110](https://github.com/madeinoz67/maker-hub/pull/110)
 - Bump sqlalchemy from 1.4.19 to 1.4.20 [\#108](https://github.com/madeinoz67/maker-hub/pull/108)
 - Bump mkdocs-material from 7.1.8 to 7.1.9 [\#107](https://github.com/madeinoz67/maker-hub/pull/107)
 - Bump sqlalchemy from 1.4.18 to 1.4.19 [\#106](https://github.com/madeinoz67/maker-hub/pull/106)
