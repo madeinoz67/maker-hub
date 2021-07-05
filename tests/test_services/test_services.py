@@ -101,3 +101,20 @@ class TestPartService:
 
             result = await session.execute(select(PartModel))
             assert result.scalar_one_or_none() is None
+
+    # @pytest.mark.asyncio
+    # async def test_part_update(
+    #     self,
+    #     db_session,
+    #     part_update_schema_factory: PartUpdateSchemaFactory,
+    #     part_model_factory: PartModelFactory,
+    # ):
+
+    #     async with db_session as session:
+    #         part_model_factory._meta.sqlalchemy_session = session
+
+    #         part: PartModel = part_model_factory.create()
+    #         result = await session.execute(
+    #             select(PartModel).where(PartModel.id == part.id)
+    #         )
+    #         assert result.scalar_one() is not None

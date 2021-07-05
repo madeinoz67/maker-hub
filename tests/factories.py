@@ -32,8 +32,7 @@ from nanoid import generate
 from app.core.config import settings
 from app.models.part import PartModel
 from app.schema.part import PartPublicSchema  # noqa:
-from app.schema.part import PartUpdateSchema  # noqa:
-from app.schema.part import PartCreateSchema
+from app.schema.part import PartCreateSchema, PartUpdateSchema
 from tests import common
 
 _alphabet = settings.NANOID_ALPHABET
@@ -95,11 +94,41 @@ class PartCreateSchemaFactory(factory.Factory):
     mpn: str = factory.Faker("bothify", text="???-####-###-???")
     notes: str = factory.Faker("text", max_nb_chars=random.randint(50, 300))
 
-    def __str__(self):
-        """To string.
+    # def __str__(self):
+    #     """To string.
 
-        Returns:
-            str:String representation of this object
+    #     Returns:
+    #         str:String representation of this object
 
-        """
-        return f"{self.name}, {self.description}, {self.footprint}, {self.manufacturer}, {self.mpn}, {self.notes}"
+    #     """
+    #     return f"{self.name}, {self.description}, {self.footprint}, {self.manufacturer}, {self.mpn}, {self.notes}"
+
+
+class PartUpdateSchemaFactory(factory.Factory):
+    """Factory for creating PartUpdateSchema object instances for testing.
+
+    Returns:
+        PartUpdateSchema: A PartUpdateSchema object instance
+
+    """
+
+    class Meta:
+        """Class decorator for creating the PartUpdateSchemaFactory."""
+
+        model = PartUpdateSchema
+
+    name: str = factory.Sequence(lambda n: f"part-{n}")
+    description: str = factory.Faker("text", max_nb_chars=random.randint(20, 150))
+    footprint: str = factory.Faker("bothify", text="SO?-#", letters="PT")
+    manufacturer: str = factory.Faker("company")
+    mpn: str = factory.Faker("bothify", text="???-####-###-???")
+    notes: str = factory.Faker("text", max_nb_chars=random.randint(50, 300))
+
+    # def __str__(self):
+    #     """To string.
+
+    #     Returns:
+    #         str:String representation of this object
+
+    #     """
+    #     return f"{self.name}, {self.description}, {self.footprint}, {self.manufacturer}, {self.mpn}, {self.notes}"
