@@ -21,6 +21,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+from typing import Optional
 
 import fastapi
 from fastapi import Depends, Response, status
@@ -31,8 +32,12 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.api.exceptions import DuplicatedEntryError
 from app.core.config import settings
 from app.db.session import db_session_context, get_db_session
-from app.schema.datatable import DataTableRequest, PartDataTableResponse
-from app.schema.part import PartCreateSchema, PartPublicSchema, PartUpdateSchema
+from app.schema.part import (
+    PartCreateSchema,
+    PartPublicResponseSchema,
+    PartPublicSchema,
+    PartUpdateSchema,
+)
 from app.services import part_service
 
 router = fastapi.APIRouter()
@@ -41,14 +46,44 @@ __host = settings.HOST
 __port = settings.PORT
 
 
+@router.get(
+    "/",
+    response_model=PartPublicResponseSchema,
+    status_code=status.HTTP_200_OK,
+    name="parts_list",
+)
+async def parts_list(
+    id: Optional[str] = None,
+    name: Optional[str] = None,
+    q: Optional[str] = None,
+    limit: Optional[int] = 100,
+    offset: Optional[int] = 0,
+    db: AsyncSession = Depends(get_db_session),
+) -> PartPublicResponseSchema:
+    """Lists parts .
+
+    Args:
+        id (Optional[str], optional): query. Defaults to None.
+        name (Optional[str], optional): query. Defaults to None.
+        q (Optional[str], optional): search query. Defaults to None.
+        limit (Optional[int], optional): limit results. Defaults to 100.
+        offset (Optional[int], optional): offset. Defaults to 0.
+        db (AsyncSession, optional): DB dependency injection.. Defaults to Depends(get_db_session).
+
+    Returns:
+        PartPublicResponseSchema: paginated result response
+    """
+
+    return Response(status_code=status.HTTP_204_NO_CONTENT, content=[])
+
+
 @router.post(
     "/",
     response_model=PartPublicSchema,
     status_code=status.HTTP_201_CREATED,
-    name="add_part",
-    tags=["Parts"],
+    name="part_create",
 )
-async def add_one(
+async def part_create(
     details: PartCreateSchema,
     __body: bool = True,
     db: AsyncSession = Depends(get_db_session),
@@ -74,31 +109,8 @@ async def add_one(
         raise DuplicatedEntryError(f"The Part with Id='{part.part_id}' already exists.")
 
 
-@router.post(
-    "/datatable", response_model=PartDataTableResponse, name="part_tablesource"
-)
-async def table_datasource(
-    request: DataTableRequest,
-    db_session: AsyncSession = Depends(get_db_session),
-) -> PartDataTableResponse:
-    """Servers side processing for Parts List Datatable .
-
-    This performs the server-side processing for the Part List Datatable
-
-    """
-    # Set the injected db_session dependency to the db_session context object
-    db_session_context.set(db_session)
-
-    draw = request.draw
-
-    data = await part_service.get_part_datatable(request)
-    return PartDataTableResponse(
-        draw=draw, recordsTotal=100, recordsFiltered=100, data=data
-    )
-
-
-@router.delete("/{part_id}", name="delete_part")
-async def delete_part(
+@router.delete("/{part_id}", name="part_delete")
+async def part_delete(
     part_id: str, db_session: AsyncSession = Depends(get_db_session)
 ) -> Response:
     """Delete a part .
@@ -119,18 +131,11 @@ async def delete_part(
     return Response(status_code=status.HTTP_204_NO_CONTENT, content=result)
 
 
-@router.get("/", response_model=PartPublicSchema, name="get all parts")
-async def get_all() -> Response:
-    """Get all parts .
-
-    Returns:
-        Response:
-    """
-    return Response(status_code=status.HTTP_204_NO_CONTENT, content=[])
-
-
-@router.get("/{part_id}", response_model=PartPublicSchema, name="get part")
-async def get_part(
+@router.get(
+    "/{part_id}",
+    response_model=PartPublicSchema,
+)
+async def part_read(
     part_id: str, db_session: AsyncSession = Depends(get_db_session)
 ) -> PartPublicSchema:
     """Get part by id .
@@ -151,19 +156,19 @@ async def get_part(
     return Response(status_code=status.HTTP_204_NO_CONTENT, content=[])
 
 
-@router.patch("/{part_id}", response_model=PartPublicSchema, name="update part")
-async def update_part(
+@router.patch("/{part_id}", response_model=PartPublicSchema, name="part_partial_update")
+async def part_partial_update(
     part_id: str,
     details: PartUpdateSchema,
     __body: bool = True,
     db_session: AsyncSession = Depends(get_db_session),
 ) -> PartPublicSchema:
-    """Update a part .
+    """partially update a part .
 
     Args:
         part_id (str): Id of part to update
-        details (PartUpdateSchema): details to updated
-        __body (bool, optional): returns all infomation. Defaults to True.
+        details (PartUpdateSchema): schema containing the details to be updated
+        __body (bool, optional): returns all infomation. Defaults to True.  False returns ResponseCode only
         db_session (AsyncSession, optional): DB dependency injection. Defaults to Depends(get_db_session).
 
     Returns:

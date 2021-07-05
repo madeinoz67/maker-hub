@@ -22,7 +22,7 @@
 # SOFTWARE.
 
 import datetime
-from typing import Optional
+from typing import List, Optional
 
 from pydantic import HttpUrl
 
@@ -58,3 +58,10 @@ class PartInDBSchema(IDSchemaMixin, PartBaseSchema):
 class PartPublicSchema(IDSchemaMixin, PartBaseSchema):
     id: str
     href: Optional[HttpUrl] = None
+
+
+class PartPublicResponseSchema(CoreSchema):
+    count: int = 0
+    next: Optional[HttpUrl] = None
+    previous: Optional[HttpUrl] = None
+    results: List[PartPublicSchema] = []
