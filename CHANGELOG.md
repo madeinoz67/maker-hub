@@ -14,6 +14,7 @@
 
 **Dependencies Updated:**
 
+- Bump mkdocs-material from 7.1.9 to 7.1.10 [\#113](https://github.com/madeinoz67/maker-hub/pull/113)
 - Bump actions/setup-node from 2.1.5 to 2.2.0 [\#111](https://github.com/madeinoz67/maker-hub/pull/111)
 - Bump python from 3.9.5-slim to 3.9.6-slim [\#110](https://github.com/madeinoz67/maker-hub/pull/110)
 - Bump sqlalchemy from 1.4.19 to 1.4.20 [\#108](https://github.com/madeinoz67/maker-hub/pull/108)
@@ -40,6 +41,10 @@
 
 - Add issue and PR Templates [\#74](https://github.com/madeinoz67/maker-hub/issues/74)
 
+**Merged pull requests:**
+
+- adds favicon and logo to the docs site [\#86](https://github.com/madeinoz67/maker-hub/pull/86)
+
 ## [v2021.0.0-dev2](https://github.com/madeinoz67/maker-hub/tree/v2021.0.0-dev2) (2021-05-24)
 
 **Features Added:**
@@ -61,10 +66,6 @@
 - Bump abatilo/actions-poetry from 2.1.0 to 2.1.2 [\#63](https://github.com/madeinoz67/maker-hub/pull/63)
 - Bump mindsers/changelog-reader-action from 1 to 2 [\#62](https://github.com/madeinoz67/maker-hub/pull/62)
 - Bump heinrichreimer/github-changelog-generator-action from 2.1.1 to 2.2 [\#61](https://github.com/madeinoz67/maker-hub/pull/61)
-
-**Merged pull requests:**
-
-- adds favicon and logo to the docs site [\#86](https://github.com/madeinoz67/maker-hub/pull/86)
 
 ## [v2021.0.0-dev1](https://github.com/madeinoz67/maker-hub/tree/v2021.0.0-dev1) (2021-05-22)
 
