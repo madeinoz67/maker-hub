@@ -26,7 +26,7 @@ Unidecode = "^1.1"
 loguru = "^0.5.1"
 python-dotenv = "^0.18.0"
 gunicorn = "^20.1.0"
-uvloop = "^0.15.2"
+uvloop = "^0.15.3"
 httptools = "^0.2.0"
 
 [tool.poetry.dev-dependencies]
