@@ -780,7 +780,7 @@ pytest = ">=2.6.0"
 
 [[package]]
 name = "python-dateutil"
-version = "2.8.1"
+version = "2.8.2"
 description = "Extensions to the standard Python datetime module"
 category = "main"
 optional = false
@@ -1069,7 +1069,7 @@ dev = ["pytest (>=4.6.2)", "black (>=19.3b0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "423ecd2fcbeacff526718017e506abff6643aa851ddf0663214c38afba4eaa3c"
+content-hash = "4646b4388e85517370177bb9b0151c47e86618296afcc60476cacc0b64cdd50e"
 
 [metadata.files]
 aiofiles = [
@@ -1553,8 +1553,8 @@ pytest-env = [
     {file = "pytest-env-0.6.2.tar.gz", hash = "sha256:7e94956aef7f2764f3c147d216ce066bf6c42948bb9e293169b1b1c880a580c2"},
 ]
 python-dateutil = [
-    {file = "python-dateutil-2.8.1.tar.gz", hash = "sha256:73ebfe9dbf22e832286dafa60473e4cd239f8592f699aa5adaf10050e6e1823c"},
-    {file = "python_dateutil-2.8.1-py2.py3-none-any.whl", hash = "sha256:75bb3f31ea686f1197762692a9ee6a7550b59fc6ca3a1f4b5d7e32fb98e2da2a"},
+    {file = "python-dateutil-2.8.2.tar.gz", hash = "sha256:0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"},
+    {file = "python_dateutil-2.8.2-py2.py3-none-any.whl", hash = "sha256:961d03dc3453ebbc59dbdea9e4e11c5651520a876d0f4db161e8674aae935da9"},
 ]
 python-dotenv = [
     {file = "python-dotenv-0.18.0.tar.gz", hash = "sha256:effaac3c1e58d89b3ccb4d04a40dc7ad6e0275fda25fd75ae9d323e2465e202d"},
