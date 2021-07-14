@@ -14,6 +14,7 @@
 
 **Dependencies Updated:**
 
+- Bump uvloop from 0.15.2 to 0.15.3 [\#115](https://github.com/madeinoz67/maker-hub/pull/115)
 - Bump mkdocs-mermaid2-plugin from 0.5.1 to 0.5.2 [\#114](https://github.com/madeinoz67/maker-hub/pull/114)
 - Bump mkdocs-material from 7.1.9 to 7.1.10 [\#113](https://github.com/madeinoz67/maker-hub/pull/113)
 - Bump actions/setup-node from 2.1.5 to 2.2.0 [\#111](https://github.com/madeinoz67/maker-hub/pull/111)
