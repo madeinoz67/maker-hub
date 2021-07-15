@@ -14,6 +14,7 @@
 
 **Dependencies Updated:**
 
+- Bump python-dateutil from 2.8.1 to 2.8.2 [\#116](https://github.com/madeinoz67/maker-hub/pull/116)
 - Bump uvloop from 0.15.2 to 0.15.3 [\#115](https://github.com/madeinoz67/maker-hub/pull/115)
 - Bump mkdocs-mermaid2-plugin from 0.5.1 to 0.5.2 [\#114](https://github.com/madeinoz67/maker-hub/pull/114)
 - Bump mkdocs-material from 7.1.9 to 7.1.10 [\#113](https://github.com/madeinoz67/maker-hub/pull/113)
@@ -38,6 +39,7 @@
 - Bump mkdocs-material from 7.1.5 to 7.1.6 [\#90](https://github.com/madeinoz67/maker-hub/pull/90)
 - Bump alembic from 1.6.4 to 1.6.5 [\#87](https://github.com/madeinoz67/maker-hub/pull/87)
 - Bump alembic from 1.6.3 to 1.6.4 [\#76](https://github.com/madeinoz67/maker-hub/pull/76)
+- Bump fastapi from 0.63.0 to 0.64.0 [\#67](https://github.com/madeinoz67/maker-hub/pull/67)
 
 **Closed issues:**
 
@@ -61,7 +63,6 @@
 **Dependencies Updated:**
 
 - Bump pyjwt from 1.7.1 to 2.1.0 [\#68](https://github.com/madeinoz67/maker-hub/pull/68)
-- Bump fastapi from 0.63.0 to 0.64.0 [\#67](https://github.com/madeinoz67/maker-hub/pull/67)
 - Bump aiofiles from 0.6.0 to 0.7.0 [\#66](https://github.com/madeinoz67/maker-hub/pull/66)
 - Bump pytest-asyncio from 0.14.0 to 0.15.1 [\#65](https://github.com/madeinoz67/maker-hub/pull/65)
 - Bump python-slugify from 4.0.1 to 5.0.2 [\#64](https://github.com/madeinoz67/maker-hub/pull/64)
