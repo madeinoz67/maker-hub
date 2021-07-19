@@ -14,6 +14,7 @@
 
 **Dependencies Updated:**
 
+- Bump black from 21.6b0 to 21.7b0 [\#118](https://github.com/madeinoz67/maker-hub/pull/118)
 - Bump sqlalchemy from 1.4.20 to 1.4.21 [\#117](https://github.com/madeinoz67/maker-hub/pull/117)
 - Bump python-dateutil from 2.8.1 to 2.8.2 [\#116](https://github.com/madeinoz67/maker-hub/pull/116)
 - Bump uvloop from 0.15.2 to 0.15.3 [\#115](https://github.com/madeinoz67/maker-hub/pull/115)
