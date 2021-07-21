@@ -2,6 +2,10 @@
 
 ## [Unreleased](https://github.com/madeinoz67/maker-hub/tree/HEAD)
 
+**Security Issues Fixed:**
+
+- Bump Fastapi Version to v0.65.x [\#121](https://github.com/madeinoz67/maker-hub/pull/121)
+
 **Bugs Fixed:**
 
 - makefile not being included in the docs build on release [\#71](https://github.com/madeinoz67/maker-hub/issues/71)
