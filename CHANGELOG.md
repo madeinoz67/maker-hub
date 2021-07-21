@@ -14,6 +14,7 @@
 
 **Dependencies Updated:**
 
+- Bump actions/setup-node from 2.2.0 to 2.3.0 [\#120](https://github.com/madeinoz67/maker-hub/pull/120)
 - Bump mkdocs-material from 7.1.10 to 7.1.11 [\#119](https://github.com/madeinoz67/maker-hub/pull/119)
 - Bump black from 21.6b0 to 21.7b0 [\#118](https://github.com/madeinoz67/maker-hub/pull/118)
 - Bump sqlalchemy from 1.4.20 to 1.4.21 [\#117](https://github.com/madeinoz67/maker-hub/pull/117)
