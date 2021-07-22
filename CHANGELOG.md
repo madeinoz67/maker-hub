@@ -1,10 +1,15 @@
 # Changelog
 
+## [Unreleased](https://github.com/madeinoz67/maker-hub/tree/HEAD)
+
+**Dependencies Updated:**
+
+- Bump sqlalchemy from 1.4.21 to 1.4.22 [\#124](https://github.com/madeinoz67/maker-hub/pull/124)
+
 ## [v2021.0.0-dev4](https://github.com/madeinoz67/maker-hub/tree/v2021.0.0-dev4) (2021-07-22)
 
 **Dependencies Updated:**
 
-- Bump mkdocs-material from 7.1.11 to 7.2.0 [\#123](https://github.com/madeinoz67/maker-hub/pull/123)
 - Bump fastapi from 0.65.3 to 0.67.0 [\#122](https://github.com/madeinoz67/maker-hub/pull/122)
 
 ## [v2021.0.0-dev3](https://github.com/madeinoz67/maker-hub/tree/v2021.0.0-dev3) (2021-07-21)
@@ -25,6 +30,7 @@
 
 **Dependencies Updated:**
 
+- Bump mkdocs-material from 7.1.11 to 7.2.0 [\#123](https://github.com/madeinoz67/maker-hub/pull/123)
 - Bump actions/setup-node from 2.2.0 to 2.3.0 [\#120](https://github.com/madeinoz67/maker-hub/pull/120)
 - Bump mkdocs-material from 7.1.10 to 7.1.11 [\#119](https://github.com/madeinoz67/maker-hub/pull/119)
 - Bump black from 21.6b0 to 21.7b0 [\#118](https://github.com/madeinoz67/maker-hub/pull/118)
