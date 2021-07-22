@@ -21,6 +21,7 @@
 
 - \[FEATURE\] - Add favicon to Docs site [\#85](https://github.com/madeinoz67/maker-hub/issues/85)
 - \[FEATURE\] - Add fav icon to main app [\#80](https://github.com/madeinoz67/maker-hub/issues/80)
+- Adds VSCode remote development container [\#89](https://github.com/madeinoz67/maker-hub/pull/89)
 
 **Dependencies Updated:**
 
@@ -67,7 +68,6 @@
 **Features Added:**
 
 - Update applications Documents page to display github documents page [\#57](https://github.com/madeinoz67/maker-hub/issues/57)
-- Adds VSCode remote development container [\#89](https://github.com/madeinoz67/maker-hub/pull/89)
 
 **Documentation Changes:**
 
@@ -84,7 +84,6 @@
 - Bump abatilo/actions-poetry from 2.1.0 to 2.1.2 [\#63](https://github.com/madeinoz67/maker-hub/pull/63)
 - Bump mindsers/changelog-reader-action from 1 to 2 [\#62](https://github.com/madeinoz67/maker-hub/pull/62)
 - Bump heinrichreimer/github-changelog-generator-action from 2.1.1 to 2.2 [\#61](https://github.com/madeinoz67/maker-hub/pull/61)
-- Bump less-loader from 7.3.0 to 8.0.0 [\#4](https://github.com/madeinoz67/maker-hub/pull/4)
 
 ## [v2021.0.0-dev1](https://github.com/madeinoz67/maker-hub/tree/v2021.0.0-dev1) (2021-05-22)
 
@@ -106,6 +105,7 @@
 - Bump actions/setup-node from v2.1.4 to v2.1.5 [\#7](https://github.com/madeinoz67/maker-hub/pull/7)
 - Bump flask-migrate from 2.6.0 to 2.7.0 [\#6](https://github.com/madeinoz67/maker-hub/pull/6)
 - Bump concurrently from 5.3.0 to 6.0.0 [\#5](https://github.com/madeinoz67/maker-hub/pull/5)
+- Bump less-loader from 7.3.0 to 8.0.0 [\#4](https://github.com/madeinoz67/maker-hub/pull/4)
 - Bump less from 3.13.1 to 4.1.1 [\#3](https://github.com/madeinoz67/maker-hub/pull/3)
 - Bump actions/setup-node from v2.1.2 to v2.1.4 [\#2](https://github.com/madeinoz67/maker-hub/pull/2)
 
