@@ -1,17 +1,29 @@
 # Changelog
 
+## [Unreleased](https://github.com/madeinoz67/maker-hub/tree/HEAD)
+
+**Dependencies Updated:**
+
+- Bump fastapi from 0.65.3 to 0.67.0 [\#122](https://github.com/madeinoz67/maker-hub/pull/122)
+
 ## [v2021.0.0-dev3](https://github.com/madeinoz67/maker-hub/tree/v2021.0.0-dev3) (2021-07-21)
 
-**Closed issues:**
+**Security Issues Fixed:**
+
+- Bump Fastapi Version to v0.65.x [\#121](https://github.com/madeinoz67/maker-hub/pull/121)
+
+**Bugs Fixed:**
+
+- makefile not being included in the docs build on release [\#71](https://github.com/madeinoz67/maker-hub/issues/71)
+
+**Features Added:**
 
 - \[FEATURE\] - Add favicon to Docs site [\#85](https://github.com/madeinoz67/maker-hub/issues/85)
 - \[FEATURE\] - Add fav icon to main app [\#80](https://github.com/madeinoz67/maker-hub/issues/80)
-- Add issue and PR Templates [\#74](https://github.com/madeinoz67/maker-hub/issues/74)
-- makefile not being included in the docs build on release [\#71](https://github.com/madeinoz67/maker-hub/issues/71)
+- Adds VSCode remote development container [\#89](https://github.com/madeinoz67/maker-hub/pull/89)
 
-**Merged pull requests:**
+**Dependencies Updated:**
 
-- Bump Fastapi Version to v0.65.x [\#121](https://github.com/madeinoz67/maker-hub/pull/121)
 - Bump actions/setup-node from 2.2.0 to 2.3.0 [\#120](https://github.com/madeinoz67/maker-hub/pull/120)
 - Bump mkdocs-material from 7.1.10 to 7.1.11 [\#119](https://github.com/madeinoz67/maker-hub/pull/119)
 - Bump black from 21.6b0 to 21.7b0 [\#118](https://github.com/madeinoz67/maker-hub/pull/118)
@@ -39,25 +51,30 @@
 - Bump black from 21.5b1 to 21.5b2 [\#92](https://github.com/madeinoz67/maker-hub/pull/92)
 - Bump sqlalchemy from 1.4.15 to 1.4.17 [\#91](https://github.com/madeinoz67/maker-hub/pull/91)
 - Bump mkdocs-material from 7.1.5 to 7.1.6 [\#90](https://github.com/madeinoz67/maker-hub/pull/90)
-- Adds VSCode remote development container [\#89](https://github.com/madeinoz67/maker-hub/pull/89)
 - Bump alembic from 1.6.4 to 1.6.5 [\#87](https://github.com/madeinoz67/maker-hub/pull/87)
-- adds favicon and logo to the docs site [\#86](https://github.com/madeinoz67/maker-hub/pull/86)
-- resolved issue \# 80 by adding in a favicon.ico and editing \_layout template [\#83](https://github.com/madeinoz67/maker-hub/pull/83)
 - Bump alembic from 1.6.3 to 1.6.4 [\#76](https://github.com/madeinoz67/maker-hub/pull/76)
-- Fixes \#71 - Makefile not being included in generated docs [\#73](https://github.com/madeinoz67/maker-hub/pull/73)
-
-## [v2021.0.0-dev2](https://github.com/madeinoz67/maker-hub/tree/v2021.0.0-dev2) (2021-05-24)
 
 **Closed issues:**
 
-- Update About page with new Repo [\#59](https://github.com/madeinoz67/maker-hub/issues/59)
-- Update applications Documents page to display github documents page [\#57](https://github.com/madeinoz67/maker-hub/issues/57)
-- Add pages site \(docs\) link to README [\#51](https://github.com/madeinoz67/maker-hub/issues/51)
+- Add issue and PR Templates [\#74](https://github.com/madeinoz67/maker-hub/issues/74)
 
 **Merged pull requests:**
 
-- updates help page [\#70](https://github.com/madeinoz67/maker-hub/pull/70)
-- Parts DataTable now working with dummy data via API callbacks [\#69](https://github.com/madeinoz67/maker-hub/pull/69)
+- adds favicon and logo to the docs site [\#86](https://github.com/madeinoz67/maker-hub/pull/86)
+
+## [v2021.0.0-dev2](https://github.com/madeinoz67/maker-hub/tree/v2021.0.0-dev2) (2021-05-24)
+
+**Features Added:**
+
+- Update applications Documents page to display github documents page [\#57](https://github.com/madeinoz67/maker-hub/issues/57)
+
+**Documentation Changes:**
+
+- Add pages site \(docs\) link to README [\#51](https://github.com/madeinoz67/maker-hub/issues/51)
+- fixes issue \#51 [\#52](https://github.com/madeinoz67/maker-hub/pull/52)
+
+**Dependencies Updated:**
+
 - Bump pyjwt from 1.7.1 to 2.1.0 [\#68](https://github.com/madeinoz67/maker-hub/pull/68)
 - Bump fastapi from 0.63.0 to 0.64.0 [\#67](https://github.com/madeinoz67/maker-hub/pull/67)
 - Bump aiofiles from 0.6.0 to 0.7.0 [\#66](https://github.com/madeinoz67/maker-hub/pull/66)
@@ -66,23 +83,21 @@
 - Bump abatilo/actions-poetry from 2.1.0 to 2.1.2 [\#63](https://github.com/madeinoz67/maker-hub/pull/63)
 - Bump mindsers/changelog-reader-action from 1 to 2 [\#62](https://github.com/madeinoz67/maker-hub/pull/62)
 - Bump heinrichreimer/github-changelog-generator-action from 2.1.1 to 2.2 [\#61](https://github.com/madeinoz67/maker-hub/pull/61)
-- Code Cleanup and minor fixes [\#58](https://github.com/madeinoz67/maker-hub/pull/58)
-- fixes issue \#51 [\#52](https://github.com/madeinoz67/maker-hub/pull/52)
 
 ## [v2021.0.0-dev1](https://github.com/madeinoz67/maker-hub/tree/v2021.0.0-dev1) (2021-05-22)
 
-**Closed issues:**
+**Bugs Fixed:**
 
 - Fix changelog page in docs [\#49](https://github.com/madeinoz67/maker-hub/issues/49)
+
+**Features Added:**
+
 - add docs to projects pages site [\#47](https://github.com/madeinoz67/maker-hub/issues/47)
 - Add release actions and workflows [\#46](https://github.com/madeinoz67/maker-hub/issues/46)
 - Migrate to FastAPI [\#38](https://github.com/madeinoz67/maker-hub/issues/38)
 
-**Merged pull requests:**
+**Dependencies Updated:**
 
-- Fixes issue \#49 [\#50](https://github.com/madeinoz67/maker-hub/pull/50)
-- Fixes issue \#46 and issue \#47 [\#48](https://github.com/madeinoz67/maker-hub/pull/48)
-- FastAPI Migration [\#39](https://github.com/madeinoz67/maker-hub/pull/39)
 - Bump flake8-docstrings from 1.5.0 to 1.6.0 [\#14](https://github.com/madeinoz67/maker-hub/pull/14)
 - Bump flask-caching from 1.9.0 to 1.10.0 [\#9](https://github.com/madeinoz67/maker-hub/pull/9)
 - Bump supervisor from 4.2.1 to 4.2.2 [\#8](https://github.com/madeinoz67/maker-hub/pull/8)
@@ -92,7 +107,6 @@
 - Bump less-loader from 7.3.0 to 8.0.0 [\#4](https://github.com/madeinoz67/maker-hub/pull/4)
 - Bump less from 3.13.1 to 4.1.1 [\#3](https://github.com/madeinoz67/maker-hub/pull/3)
 - Bump actions/setup-node from v2.1.2 to v2.1.4 [\#2](https://github.com/madeinoz67/maker-hub/pull/2)
-- CI Working [\#1](https://github.com/madeinoz67/maker-hub/pull/1)
 
 
 
