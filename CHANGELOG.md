@@ -4,12 +4,14 @@
 
 **Dependencies Updated:**
 
+- Bump mkdocs-material from 7.2.0 to 7.2.1 [\#125](https://github.com/madeinoz67/maker-hub/pull/125)
 - Bump sqlalchemy from 1.4.21 to 1.4.22 [\#124](https://github.com/madeinoz67/maker-hub/pull/124)
 
 ## [v2021.0.0-dev4](https://github.com/madeinoz67/maker-hub/tree/v2021.0.0-dev4) (2021-07-22)
 
 **Dependencies Updated:**
 
+- Bump mkdocs-material from 7.1.11 to 7.2.0 [\#123](https://github.com/madeinoz67/maker-hub/pull/123)
 - Bump fastapi from 0.65.3 to 0.67.0 [\#122](https://github.com/madeinoz67/maker-hub/pull/122)
 
 ## [v2021.0.0-dev3](https://github.com/madeinoz67/maker-hub/tree/v2021.0.0-dev3) (2021-07-21)
@@ -30,7 +32,6 @@
 
 **Dependencies Updated:**
 
-- Bump mkdocs-material from 7.1.11 to 7.2.0 [\#123](https://github.com/madeinoz67/maker-hub/pull/123)
 - Bump actions/setup-node from 2.2.0 to 2.3.0 [\#120](https://github.com/madeinoz67/maker-hub/pull/120)
 - Bump mkdocs-material from 7.1.10 to 7.1.11 [\#119](https://github.com/madeinoz67/maker-hub/pull/119)
 - Bump black from 21.6b0 to 21.7b0 [\#118](https://github.com/madeinoz67/maker-hub/pull/118)
@@ -60,6 +61,7 @@
 - Bump mkdocs-material from 7.1.5 to 7.1.6 [\#90](https://github.com/madeinoz67/maker-hub/pull/90)
 - Bump alembic from 1.6.4 to 1.6.5 [\#87](https://github.com/madeinoz67/maker-hub/pull/87)
 - Bump alembic from 1.6.3 to 1.6.4 [\#76](https://github.com/madeinoz67/maker-hub/pull/76)
+- Bump aiofiles from 0.6.0 to 0.7.0 [\#66](https://github.com/madeinoz67/maker-hub/pull/66)
 
 **Closed issues:**
 
@@ -84,7 +86,6 @@
 
 - Bump pyjwt from 1.7.1 to 2.1.0 [\#68](https://github.com/madeinoz67/maker-hub/pull/68)
 - Bump fastapi from 0.63.0 to 0.64.0 [\#67](https://github.com/madeinoz67/maker-hub/pull/67)
-- Bump aiofiles from 0.6.0 to 0.7.0 [\#66](https://github.com/madeinoz67/maker-hub/pull/66)
 - Bump pytest-asyncio from 0.14.0 to 0.15.1 [\#65](https://github.com/madeinoz67/maker-hub/pull/65)
 - Bump python-slugify from 4.0.1 to 5.0.2 [\#64](https://github.com/madeinoz67/maker-hub/pull/64)
 - Bump abatilo/actions-poetry from 2.1.0 to 2.1.2 [\#63](https://github.com/madeinoz67/maker-hub/pull/63)
