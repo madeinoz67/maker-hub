@@ -4,6 +4,7 @@
 
 **Dependencies Updated:**
 
+- Bump python-dotenv from 0.18.0 to 0.19.0 [\#126](https://github.com/madeinoz67/maker-hub/pull/126)
 - Bump mkdocs-material from 7.2.0 to 7.2.1 [\#125](https://github.com/madeinoz67/maker-hub/pull/125)
 - Bump sqlalchemy from 1.4.21 to 1.4.22 [\#124](https://github.com/madeinoz67/maker-hub/pull/124)
 
@@ -28,7 +29,6 @@
 
 - \[FEATURE\] - Add favicon to Docs site [\#85](https://github.com/madeinoz67/maker-hub/issues/85)
 - \[FEATURE\] - Add fav icon to main app [\#80](https://github.com/madeinoz67/maker-hub/issues/80)
-- Adds VSCode remote development container [\#89](https://github.com/madeinoz67/maker-hub/pull/89)
 
 **Dependencies Updated:**
 
@@ -61,7 +61,6 @@
 - Bump mkdocs-material from 7.1.5 to 7.1.6 [\#90](https://github.com/madeinoz67/maker-hub/pull/90)
 - Bump alembic from 1.6.4 to 1.6.5 [\#87](https://github.com/madeinoz67/maker-hub/pull/87)
 - Bump alembic from 1.6.3 to 1.6.4 [\#76](https://github.com/madeinoz67/maker-hub/pull/76)
-- Bump aiofiles from 0.6.0 to 0.7.0 [\#66](https://github.com/madeinoz67/maker-hub/pull/66)
 
 **Closed issues:**
 
@@ -76,6 +75,7 @@
 **Features Added:**
 
 - Update applications Documents page to display github documents page [\#57](https://github.com/madeinoz67/maker-hub/issues/57)
+- Adds VSCode remote development container [\#89](https://github.com/madeinoz67/maker-hub/pull/89)
 
 **Documentation Changes:**
 
@@ -86,6 +86,7 @@
 
 - Bump pyjwt from 1.7.1 to 2.1.0 [\#68](https://github.com/madeinoz67/maker-hub/pull/68)
 - Bump fastapi from 0.63.0 to 0.64.0 [\#67](https://github.com/madeinoz67/maker-hub/pull/67)
+- Bump aiofiles from 0.6.0 to 0.7.0 [\#66](https://github.com/madeinoz67/maker-hub/pull/66)
 - Bump pytest-asyncio from 0.14.0 to 0.15.1 [\#65](https://github.com/madeinoz67/maker-hub/pull/65)
 - Bump python-slugify from 4.0.1 to 5.0.2 [\#64](https://github.com/madeinoz67/maker-hub/pull/64)
 - Bump abatilo/actions-poetry from 2.1.0 to 2.1.2 [\#63](https://github.com/madeinoz67/maker-hub/pull/63)
