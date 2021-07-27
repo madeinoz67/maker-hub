@@ -1,5 +1,13 @@
 # Changelog
 
+## [Unreleased](https://github.com/madeinoz67/maker-hub/tree/HEAD)
+
+**Dependencies Updated:**
+
+- Bump python-dotenv from 0.18.0 to 0.19.0 [\#126](https://github.com/madeinoz67/maker-hub/pull/126)
+- Bump mkdocs-material from 7.2.0 to 7.2.1 [\#125](https://github.com/madeinoz67/maker-hub/pull/125)
+- Bump sqlalchemy from 1.4.21 to 1.4.22 [\#124](https://github.com/madeinoz67/maker-hub/pull/124)
+
 ## [v2021.0.0-dev4](https://github.com/madeinoz67/maker-hub/tree/v2021.0.0-dev4) (2021-07-22)
 
 **Dependencies Updated:**
@@ -21,7 +29,6 @@
 
 - \[FEATURE\] - Add favicon to Docs site [\#85](https://github.com/madeinoz67/maker-hub/issues/85)
 - \[FEATURE\] - Add fav icon to main app [\#80](https://github.com/madeinoz67/maker-hub/issues/80)
-- Adds VSCode remote development container [\#89](https://github.com/madeinoz67/maker-hub/pull/89)
 
 **Dependencies Updated:**
 
@@ -68,6 +75,7 @@
 **Features Added:**
 
 - Update applications Documents page to display github documents page [\#57](https://github.com/madeinoz67/maker-hub/issues/57)
+- Adds VSCode remote development container [\#89](https://github.com/madeinoz67/maker-hub/pull/89)
 
 **Documentation Changes:**
 
