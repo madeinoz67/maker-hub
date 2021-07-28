@@ -49,6 +49,9 @@
                     <li class="nav-item"><a class="nav-link" href="/reports"><i class="fas fa-chart-line"></i>
                             Reports</a>
                     </li>
+                    <li class="nav-item"><a class="nav-link" href="https://madeinoz67.github.io/maker-hub/"><i class="fas fa-book-open"></i>
+                            Docs</a>
+                    </li>
                     </li>
                 </ul>
 
@@ -58,7 +61,7 @@
                         <a class="nav-link" href="/about"><i class="fas fa-info fa-lg"></i></a>
                     </li>
                     <li class="nav-item me-3 me-lg-0">
-                        <a class="nav-link" href="/help"><i class="fas fa-question-circle fa-lg"></i></a>
+                        <a class="nav-link" href="https://github.com/madeinoz67/maker-hub/discussions"><i class="fas fa-question-circle fa-lg"></i></a>
                     </li>
                 </ul>
 
