@@ -1,7 +1,7 @@
 ---
 name: Feature request
 about: Suggest an idea for this project
-title: ":sunny: Add your Title Here (leave :sunny: at start)"
+title: "Add your Title Here"
 labels: 'triage, type: enhancement'
 assignees: ''
 
