@@ -1,12 +1,54 @@
 # Changelog
 
+## [Unreleased](https://github.com/madeinoz67/maker-hub/tree/HEAD)
+
+**Features Added:**
+
+- Add Docs icon navbar item and link to online docs URL [\#60](https://github.com/madeinoz67/maker-hub/issues/60)
+
+**Closed issues:**
+
+- Integrate DataTable https://www.datatables.net/ [\#55](https://github.com/madeinoz67/maker-hub/issues/55)
+- implement server-side api for DataTable integration [\#54](https://github.com/madeinoz67/maker-hub/issues/54)
+
 ## [v2021.0.0-dev4](https://github.com/madeinoz67/maker-hub/tree/v2021.0.0-dev4) (2021-07-22)
 
 ## [v2021.0.0-dev3](https://github.com/madeinoz67/maker-hub/tree/v2021.0.0-dev3) (2021-07-21)
 
+**Bugs Fixed:**
+
+- makefile not being included in the docs build on release [\#71](https://github.com/madeinoz67/maker-hub/issues/71)
+
+**Features Added:**
+
+- \[FEATURE\] - Add favicon to Docs site [\#85](https://github.com/madeinoz67/maker-hub/issues/85)
+- \[FEATURE\] - Add fav icon to main app [\#80](https://github.com/madeinoz67/maker-hub/issues/80)
+
+**Closed issues:**
+
+- Add issue and PR Templates [\#74](https://github.com/madeinoz67/maker-hub/issues/74)
+
 ## [v2021.0.0-dev2](https://github.com/madeinoz67/maker-hub/tree/v2021.0.0-dev2) (2021-05-24)
 
+**Features Added:**
+
+- Update applications Documents page to display github documents page [\#57](https://github.com/madeinoz67/maker-hub/issues/57)
+
+**Documentation Changes:**
+
+- Add pages site \(docs\) link to README [\#51](https://github.com/madeinoz67/maker-hub/issues/51)
+
 ## [v2021.0.0-dev1](https://github.com/madeinoz67/maker-hub/tree/v2021.0.0-dev1) (2021-05-22)
+
+**Bugs Fixed:**
+
+- Fix changelog page in docs [\#49](https://github.com/madeinoz67/maker-hub/issues/49)
+
+**Features Added:**
+
+- add docs to projects pages site [\#47](https://github.com/madeinoz67/maker-hub/issues/47)
+- Add release actions and workflows [\#46](https://github.com/madeinoz67/maker-hub/issues/46)
+- Migrate to FastAPI [\#38](https://github.com/madeinoz67/maker-hub/issues/38)
 
 
 
