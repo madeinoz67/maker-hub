@@ -98,7 +98,6 @@
 - Bump aiofiles from 0.6.0 to 0.7.0 [\#66](https://github.com/madeinoz67/maker-hub/pull/66)
 - Bump pytest-asyncio from 0.14.0 to 0.15.1 [\#65](https://github.com/madeinoz67/maker-hub/pull/65)
 - Bump python-slugify from 4.0.1 to 5.0.2 [\#64](https://github.com/madeinoz67/maker-hub/pull/64)
-- Bump abatilo/actions-poetry from 2.1.0 to 2.1.2 [\#63](https://github.com/madeinoz67/maker-hub/pull/63)
 - Bump mindsers/changelog-reader-action from 1 to 2 [\#62](https://github.com/madeinoz67/maker-hub/pull/62)
 - Bump heinrichreimer/github-changelog-generator-action from 2.1.1 to 2.2 [\#61](https://github.com/madeinoz67/maker-hub/pull/61)
 
@@ -116,6 +115,7 @@
 
 **Dependencies Updated:**
 
+- Bump abatilo/actions-poetry from 2.1.0 to 2.1.2 [\#63](https://github.com/madeinoz67/maker-hub/pull/63)
 - Bump flake8-docstrings from 1.5.0 to 1.6.0 [\#14](https://github.com/madeinoz67/maker-hub/pull/14)
 - Bump flask-caching from 1.9.0 to 1.10.0 [\#9](https://github.com/madeinoz67/maker-hub/pull/9)
 - Bump supervisor from 4.2.1 to 4.2.2 [\#8](https://github.com/madeinoz67/maker-hub/pull/8)
