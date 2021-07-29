@@ -17,7 +17,7 @@ jobs:
         uses: heinrichreimer/github-changelog-generator-action@v2.2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          issues: false
+          issues: true
           issuesWoLabels: false
           pullRequests: false
           prWoLabels: false
