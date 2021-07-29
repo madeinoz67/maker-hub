@@ -2,6 +2,12 @@
 
 ## [Unreleased](https://github.com/madeinoz67/maker-hub/tree/HEAD)
 
+**Features Added:**
+
+- Add Docs icon navbar item and link to online docs URL [\#60](https://github.com/madeinoz67/maker-hub/issues/60)
+- Integrate DataTable https://www.datatables.net/ [\#55](https://github.com/madeinoz67/maker-hub/issues/55)
+- implement server-side api for DataTable integration [\#54](https://github.com/madeinoz67/maker-hub/issues/54)
+
 **Dependencies Updated:**
 
 - Bump python-dotenv from 0.18.0 to 0.19.0 [\#126](https://github.com/madeinoz67/maker-hub/pull/126)
@@ -29,6 +35,7 @@
 
 - \[FEATURE\] - Add favicon to Docs site [\#85](https://github.com/madeinoz67/maker-hub/issues/85)
 - \[FEATURE\] - Add fav icon to main app [\#80](https://github.com/madeinoz67/maker-hub/issues/80)
+- Adds VSCode remote development container [\#89](https://github.com/madeinoz67/maker-hub/pull/89)
 
 **Dependencies Updated:**
 
@@ -75,7 +82,6 @@
 **Features Added:**
 
 - Update applications Documents page to display github documents page [\#57](https://github.com/madeinoz67/maker-hub/issues/57)
-- Adds VSCode remote development container [\#89](https://github.com/madeinoz67/maker-hub/pull/89)
 
 **Documentation Changes:**
 
