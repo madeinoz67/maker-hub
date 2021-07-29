@@ -5,14 +5,17 @@
 **Features Added:**
 
 - Add Docs icon navbar item and link to online docs URL [\#60](https://github.com/madeinoz67/maker-hub/issues/60)
-- Integrate DataTable https://www.datatables.net/ [\#55](https://github.com/madeinoz67/maker-hub/issues/55)
-- implement server-side api for DataTable integration [\#54](https://github.com/madeinoz67/maker-hub/issues/54)
 
 **Dependencies Updated:**
 
 - Bump python-dotenv from 0.18.0 to 0.19.0 [\#126](https://github.com/madeinoz67/maker-hub/pull/126)
 - Bump mkdocs-material from 7.2.0 to 7.2.1 [\#125](https://github.com/madeinoz67/maker-hub/pull/125)
 - Bump sqlalchemy from 1.4.21 to 1.4.22 [\#124](https://github.com/madeinoz67/maker-hub/pull/124)
+
+**Closed issues:**
+
+- Integrate DataTable https://www.datatables.net/ [\#55](https://github.com/madeinoz67/maker-hub/issues/55)
+- implement server-side api for DataTable integration [\#54](https://github.com/madeinoz67/maker-hub/issues/54)
 
 ## [v2021.0.0-dev4](https://github.com/madeinoz67/maker-hub/tree/v2021.0.0-dev4) (2021-07-22)
 
