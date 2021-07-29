@@ -19,7 +19,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           issues: true
           issuesWoLabels: false
-          pullRequests: false
+          pullRequests: true
           prWoLabels: false
           unreleased: true
           addSections: '{"security": {"prefix": "**Security Issues Fixed:**", "labels":["pr: security"]},"bugs": {"prefix": "**Bugs Fixed:**", "labels":["type: bug"]}, "features": {"prefix":"**Features Added:**", "labels":["type: enhancement"]},  "documentation":{"prefix":"**Documentation Changes:**","labels":["type: documentation"]}, "dependencies": {"prefix": "**Dependencies Updated:**", "labels":["pr: dependencies"]}}'
