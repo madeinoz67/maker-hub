@@ -8,6 +8,7 @@
 
 **Dependencies Updated:**
 
+- Bump mkdocs-material from 7.2.1 to 7.2.2 [\#130](https://github.com/madeinoz67/maker-hub/pull/130)
 - Bump fastapi from 0.67.0 to 0.68.0 [\#129](https://github.com/madeinoz67/maker-hub/pull/129)
 - Bump python-dotenv from 0.18.0 to 0.19.0 [\#126](https://github.com/madeinoz67/maker-hub/pull/126)
 - Bump mkdocs-material from 7.2.0 to 7.2.1 [\#125](https://github.com/madeinoz67/maker-hub/pull/125)
