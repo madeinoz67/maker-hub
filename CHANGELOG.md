@@ -8,6 +8,7 @@
 
 **Dependencies Updated:**
 
+- Bump actions/setup-node from 2.3.0 to 2.3.1 [\#131](https://github.com/madeinoz67/maker-hub/pull/131)
 - Bump mkdocs-material from 7.2.1 to 7.2.2 [\#130](https://github.com/madeinoz67/maker-hub/pull/130)
 - Bump fastapi from 0.67.0 to 0.68.0 [\#129](https://github.com/madeinoz67/maker-hub/pull/129)
 - Bump python-dotenv from 0.18.0 to 0.19.0 [\#126](https://github.com/madeinoz67/maker-hub/pull/126)
@@ -71,7 +72,6 @@
 - Bump black from 21.5b1 to 21.5b2 [\#92](https://github.com/madeinoz67/maker-hub/pull/92)
 - Bump sqlalchemy from 1.4.15 to 1.4.17 [\#91](https://github.com/madeinoz67/maker-hub/pull/91)
 - Bump mkdocs-material from 7.1.5 to 7.1.6 [\#90](https://github.com/madeinoz67/maker-hub/pull/90)
-- Bump alembic from 1.6.4 to 1.6.5 [\#87](https://github.com/madeinoz67/maker-hub/pull/87)
 - Bump alembic from 1.6.3 to 1.6.4 [\#76](https://github.com/madeinoz67/maker-hub/pull/76)
 
 **Closed issues:**
@@ -91,10 +91,10 @@
 **Documentation Changes:**
 
 - Add pages site \(docs\) link to README [\#51](https://github.com/madeinoz67/maker-hub/issues/51)
-- fixes issue \#51 [\#52](https://github.com/madeinoz67/maker-hub/pull/52)
 
 **Dependencies Updated:**
 
+- Bump alembic from 1.6.4 to 1.6.5 [\#87](https://github.com/madeinoz67/maker-hub/pull/87)
 - Bump pyjwt from 1.7.1 to 2.1.0 [\#68](https://github.com/madeinoz67/maker-hub/pull/68)
 - Bump fastapi from 0.63.0 to 0.64.0 [\#67](https://github.com/madeinoz67/maker-hub/pull/67)
 - Bump aiofiles from 0.6.0 to 0.7.0 [\#66](https://github.com/madeinoz67/maker-hub/pull/66)
@@ -115,6 +115,10 @@
 - add docs to projects pages site [\#47](https://github.com/madeinoz67/maker-hub/issues/47)
 - Add release actions and workflows [\#46](https://github.com/madeinoz67/maker-hub/issues/46)
 - Migrate to FastAPI [\#38](https://github.com/madeinoz67/maker-hub/issues/38)
+
+**Documentation Changes:**
+
+- fixes issue \#51 [\#52](https://github.com/madeinoz67/maker-hub/pull/52)
 
 **Dependencies Updated:**
 
