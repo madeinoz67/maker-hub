@@ -8,6 +8,7 @@
 
 **Dependencies Updated:**
 
+- Bump actions/setup-node from 2.3.2 to 2.4.0 [\#133](https://github.com/madeinoz67/maker-hub/pull/133)
 - Bump actions/setup-node from 2.3.1 to 2.3.2 [\#132](https://github.com/madeinoz67/maker-hub/pull/132)
 - Bump actions/setup-node from 2.3.0 to 2.3.1 [\#131](https://github.com/madeinoz67/maker-hub/pull/131)
 - Bump mkdocs-material from 7.2.1 to 7.2.2 [\#130](https://github.com/madeinoz67/maker-hub/pull/130)
@@ -105,7 +106,6 @@
 - Bump abatilo/actions-poetry from 2.1.0 to 2.1.2 [\#63](https://github.com/madeinoz67/maker-hub/pull/63)
 - Bump mindsers/changelog-reader-action from 1 to 2 [\#62](https://github.com/madeinoz67/maker-hub/pull/62)
 - Bump heinrichreimer/github-changelog-generator-action from 2.1.1 to 2.2 [\#61](https://github.com/madeinoz67/maker-hub/pull/61)
-- Bump flask-migrate from 2.6.0 to 2.7.0 [\#6](https://github.com/madeinoz67/maker-hub/pull/6)
 
 ## [v2021.0.0-dev1](https://github.com/madeinoz67/maker-hub/tree/v2021.0.0-dev1) (2021-05-22)
 
@@ -125,6 +125,7 @@
 - Bump flask-caching from 1.9.0 to 1.10.0 [\#9](https://github.com/madeinoz67/maker-hub/pull/9)
 - Bump supervisor from 4.2.1 to 4.2.2 [\#8](https://github.com/madeinoz67/maker-hub/pull/8)
 - Bump actions/setup-node from v2.1.4 to v2.1.5 [\#7](https://github.com/madeinoz67/maker-hub/pull/7)
+- Bump flask-migrate from 2.6.0 to 2.7.0 [\#6](https://github.com/madeinoz67/maker-hub/pull/6)
 - Bump concurrently from 5.3.0 to 6.0.0 [\#5](https://github.com/madeinoz67/maker-hub/pull/5)
 - Bump less-loader from 7.3.0 to 8.0.0 [\#4](https://github.com/madeinoz67/maker-hub/pull/4)
 - Bump less from 3.13.1 to 4.1.1 [\#3](https://github.com/madeinoz67/maker-hub/pull/3)
