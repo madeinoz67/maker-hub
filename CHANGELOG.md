@@ -8,6 +8,7 @@
 
 **Dependencies Updated:**
 
+- Bump mkdocs-material from 7.2.2 to 7.2.3 [\#134](https://github.com/madeinoz67/maker-hub/pull/134)
 - Bump actions/setup-node from 2.3.2 to 2.4.0 [\#133](https://github.com/madeinoz67/maker-hub/pull/133)
 - Bump actions/setup-node from 2.3.1 to 2.3.2 [\#132](https://github.com/madeinoz67/maker-hub/pull/132)
 - Bump actions/setup-node from 2.3.0 to 2.3.1 [\#131](https://github.com/madeinoz67/maker-hub/pull/131)
