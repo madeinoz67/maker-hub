@@ -8,6 +8,7 @@
 
 **Dependencies Updated:**
 
+- Bump uvloop from 0.15.3 to 0.16.0 [\#135](https://github.com/madeinoz67/maker-hub/pull/135)
 - Bump mkdocs-material from 7.2.2 to 7.2.3 [\#134](https://github.com/madeinoz67/maker-hub/pull/134)
 - Bump actions/setup-node from 2.3.2 to 2.4.0 [\#133](https://github.com/madeinoz67/maker-hub/pull/133)
 - Bump actions/setup-node from 2.3.1 to 2.3.2 [\#132](https://github.com/madeinoz67/maker-hub/pull/132)
