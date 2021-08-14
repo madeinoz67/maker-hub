@@ -8,6 +8,7 @@
 
 **Dependencies Updated:**
 
+- Bump uvicorn from 0.14.0 to 0.15.0 [\#138](https://github.com/madeinoz67/maker-hub/pull/138)
 - Bump mkdocs-material from 7.2.3 to 7.2.4 [\#137](https://github.com/madeinoz67/maker-hub/pull/137)
 - Bump httptools from 0.2.0 to 0.3.0 [\#136](https://github.com/madeinoz67/maker-hub/pull/136)
 - Bump uvloop from 0.15.3 to 0.16.0 [\#135](https://github.com/madeinoz67/maker-hub/pull/135)
@@ -77,6 +78,7 @@
 - Bump pytest-cov from 2.12.0 to 2.12.1 [\#93](https://github.com/madeinoz67/maker-hub/pull/93)
 - Bump black from 21.5b1 to 21.5b2 [\#92](https://github.com/madeinoz67/maker-hub/pull/92)
 - Bump sqlalchemy from 1.4.15 to 1.4.17 [\#91](https://github.com/madeinoz67/maker-hub/pull/91)
+- Bump mkdocs-material from 7.1.5 to 7.1.6 [\#90](https://github.com/madeinoz67/maker-hub/pull/90)
 - Bump alembic from 1.6.4 to 1.6.5 [\#87](https://github.com/madeinoz67/maker-hub/pull/87)
 - Bump alembic from 1.6.3 to 1.6.4 [\#76](https://github.com/madeinoz67/maker-hub/pull/76)
 
@@ -101,7 +103,6 @@
 
 **Dependencies Updated:**
 
-- Bump mkdocs-material from 7.1.5 to 7.1.6 [\#90](https://github.com/madeinoz67/maker-hub/pull/90)
 - Bump pyjwt from 1.7.1 to 2.1.0 [\#68](https://github.com/madeinoz67/maker-hub/pull/68)
 - Bump fastapi from 0.63.0 to 0.64.0 [\#67](https://github.com/madeinoz67/maker-hub/pull/67)
 - Bump aiofiles from 0.6.0 to 0.7.0 [\#66](https://github.com/madeinoz67/maker-hub/pull/66)
