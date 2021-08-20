@@ -8,6 +8,7 @@
 
 **Dependencies Updated:**
 
+- Bump sqlalchemy from 1.4.22 to 1.4.23 [\#139](https://github.com/madeinoz67/maker-hub/pull/139)
 - Bump uvicorn from 0.14.0 to 0.15.0 [\#138](https://github.com/madeinoz67/maker-hub/pull/138)
 - Bump mkdocs-material from 7.2.3 to 7.2.4 [\#137](https://github.com/madeinoz67/maker-hub/pull/137)
 - Bump httptools from 0.2.0 to 0.3.0 [\#136](https://github.com/madeinoz67/maker-hub/pull/136)
