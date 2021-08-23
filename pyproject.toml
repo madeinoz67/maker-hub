@@ -37,7 +37,7 @@ black = "^21.7b0"
 docker = "^5.0.0"
 mypy = "^0.910"
 mkdocs-material = "^7.2.4"
-mkdocs-macros-plugin = "^0.5.12"
+mkdocs-macros-plugin = "^0.6.0"
 mkdocs-mermaid2-plugin = "^0.5.2"
 
 [tool.isort]
