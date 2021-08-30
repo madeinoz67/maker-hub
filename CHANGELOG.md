@@ -8,6 +8,7 @@
 
 **Dependencies Updated:**
 
+- Bump black from 21.7b0 to 21.8b0 [\#145](https://github.com/madeinoz67/maker-hub/pull/145)
 - Bump mkdocs-material from 7.2.4 to 7.2.5 [\#142](https://github.com/madeinoz67/maker-hub/pull/142)
 - Bump fastapi from 0.68.0 to 0.68.1 [\#141](https://github.com/madeinoz67/maker-hub/pull/141)
 - Bump mkdocs-macros-plugin from 0.5.12 to 0.6.0 [\#140](https://github.com/madeinoz67/maker-hub/pull/140)
