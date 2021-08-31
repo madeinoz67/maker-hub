@@ -10,6 +10,7 @@
 
 - Bump alembic from 1.6.5 to 1.7.1 [\#146](https://github.com/madeinoz67/maker-hub/pull/146)
 - Bump black from 21.7b0 to 21.8b0 [\#145](https://github.com/madeinoz67/maker-hub/pull/145)
+- Bump pytest from 6.2.4 to 6.2.5 [\#143](https://github.com/madeinoz67/maker-hub/pull/143)
 - Bump mkdocs-material from 7.2.4 to 7.2.5 [\#142](https://github.com/madeinoz67/maker-hub/pull/142)
 - Bump fastapi from 0.68.0 to 0.68.1 [\#141](https://github.com/madeinoz67/maker-hub/pull/141)
 - Bump mkdocs-macros-plugin from 0.5.12 to 0.6.0 [\#140](https://github.com/madeinoz67/maker-hub/pull/140)
