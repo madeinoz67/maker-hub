@@ -8,6 +8,7 @@
 
 **Dependencies Updated:**
 
+- Bump docker from 5.0.1 to 5.0.2 [\#151](https://github.com/madeinoz67/maker-hub/pull/151)
 - Bump docker from 5.0.0 to 5.0.1 [\#148](https://github.com/madeinoz67/maker-hub/pull/148)
 - Bump alembic from 1.6.5 to 1.7.1 [\#146](https://github.com/madeinoz67/maker-hub/pull/146)
 - Bump black from 21.7b0 to 21.8b0 [\#145](https://github.com/madeinoz67/maker-hub/pull/145)
