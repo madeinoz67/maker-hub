@@ -208,7 +208,7 @@ trio = ["trio (>=0.14.0)", "sniffio (>=1.1)"]
 
 [[package]]
 name = "docker"
-version = "5.0.1"
+version = "5.0.2"
 description = "A Python library for the Docker Engine API."
 category = "dev"
 optional = false
@@ -1076,7 +1076,7 @@ testing = ["pytest (>=4.6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytes
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "65d18953c2ba9b77f65edbd4efd193c01e0b950f6fd949d23bb81f63fdb919b5"
+content-hash = "2a74c6df1e59be4b43a39ad2e6447e6c165c34a3b5ae1f184d2e0486a1a2a7aa"
 
 [metadata.files]
 aiofiles = [
@@ -1246,8 +1246,8 @@ dnspython = [
     {file = "dnspython-2.1.0.zip", hash = "sha256:e4a87f0b573201a0f3727fa18a516b055fd1107e0e5477cded4a2de497df1dd4"},
 ]
 docker = [
-    {file = "docker-5.0.1-py2.py3-none-any.whl", hash = "sha256:b88eef725b33c0ed59c67506631bbb09b480b7ca5a739bbbb948b446443fe914"},
-    {file = "docker-5.0.1.tar.gz", hash = "sha256:5aafaec0d2a1de0e32010b43b5eac9f6f851c9db99a46ad32b8e44eeeb55616d"},
+    {file = "docker-5.0.2-py2.py3-none-any.whl", hash = "sha256:9b17f0723d83c1f3418d2aa17bf90b24dbe97deda06208dd4262fa30a6ee87eb"},
+    {file = "docker-5.0.2.tar.gz", hash = "sha256:21ec4998e90dff7a7aaaa098ca8d839c7de412b89e6f6c30908372d58fecf663"},
 ]
 editorconfig = [
     {file = "EditorConfig-0.12.3-py3-none-any.whl", hash = "sha256:6b0851425aa875b08b16789ee0eeadbd4ab59666e9ebe728e526314c4a2e52c1"},
