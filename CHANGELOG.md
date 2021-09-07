@@ -8,8 +8,10 @@
 
 **Dependencies Updated:**
 
+- Bump unidecode from 1.2.0 to 1.3.0 [\#152](https://github.com/madeinoz67/maker-hub/pull/152)
 - Bump docker from 5.0.1 to 5.0.2 [\#151](https://github.com/madeinoz67/maker-hub/pull/151)
 - Bump mkdocs-material from 7.2.5 to 7.2.6 [\#150](https://github.com/madeinoz67/maker-hub/pull/150)
+- Bump python from 3.9.6-slim to 3.9.7-slim [\#149](https://github.com/madeinoz67/maker-hub/pull/149)
 - Bump docker from 5.0.0 to 5.0.1 [\#148](https://github.com/madeinoz67/maker-hub/pull/148)
 - Bump alembic from 1.6.5 to 1.7.1 [\#146](https://github.com/madeinoz67/maker-hub/pull/146)
 - Bump black from 21.7b0 to 21.8b0 [\#145](https://github.com/madeinoz67/maker-hub/pull/145)
@@ -28,7 +30,6 @@
 - Bump actions/setup-node from 2.3.0 to 2.3.1 [\#131](https://github.com/madeinoz67/maker-hub/pull/131)
 - Bump mkdocs-material from 7.2.1 to 7.2.2 [\#130](https://github.com/madeinoz67/maker-hub/pull/130)
 - Bump fastapi from 0.67.0 to 0.68.0 [\#129](https://github.com/madeinoz67/maker-hub/pull/129)
-- Bump python-dotenv from 0.18.0 to 0.19.0 [\#126](https://github.com/madeinoz67/maker-hub/pull/126)
 - Bump mkdocs-material from 7.2.0 to 7.2.1 [\#125](https://github.com/madeinoz67/maker-hub/pull/125)
 - Bump sqlalchemy from 1.4.21 to 1.4.22 [\#124](https://github.com/madeinoz67/maker-hub/pull/124)
 
@@ -41,6 +42,7 @@
 
 **Dependencies Updated:**
 
+- Bump python-dotenv from 0.18.0 to 0.19.0 [\#126](https://github.com/madeinoz67/maker-hub/pull/126)
 - Bump mkdocs-material from 7.1.11 to 7.2.0 [\#123](https://github.com/madeinoz67/maker-hub/pull/123)
 - Bump fastapi from 0.65.3 to 0.67.0 [\#122](https://github.com/madeinoz67/maker-hub/pull/122)
 
