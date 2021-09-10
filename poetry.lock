@@ -623,7 +623,7 @@ dev = ["pre-commit", "tox"]
 
 [[package]]
 name = "progressbar2"
-version = "3.53.1"
+version = "3.53.2"
 description = "A Python Progressbar library to provide visual (yet text based) progress to long running operations."
 category = "main"
 optional = false
@@ -635,7 +635,7 @@ six = "*"
 
 [package.extras]
 docs = ["sphinx (>=1.7.4)"]
-tests = ["flake8 (>=3.7.7)", "pytest (>=4.6.9)", "pytest-cov (>=2.6.1)", "pytest-flakes (>=4.0.0)", "pytest-pep8 (>=1.0.6)", "freezegun (>=0.3.11)", "sphinx (>=1.8.5)"]
+tests = ["flake8 (>=3.7.7)", "pytest (>=4.6.9)", "pytest-cov (>=2.6.1)", "freezegun (>=0.3.11)", "sphinx (>=1.8.5)"]
 
 [[package]]
 name = "py"
@@ -1076,7 +1076,7 @@ testing = ["pytest (>=4.6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytes
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "f704fe7fd2256f4d8dad282900a63d31003a3f7f70ca018713baf18b83f46428"
+content-hash = "31ab98452c4a8b59653e4b41be3588c0af3f925e31e6bc4816e36bd2734b97b1"
 
 [metadata.files]
 aiofiles = [
@@ -1511,8 +1511,8 @@ pluggy = [
     {file = "pluggy-0.13.1.tar.gz", hash = "sha256:15b2acde666561e1298d71b523007ed7364de07029219b604cf808bfa1c765b0"},
 ]
 progressbar2 = [
-    {file = "progressbar2-3.53.1-py2.py3-none-any.whl", hash = "sha256:fe2738e7ecb7df52ad76307fe610c460c52b50f5335fd26c3ab80ff7655ba1e0"},
-    {file = "progressbar2-3.53.1.tar.gz", hash = "sha256:ef72be284e7f2b61ac0894b44165926f13f5d995b2bf3cd8a8dedc6224b255a7"},
+    {file = "progressbar2-3.53.2-py2.py3-none-any.whl", hash = "sha256:c84d074ffb68159dc1b844eeb9e765dac84a633d3fa8527000b53a6a86bd2f93"},
+    {file = "progressbar2-3.53.2.tar.gz", hash = "sha256:8c150baaa33448c1e34a2cafa5108285d96f2c877bdf64fcbd77f26cb135435d"},
 ]
 py = [
     {file = "py-1.10.0-py2.py3-none-any.whl", hash = "sha256:3b80836aa6d1feeaa108e046da6423ab8f6ceda6468545ae8d02d9d58d18818a"},
