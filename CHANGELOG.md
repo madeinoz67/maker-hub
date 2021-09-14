@@ -8,6 +8,7 @@
 
 **Dependencies Updated:**
 
+- Bump abatilo/actions-poetry from 2.1.2 to 2.1.3 [\#155](https://github.com/madeinoz67/maker-hub/pull/155)
 - Bump unidecode from 1.3.0 to 1.3.1 [\#154](https://github.com/madeinoz67/maker-hub/pull/154)
 - Bump progressbar2 from 3.53.1 to 3.53.2 [\#153](https://github.com/madeinoz67/maker-hub/pull/153)
 - Bump unidecode from 1.2.0 to 1.3.0 [\#152](https://github.com/madeinoz67/maker-hub/pull/152)
