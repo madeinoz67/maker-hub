@@ -8,6 +8,7 @@
 
 **Dependencies Updated:**
 
+- Bump progressbar2 from 3.53.2 to 3.53.3 [\#157](https://github.com/madeinoz67/maker-hub/pull/157)
 - Bump black from 21.8b0 to 21.9b0 [\#156](https://github.com/madeinoz67/maker-hub/pull/156)
 - Bump abatilo/actions-poetry from 2.1.2 to 2.1.3 [\#155](https://github.com/madeinoz67/maker-hub/pull/155)
 - Bump unidecode from 1.3.0 to 1.3.1 [\#154](https://github.com/madeinoz67/maker-hub/pull/154)
