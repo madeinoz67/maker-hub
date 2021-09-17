@@ -8,6 +8,7 @@
 
 **Dependencies Updated:**
 
+- Bump unidecode from 1.3.1 to 1.3.2 [\#158](https://github.com/madeinoz67/maker-hub/pull/158)
 - Bump progressbar2 from 3.53.2 to 3.53.3 [\#157](https://github.com/madeinoz67/maker-hub/pull/157)
 - Bump black from 21.8b0 to 21.9b0 [\#156](https://github.com/madeinoz67/maker-hub/pull/156)
 - Bump abatilo/actions-poetry from 2.1.2 to 2.1.3 [\#155](https://github.com/madeinoz67/maker-hub/pull/155)
@@ -38,6 +39,7 @@
 - Bump python-dotenv from 0.18.0 to 0.19.0 [\#126](https://github.com/madeinoz67/maker-hub/pull/126)
 - Bump mkdocs-material from 7.2.0 to 7.2.1 [\#125](https://github.com/madeinoz67/maker-hub/pull/125)
 - Bump sqlalchemy from 1.4.21 to 1.4.22 [\#124](https://github.com/madeinoz67/maker-hub/pull/124)
+- Bump mkdocs-material from 7.1.10 to 7.1.11 [\#119](https://github.com/madeinoz67/maker-hub/pull/119)
 
 **Closed issues:**
 
@@ -70,7 +72,6 @@
 **Dependencies Updated:**
 
 - Bump actions/setup-node from 2.2.0 to 2.3.0 [\#120](https://github.com/madeinoz67/maker-hub/pull/120)
-- Bump mkdocs-material from 7.1.10 to 7.1.11 [\#119](https://github.com/madeinoz67/maker-hub/pull/119)
 - Bump black from 21.6b0 to 21.7b0 [\#118](https://github.com/madeinoz67/maker-hub/pull/118)
 - Bump sqlalchemy from 1.4.20 to 1.4.21 [\#117](https://github.com/madeinoz67/maker-hub/pull/117)
 - Bump python-dateutil from 2.8.1 to 2.8.2 [\#116](https://github.com/madeinoz67/maker-hub/pull/116)
