@@ -8,6 +8,7 @@
 
 **Dependencies Updated:**
 
+- Bump sqlalchemy from 1.4.23 to 1.4.24 [\#161](https://github.com/madeinoz67/maker-hub/pull/161)
 - Bump mkdocs-material from 7.2.6 to 7.2.8 [\#160](https://github.com/madeinoz67/maker-hub/pull/160)
 - Bump alembic from 1.7.1 to 1.7.3 [\#159](https://github.com/madeinoz67/maker-hub/pull/159)
 - Bump unidecode from 1.3.1 to 1.3.2 [\#158](https://github.com/madeinoz67/maker-hub/pull/158)
