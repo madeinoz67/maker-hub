@@ -2,12 +2,17 @@
 
 ## [Unreleased](https://github.com/madeinoz67/maker-hub/tree/HEAD)
 
+**Security Issues Fixed:**
+
+- Bump Fastapi Version to v0.65.x [\#121](https://github.com/madeinoz67/maker-hub/pull/121)
+
 **Features Added:**
 
 - Add Docs icon navbar item and link to online docs URL [\#60](https://github.com/madeinoz67/maker-hub/issues/60)
 
 **Dependencies Updated:**
 
+- Bump mkdocs-material from 7.3.0 to 7.3.1 [\#166](https://github.com/madeinoz67/maker-hub/pull/166)
 - Bump pytest-cov from 2.12.1 to 3.0.0 [\#165](https://github.com/madeinoz67/maker-hub/pull/165)
 - Bump actions/setup-node from 2.4.0 to 2.4.1 [\#164](https://github.com/madeinoz67/maker-hub/pull/164)
 - Bump mkdocs-material from 7.2.8 to 7.3.0 [\#163](https://github.com/madeinoz67/maker-hub/pull/163)
@@ -60,10 +65,6 @@
 - Bump fastapi from 0.65.3 to 0.67.0 [\#122](https://github.com/madeinoz67/maker-hub/pull/122)
 
 ## [v2021.0.0-dev3](https://github.com/madeinoz67/maker-hub/tree/v2021.0.0-dev3) (2021-07-21)
-
-**Security Issues Fixed:**
-
-- Bump Fastapi Version to v0.65.x [\#121](https://github.com/madeinoz67/maker-hub/pull/121)
 
 **Bugs Fixed:**
 
@@ -133,7 +134,6 @@
 - Bump aiofiles from 0.6.0 to 0.7.0 [\#66](https://github.com/madeinoz67/maker-hub/pull/66)
 - Bump pytest-asyncio from 0.14.0 to 0.15.1 [\#65](https://github.com/madeinoz67/maker-hub/pull/65)
 - Bump python-slugify from 4.0.1 to 5.0.2 [\#64](https://github.com/madeinoz67/maker-hub/pull/64)
-- Bump abatilo/actions-poetry from 2.1.0 to 2.1.2 [\#63](https://github.com/madeinoz67/maker-hub/pull/63)
 - Bump mindsers/changelog-reader-action from 1 to 2 [\#62](https://github.com/madeinoz67/maker-hub/pull/62)
 - Bump heinrichreimer/github-changelog-generator-action from 2.1.1 to 2.2 [\#61](https://github.com/madeinoz67/maker-hub/pull/61)
 
@@ -151,6 +151,7 @@
 
 **Dependencies Updated:**
 
+- Bump abatilo/actions-poetry from 2.1.0 to 2.1.2 [\#63](https://github.com/madeinoz67/maker-hub/pull/63)
 - Bump flake8-docstrings from 1.5.0 to 1.6.0 [\#14](https://github.com/madeinoz67/maker-hub/pull/14)
 - Bump flask-caching from 1.9.0 to 1.10.0 [\#9](https://github.com/madeinoz67/maker-hub/pull/9)
 - Bump supervisor from 4.2.1 to 4.2.2 [\#8](https://github.com/madeinoz67/maker-hub/pull/8)
