@@ -8,6 +8,7 @@
 
 **Dependencies Updated:**
 
+- Bump pytest-cov from 2.12.1 to 3.0.0 [\#165](https://github.com/madeinoz67/maker-hub/pull/165)
 - Bump actions/setup-node from 2.4.0 to 2.4.1 [\#164](https://github.com/madeinoz67/maker-hub/pull/164)
 - Bump mkdocs-material from 7.2.8 to 7.3.0 [\#163](https://github.com/madeinoz67/maker-hub/pull/163)
 - Bump sqlalchemy from 1.4.24 to 1.4.25 [\#162](https://github.com/madeinoz67/maker-hub/pull/162)
