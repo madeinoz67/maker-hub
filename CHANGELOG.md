@@ -8,6 +8,7 @@
 
 **Dependencies Updated:**
 
+- Bump mkdocs-material from 7.3.1 to 7.3.2 [\#170](https://github.com/madeinoz67/maker-hub/pull/170)
 - Bump alembic from 1.7.3 to 1.7.4 [\#169](https://github.com/madeinoz67/maker-hub/pull/169)
 - Bump fastapi from 0.68.1 to 0.68.2 [\#167](https://github.com/madeinoz67/maker-hub/pull/167)
 - Bump mkdocs-material from 7.3.0 to 7.3.1 [\#166](https://github.com/madeinoz67/maker-hub/pull/166)
