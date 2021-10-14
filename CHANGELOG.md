@@ -12,6 +12,7 @@
 - Bump mkdocs-material from 7.3.2 to 7.3.3 [\#175](https://github.com/madeinoz67/maker-hub/pull/175)
 - Bump python-dotenv from 0.19.0 to 0.19.1 [\#174](https://github.com/madeinoz67/maker-hub/pull/174)
 - Bump docker from 5.0.2 to 5.0.3 [\#173](https://github.com/madeinoz67/maker-hub/pull/173)
+- Bump pyjwt from 2.1.0 to 2.2.0 [\#172](https://github.com/madeinoz67/maker-hub/pull/172)
 - Bump fastapi from 0.68.2 to 0.70.0 [\#171](https://github.com/madeinoz67/maker-hub/pull/171)
 - Bump mkdocs-material from 7.3.1 to 7.3.2 [\#170](https://github.com/madeinoz67/maker-hub/pull/170)
 - Bump alembic from 1.7.3 to 1.7.4 [\#169](https://github.com/madeinoz67/maker-hub/pull/169)
