@@ -10,6 +10,7 @@
 
 - Bump progressbar2 from 3.53.3 to 3.54.0 [\#176](https://github.com/madeinoz67/maker-hub/pull/176)
 - Bump mkdocs-material from 7.3.2 to 7.3.3 [\#175](https://github.com/madeinoz67/maker-hub/pull/175)
+- Bump python-dotenv from 0.19.0 to 0.19.1 [\#174](https://github.com/madeinoz67/maker-hub/pull/174)
 - Bump fastapi from 0.68.2 to 0.70.0 [\#171](https://github.com/madeinoz67/maker-hub/pull/171)
 - Bump mkdocs-material from 7.3.1 to 7.3.2 [\#170](https://github.com/madeinoz67/maker-hub/pull/170)
 - Bump alembic from 1.7.3 to 1.7.4 [\#169](https://github.com/madeinoz67/maker-hub/pull/169)
@@ -131,6 +132,7 @@
 **Documentation Changes:**
 
 - Add pages site \(docs\) link to README [\#51](https://github.com/madeinoz67/maker-hub/issues/51)
+- fixes issue \#51 [\#52](https://github.com/madeinoz67/maker-hub/pull/52)
 
 **Dependencies Updated:**
 
@@ -154,10 +156,6 @@
 - add docs to projects pages site [\#47](https://github.com/madeinoz67/maker-hub/issues/47)
 - Add release actions and workflows [\#46](https://github.com/madeinoz67/maker-hub/issues/46)
 - Migrate to FastAPI [\#38](https://github.com/madeinoz67/maker-hub/issues/38)
-
-**Documentation Changes:**
-
-- fixes issue \#51 [\#52](https://github.com/madeinoz67/maker-hub/pull/52)
 
 **Dependencies Updated:**
 
