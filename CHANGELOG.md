@@ -2,12 +2,17 @@
 
 ## [Unreleased](https://github.com/madeinoz67/maker-hub/tree/HEAD)
 
+**Security Issues Fixed:**
+
+- Bump Fastapi Version to v0.65.x [\#121](https://github.com/madeinoz67/maker-hub/pull/121)
+
 **Features Added:**
 
 - Add Docs icon navbar item and link to online docs URL [\#60](https://github.com/madeinoz67/maker-hub/issues/60)
 
 **Dependencies Updated:**
 
+- Bump progressbar2 from 3.53.3 to 3.54.0 [\#176](https://github.com/madeinoz67/maker-hub/pull/176)
 - Bump fastapi from 0.68.2 to 0.70.0 [\#171](https://github.com/madeinoz67/maker-hub/pull/171)
 - Bump mkdocs-material from 7.3.1 to 7.3.2 [\#170](https://github.com/madeinoz67/maker-hub/pull/170)
 - Bump alembic from 1.7.3 to 1.7.4 [\#169](https://github.com/madeinoz67/maker-hub/pull/169)
@@ -65,10 +70,6 @@
 - Bump fastapi from 0.65.3 to 0.67.0 [\#122](https://github.com/madeinoz67/maker-hub/pull/122)
 
 ## [v2021.0.0-dev3](https://github.com/madeinoz67/maker-hub/tree/v2021.0.0-dev3) (2021-07-21)
-
-**Security Issues Fixed:**
-
-- Bump Fastapi Version to v0.65.x [\#121](https://github.com/madeinoz67/maker-hub/pull/121)
 
 **Bugs Fixed:**
 
