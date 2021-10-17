@@ -8,6 +8,7 @@
 
 **Dependencies Updated:**
 
+- Bump progressbar2 from 3.54.0 to 3.55.0 [\#177](https://github.com/madeinoz67/maker-hub/pull/177)
 - Bump progressbar2 from 3.53.3 to 3.54.0 [\#176](https://github.com/madeinoz67/maker-hub/pull/176)
 - Bump mkdocs-material from 7.3.2 to 7.3.3 [\#175](https://github.com/madeinoz67/maker-hub/pull/175)
 - Bump python-dotenv from 0.19.0 to 0.19.1 [\#174](https://github.com/madeinoz67/maker-hub/pull/174)
