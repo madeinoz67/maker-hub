@@ -1,5 +1,11 @@
 # Changelog
 
+## [Unreleased](https://github.com/madeinoz67/maker-hub/tree/HEAD)
+
+**Dependencies Updated:**
+
+- Bump sqlalchemy from 1.4.25 to 1.4.26 [\#182](https://github.com/madeinoz67/maker-hub/pull/182)
+
 ## [v2021.0.0-dev5](https://github.com/madeinoz67/maker-hub/tree/v2021.0.0-dev5) (2021-10-19)
 
 **Features Added:**
