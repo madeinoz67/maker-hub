@@ -6,6 +6,7 @@
 
 **Dependencies Updated:**
 
+- Bump mkdocs-material from 7.3.4 to 7.3.5 [\#184](https://github.com/madeinoz67/maker-hub/pull/184) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump heinrichreimer/github-changelog-generator-action from 2.2 to 2.3 [\#183](https://github.com/madeinoz67/maker-hub/pull/183) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump sqlalchemy from 1.4.25 to 1.4.26 [\#182](https://github.com/madeinoz67/maker-hub/pull/182) ([dependabot[bot]](https://github.com/apps/dependabot))
 
