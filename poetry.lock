@@ -516,7 +516,7 @@ test = ["mkdocs-macros-test", "mkdocs-material (>=6.2)", "mkdocs-include-markdow
 
 [[package]]
 name = "mkdocs-material"
-version = "7.3.5"
+version = "7.3.6"
 description = "A Material Design theme for MkDocs"
 category = "dev"
 optional = false
@@ -527,7 +527,7 @@ jinja2 = ">=2.11.1"
 markdown = ">=3.2"
 mkdocs = ">=1.2.3"
 mkdocs-material-extensions = ">=1.0"
-pygments = ">=2.4"
+pygments = ">=2.10"
 pymdown-extensions = ">=9.0"
 
 [[package]]
@@ -692,7 +692,7 @@ email = ["email-validator (>=1.0.3)"]
 
 [[package]]
 name = "pygments"
-version = "2.9.0"
+version = "2.10.0"
 description = "Pygments is a syntax highlighting package written in Python."
 category = "dev"
 optional = false
@@ -1108,7 +1108,7 @@ testing = ["pytest (>=4.6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytes
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "b7e5f75f47c28d8845258957f67c38ef8295bb55d6abd83795e4b8a51c5d6e21"
+content-hash = "2a826077f68b78c28fa8e3cbf1090dd3e13a4634d0b19fe2d4033e2d06940496"
 
 [metadata.files]
 aiofiles = [
@@ -1264,9 +1264,6 @@ coverage = [
     {file = "coverage-6.1.1-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:e14bceb1f3ae8a14374be2b2d7bc12a59226872285f91d66d301e5f41705d4d6"},
     {file = "coverage-6.1.1-cp39-cp39-manylinux_2_5_i686.manylinux1_i686.manylinux_2_12_i686.manylinux2010_i686.whl", hash = "sha256:0147f7833c41927d84f5af9219d9b32f875c0689e5e74ac8ca3cb61e73a698f9"},
     {file = "coverage-6.1.1-cp39-cp39-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:b1d0a1bce919de0dd8da5cff4e616b2d9e6ebf3bd1410ff645318c3dd615010a"},
-    {file = "coverage-6.1.1-cp39-cp39-musllinux_1_1_aarch64.whl", hash = "sha256:ae6de0e41f44794e68d23644636544ed8003ce24845f213b24de097cbf44997f"},
-    {file = "coverage-6.1.1-cp39-cp39-musllinux_1_1_i686.whl", hash = "sha256:db2797ed7a7e883b9ab76e8e778bb4c859fc2037d6fd0644d8675e64d58d1653"},
-    {file = "coverage-6.1.1-cp39-cp39-musllinux_1_1_x86_64.whl", hash = "sha256:c40966b683d92869b72ea3c11fd6b99a091fd30e12652727eca117273fc97366"},
     {file = "coverage-6.1.1-cp39-cp39-win32.whl", hash = "sha256:a11a2c019324fc111485e79d55907e7289e53d0031275a6c8daed30690bc50c0"},
     {file = "coverage-6.1.1-cp39-cp39-win_amd64.whl", hash = "sha256:4d8b453764b9b26b0dd2afb83086a7c3f9379134e340288d2a52f8a91592394b"},
     {file = "coverage-6.1.1-pp36-none-any.whl", hash = "sha256:3b270c6b48d3ff5a35deb3648028ba2643ad8434b07836782b1139cf9c66313f"},
@@ -1499,8 +1496,8 @@ mkdocs-macros-plugin = [
     {file = "mkdocs_macros_plugin-0.6.0-py3-none-any.whl", hash = "sha256:7f56a2e5a4e8c2d0bf83f23ada9b62c234910405c35ba257c2d6748482c724ff"},
 ]
 mkdocs-material = [
-    {file = "mkdocs-material-7.3.5.tar.gz", hash = "sha256:5edbf86b4249f413d54b8e2f1f2f8f1d2a9345f45e928303f4541e1d51f362c0"},
-    {file = "mkdocs_material-7.3.5-py2.py3-none-any.whl", hash = "sha256:9fc09d2636d3249a7d75813c16360f3aa6987dff792c0e19f218fc80d48c2296"},
+    {file = "mkdocs-material-7.3.6.tar.gz", hash = "sha256:1b1dbd8ef2508b358d93af55a5c5db3f141c95667fad802301ec621c40c7c217"},
+    {file = "mkdocs_material-7.3.6-py2.py3-none-any.whl", hash = "sha256:1b6b3e9e09f922c2d7f1160fe15c8f43d4adc0d6fb81aa6ff0cbc7ef5b78ec75"},
 ]
 mkdocs-material-extensions = [
     {file = "mkdocs-material-extensions-1.0.1.tar.gz", hash = "sha256:6947fb7f5e4291e3c61405bad3539d81e0b3cd62ae0d66ced018128af509c68f"},
@@ -1596,8 +1593,8 @@ pydantic = [
     {file = "pydantic-1.8.2.tar.gz", hash = "sha256:26464e57ccaafe72b7ad156fdaa4e9b9ef051f69e175dbbb463283000c05ab7b"},
 ]
 pygments = [
-    {file = "Pygments-2.9.0-py3-none-any.whl", hash = "sha256:d66e804411278594d764fc69ec36ec13d9ae9147193a1740cd34d272ca383b8e"},
-    {file = "Pygments-2.9.0.tar.gz", hash = "sha256:a18f47b506a429f6f4b9df81bb02beab9ca21d0a5fee38ed15aef65f0545519f"},
+    {file = "Pygments-2.10.0-py3-none-any.whl", hash = "sha256:b8e67fe6af78f492b3c4b3e2970c0624cbf08beb1e493b2c99b9fa1b67a20380"},
+    {file = "Pygments-2.10.0.tar.gz", hash = "sha256:f398865f7eb6874156579fdf36bc840a03cab64d1cde9e93d68f46a425ec52c6"},
 ]
 pyjwt = [
     {file = "PyJWT-2.3.0-py3-none-any.whl", hash = "sha256:e0c4bb8d9f0af0c7f5b1ec4c5036309617d03d56932877f2f7a0beeb5318322f"},
