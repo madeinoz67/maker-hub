@@ -6,6 +6,7 @@
 
 **Dependencies Updated:**
 
+- Bump python-dotenv from 0.19.1 to 0.19.2 [\#189](https://github.com/madeinoz67/maker-hub/pull/189) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump alembic from 1.7.4 to 1.7.5 [\#187](https://github.com/madeinoz67/maker-hub/pull/187) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump mkdocs-material from 7.3.5 to 7.3.6 [\#186](https://github.com/madeinoz67/maker-hub/pull/186) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump black from 21.9b0 to 21.10b0 [\#185](https://github.com/madeinoz67/maker-hub/pull/185) ([dependabot[bot]](https://github.com/apps/dependabot))
