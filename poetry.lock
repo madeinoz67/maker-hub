@@ -498,7 +498,7 @@ i18n = ["babel (>=2.9.0)"]
 
 [[package]]
 name = "mkdocs-macros-plugin"
-version = "0.6.0"
+version = "0.6.3"
 description = "Unleash the power of MkDocs with macros and variables"
 category = "dev"
 optional = false
@@ -1108,7 +1108,7 @@ testing = ["pytest (>=4.6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytes
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "35ac8d37980d075e86949bcd1089c36abb6e43d4184c325d1cebc2f02cb3c9e8"
+content-hash = "590ef8291d37ffe7125cd5334bb4623da9e343d54fc6b9d335d76c9617c20bcd"
 
 [metadata.files]
 aiofiles = [
@@ -1493,8 +1493,8 @@ mkdocs = [
     {file = "mkdocs-1.2.3.tar.gz", hash = "sha256:89f5a094764381cda656af4298727c9f53dc3e602983087e1fe96ea1df24f4c1"},
 ]
 mkdocs-macros-plugin = [
-    {file = "mkdocs-macros-plugin-0.6.0.tar.gz", hash = "sha256:50c4672c162dcbcaadc225d6f4269bbdfe11159941cfde4cb21cfbd4ed5b552e"},
-    {file = "mkdocs_macros_plugin-0.6.0-py3-none-any.whl", hash = "sha256:7f56a2e5a4e8c2d0bf83f23ada9b62c234910405c35ba257c2d6748482c724ff"},
+    {file = "mkdocs-macros-plugin-0.6.3.tar.gz", hash = "sha256:2a22297d8fb6339e2a5d711e4473cd9ef3d9cda9b95e7b43a0c42c076b3eeec2"},
+    {file = "mkdocs_macros_plugin-0.6.3-py3-none-any.whl", hash = "sha256:c86e96e205c8c30e9bbdde37178cdd9564eb57248257131d185a846f9a94d8bb"},
 ]
 mkdocs-material = [
     {file = "mkdocs-material-7.3.6.tar.gz", hash = "sha256:1b1dbd8ef2508b358d93af55a5c5db3f141c95667fad802301ec621c40c7c217"},
