@@ -6,6 +6,7 @@
 
 **Dependencies Updated:**
 
+- Bump mkdocs-macros-plugin from 0.6.0 to 0.6.3 [\#192](https://github.com/madeinoz67/maker-hub/pull/192) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump black from 21.11b0 to 21.11b1 [\#191](https://github.com/madeinoz67/maker-hub/pull/191) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump black from 21.10b0 to 21.11b0 [\#190](https://github.com/madeinoz67/maker-hub/pull/190) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump python-dotenv from 0.19.1 to 0.19.2 [\#189](https://github.com/madeinoz67/maker-hub/pull/189) ([dependabot[bot]](https://github.com/apps/dependabot))
