@@ -6,6 +6,7 @@
 
 **Dependencies Updated:**
 
+- Bump actions/setup-node from 2.4.1 to 2.5.0 [\#193](https://github.com/madeinoz67/maker-hub/pull/193) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump mkdocs-macros-plugin from 0.6.0 to 0.6.3 [\#192](https://github.com/madeinoz67/maker-hub/pull/192) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump black from 21.11b0 to 21.11b1 [\#191](https://github.com/madeinoz67/maker-hub/pull/191) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump black from 21.10b0 to 21.11b0 [\#190](https://github.com/madeinoz67/maker-hub/pull/190) ([dependabot[bot]](https://github.com/apps/dependabot))
