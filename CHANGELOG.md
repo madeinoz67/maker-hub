@@ -6,6 +6,7 @@
 
 **Dependencies Updated:**
 
+- Bump mkdocs-material from 7.3.6 to 8.0.3 [\#197](https://github.com/madeinoz67/maker-hub/pull/197) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump aiofiles from 0.7.0 to 0.8.0 [\#195](https://github.com/madeinoz67/maker-hub/pull/195) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump actions/setup-node from 2.4.1 to 2.5.0 [\#193](https://github.com/madeinoz67/maker-hub/pull/193) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump mkdocs-macros-plugin from 0.6.0 to 0.6.3 [\#192](https://github.com/madeinoz67/maker-hub/pull/192) ([dependabot[bot]](https://github.com/apps/dependabot))
