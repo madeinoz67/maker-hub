@@ -7,6 +7,7 @@
 **Dependencies Updated:**
 
 - Bump mkdocs-material from 8.0.5 to 8.1.0 [\#204](https://github.com/madeinoz67/maker-hub/pull/204) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump python from 3.10.0-slim to 3.10.1-slim [\#201](https://github.com/madeinoz67/maker-hub/pull/201) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump mkdocs-material from 8.0.4 to 8.0.5 [\#200](https://github.com/madeinoz67/maker-hub/pull/200) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump black from 21.11b1 to 21.12b0 [\#199](https://github.com/madeinoz67/maker-hub/pull/199) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump mkdocs-material from 8.0.3 to 8.0.4 [\#198](https://github.com/madeinoz67/maker-hub/pull/198) ([dependabot[bot]](https://github.com/apps/dependabot))
