@@ -6,6 +6,7 @@
 
 **Dependencies Updated:**
 
+- Bump actions/setup-node from 2.5.0 to 2.5.1 [\#213](https://github.com/madeinoz67/maker-hub/pull/213) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump mkdocs-material from 8.0.5 to 8.1.0 [\#204](https://github.com/madeinoz67/maker-hub/pull/204) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump sqlalchemy from 1.4.27 to 1.4.28 [\#203](https://github.com/madeinoz67/maker-hub/pull/203) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump uvicorn from 0.15.0 to 0.16.0 [\#202](https://github.com/madeinoz67/maker-hub/pull/202) ([dependabot[bot]](https://github.com/apps/dependabot))
