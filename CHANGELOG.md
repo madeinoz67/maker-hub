@@ -6,6 +6,7 @@
 
 **Dependencies Updated:**
 
+- Bump pydantic from 1.8.2 to 1.9.0 [\#214](https://github.com/madeinoz67/maker-hub/pull/214) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump actions/setup-node from 2.5.0 to 2.5.1 [\#213](https://github.com/madeinoz67/maker-hub/pull/213) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump sqlalchemy from 1.4.28 to 1.4.29 [\#212](https://github.com/madeinoz67/maker-hub/pull/212) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump mkdocs-material from 8.0.5 to 8.1.0 [\#204](https://github.com/madeinoz67/maker-hub/pull/204) ([dependabot[bot]](https://github.com/apps/dependabot))
