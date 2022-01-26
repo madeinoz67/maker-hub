@@ -6,6 +6,7 @@
 
 **Dependencies Updated:**
 
+- Bump fastapi from 0.71.0 to 0.73.0 [\#230](https://github.com/madeinoz67/maker-hub/pull/230) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump uvicorn from 0.16.0 to 0.17.0.post1 [\#227](https://github.com/madeinoz67/maker-hub/pull/227) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump python from 3.10.1-slim to 3.10.2-slim [\#226](https://github.com/madeinoz67/maker-hub/pull/226) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump pytest-asyncio from 0.17.0 to 0.17.2 [\#224](https://github.com/madeinoz67/maker-hub/pull/224) ([dependabot[bot]](https://github.com/apps/dependabot))
