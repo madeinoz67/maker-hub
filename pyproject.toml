@@ -19,7 +19,7 @@ passlib = { version = "^1.7", extras = ["bcrypt"] }
 python-dateutil = "^2.8.2"
 aiosqlite = "^0.17.0"
 fastapi-chameleon = {git = "https://github.com/mikeckennedy/fastapi-chameleon", rev = "main"}
-alembic = "^1.7"
+alembic = "^1.8"
 python-slugify = "^5.0"
 Unidecode = "^1.3"
 loguru = "^0.5.1"
