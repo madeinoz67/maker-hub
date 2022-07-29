@@ -7,6 +7,11 @@
 **Bugs Fixed:**
 
 - CI tests failing to run [\#291](https://github.com/madeinoz67/maker-hub/issues/291)
+- Change Mkdocs server to start on different port [\#72](https://github.com/madeinoz67/maker-hub/issues/72)
+
+**Features Added:**
+
+- Add logging [\#84](https://github.com/madeinoz67/maker-hub/issues/84)
 
 ## [v2022.07.02](https://github.com/madeinoz67/maker-hub/tree/v2022.07.02) (2022-07-29)
 
