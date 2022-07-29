@@ -2,15 +2,11 @@
 
 ## [Unreleased](https://github.com/madeinoz67/maker-hub/tree/HEAD)
 
-[Full Changelog](https://github.com/madeinoz67/maker-hub/compare/v2022.07.02...HEAD)
+[Full Changelog](https://github.com/madeinoz67/maker-hub/compare/v2022.07.01...HEAD)
 
 **Bugs Fixed:**
 
 - CI tests failing to run [\#291](https://github.com/madeinoz67/maker-hub/issues/291)
-
-## [v2022.07.02](https://github.com/madeinoz67/maker-hub/tree/v2022.07.02) (2022-07-29)
-
-[Full Changelog](https://github.com/madeinoz67/maker-hub/compare/v2022.07.01...v2022.07.02)
 
 ## [v2022.07.01](https://github.com/madeinoz67/maker-hub/tree/v2022.07.01) (2022-07-29)
 
