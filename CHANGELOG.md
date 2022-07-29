@@ -6,6 +6,9 @@
 
 **Dependencies Updated:**
 
+- Bump github/codeql-action from 1 to 2 [\#261](https://github.com/madeinoz67/maker-hub/pull/261) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump actions/checkout from 2 to 3 [\#246](https://github.com/madeinoz67/maker-hub/pull/246) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump loguru from 0.5.3 to 0.6.0 [\#233](https://github.com/madeinoz67/maker-hub/pull/233) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump fastapi from 0.71.0 to 0.73.0 [\#230](https://github.com/madeinoz67/maker-hub/pull/230) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump sqlalchemy from 1.4.29 to 1.4.31 [\#229](https://github.com/madeinoz67/maker-hub/pull/229) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump mkdocs-material from 8.1.4 to 8.1.8 [\#228](https://github.com/madeinoz67/maker-hub/pull/228) ([dependabot[bot]](https://github.com/apps/dependabot))
