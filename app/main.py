@@ -2,6 +2,7 @@ import os
 
 import fastapi_chameleon
 from dotenv import load_dotenv
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from loguru import logger
 from starlette.staticfiles import StaticFiles
@@ -67,7 +68,7 @@ def configure_routes() -> None:
     app.mount("/static", StaticFiles(directory=static_folder), name="static")
 
     # API endpoints
-    app.include_router(api_router, prefix=settings.API_V1_STR)
+    app.include_router(part_api.api)
 
     # Webpages
     app.include_router(home.router)
