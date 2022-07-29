@@ -50,17 +50,6 @@ test = ["coverage[toml] (>=4.5)", "hypothesis (>=4.0)", "pytest (>=6.0)", "pytes
 trio = ["trio (>=0.16)"]
 
 [[package]]
-name = "asgiref"
-version = "3.4.1"
-description = "ASGI specs, helper code, and adapters"
-category = "main"
-optional = false
-python-versions = ">=3.6"
-
-[package.extras]
-tests = ["pytest", "pytest-asyncio", "mypy (>=0.800)"]
-
-[[package]]
 name = "atomicwrites"
 version = "1.4.0"
 description = "Atomic file writes."
@@ -1027,19 +1016,18 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 
 [[package]]
 name = "uvicorn"
-version = "0.17.0.post1"
+version = "0.18.2"
 description = "The lightning-fast ASGI server."
 category = "main"
 optional = false
 python-versions = ">=3.7"
 
 [package.dependencies]
-asgiref = ">=3.4.0"
 click = ">=7.0"
 h11 = ">=0.8"
 
 [package.extras]
-standard = ["websockets (>=10.0)", "httptools (>=0.2.0,<0.4.0)", "watchgod (>=0.6)", "python-dotenv (>=0.13)", "PyYAML (>=5.1)", "uvloop (>=0.14.0,!=0.15.0,!=0.15.1)", "colorama (>=0.4)"]
+standard = ["websockets (>=10.0)", "httptools (>=0.4.0)", "watchfiles (>=0.13)", "python-dotenv (>=0.13)", "PyYAML (>=5.1)", "uvloop (>=0.14.0,!=0.15.0,!=0.15.1)", "colorama (>=0.4)"]
 
 [[package]]
 name = "uvloop"
@@ -1099,7 +1087,7 @@ testing = ["pytest (>=4.6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytes
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "e27e2bb0e7aefa9e86b0c1e5f33a612a1153a030e3d5129b736f9f0a4e0927ea"
+content-hash = "4e49b54041536c63d7f33d3eea27bd34c6276359161c163a081b3a23283fd4a2"
 
 [metadata.files]
 aiofiles = [
@@ -1117,10 +1105,6 @@ alembic = [
 anyio = [
     {file = "anyio-3.3.2-py3-none-any.whl", hash = "sha256:c32da314c510b34a862f5afeaf8a446ffed2c2fde21583e654bd71ecfb5b744b"},
     {file = "anyio-3.3.2.tar.gz", hash = "sha256:0b993a2ef6c1dc456815c2b5ca2819f382f20af98087cc2090a4afed3a501436"},
-]
-asgiref = [
-    {file = "asgiref-3.4.1-py3-none-any.whl", hash = "sha256:ffc141aa908e6f175673e7b1b3b7af4fdb0ecb738fc5c8b88f69f055c2415214"},
-    {file = "asgiref-3.4.1.tar.gz", hash = "sha256:4ef1ab46b484e3c706329cedeff284a5d40824200638503f5768edb6de7d58e9"},
 ]
 atomicwrites = [
     {file = "atomicwrites-1.4.0-py2.py3-none-any.whl", hash = "sha256:6d1784dea7c0c8d4a5172b6c620f40b6e4cbfdf96d783691f2e1302a7b88e197"},
@@ -1777,8 +1761,8 @@ urllib3 = [
     {file = "urllib3-1.26.6.tar.gz", hash = "sha256:f57b4c16c62fa2760b7e3d97c35b255512fb6b59a259730f36ba32ce9f8e342f"},
 ]
 uvicorn = [
-    {file = "uvicorn-0.17.0.post1-py3-none-any.whl", hash = "sha256:fa166e6c3d58e23ff5a1a3543b079c7b28aa057ab1388201e4b34a49ec05da72"},
-    {file = "uvicorn-0.17.0.post1.tar.gz", hash = "sha256:60a149248181920a73b2e97aec1dacec5501618867f041a228b2519d91a62a91"},
+    {file = "uvicorn-0.18.2-py3-none-any.whl", hash = "sha256:c19a057deb1c5bb060946e2e5c262fc01590c6529c0af2c3d9ce941e89bc30e0"},
+    {file = "uvicorn-0.18.2.tar.gz", hash = "sha256:cade07c403c397f9fe275492a48c1b869efd175d5d8a692df649e6e7e2ed8f4e"},
 ]
 uvloop = [
     {file = "uvloop-0.16.0-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:6224f1401025b748ffecb7a6e2652b17768f30b1a6a3f7b44660e5b5b690b12d"},
