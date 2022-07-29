@@ -46,6 +46,7 @@ src_paths = ["app", "tests"]
 combine_as_imports = true
 
 [tool.pytest.ini_options]
+asyncio_mode = "auto"
 testpaths = "tests"
 filterwarnings = "error"
 addopts = '''
