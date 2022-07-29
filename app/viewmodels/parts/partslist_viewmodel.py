@@ -1,6 +1,5 @@
 from starlette.requests import Request
 
-
 from app.services import part_service
 from app.viewmodels.shared.viewmodel import ViewModelBase
 

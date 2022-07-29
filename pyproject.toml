@@ -41,6 +41,7 @@ mkdocs-macros-plugin = "^0.6.3"
 mkdocs-mermaid2-plugin = "^0.5.2"
 codespell = "^2.1.0"
 flake8 = "^4.0.1"
+isort = "^5.10.1"
 
 [tool.isort]
 profile = "black"

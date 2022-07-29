@@ -1,6 +1,7 @@
+import datetime
+
 from app.models.location import Location
 from app.models.part import Part
-import datetime
 
 
 class StockHistory:

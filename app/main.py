@@ -1,23 +1,32 @@
 import os
-import fastapi
+
 import fastapi_chameleon
-
-from starlette.staticfiles import StaticFiles
 from dotenv import load_dotenv
-
-from app.views import home
-from app.views import parts
-from app.views import projects
-from app.views import storage
-from app.views import reports
+from fastapi.middleware.cors import CORSMiddleware
+from loguru import logger
+from starlette.staticfiles import StaticFiles
 
 from app.api import part_api
+from app.core.config import settings
+from app.views import home, parts, projects, reports, storage
 
-app = fastapi.FastAPI(
-    title="Maker Hub",
-    description="Personal Hub for makers: Manage Parts, projects, ideas, documentation, parts and footprints etc",
-    version="2021.0.0-dev1",
-)
+
+def get_application() -> FastAPI:
+    """Return a new application that will be used to instantiate the application .
+    Returns:
+        FastAPI: FastAPI Application
+    """
+    return FastAPI(
+        title="Maker Hub",
+        description="Open Source Personal Hub for Makers: Manage Parts, \
+        projects, ideas, documentation, parts and footprints etc",
+        debug=settings.DEBUG,
+        version=settings.VERSION,
+        openapi_url=f"{settings.API_V1_STR}/openapi.json",
+    )
+
+
+app = get_application()
 
 
 def main():
@@ -29,22 +38,36 @@ def configure(dev_mode: bool):
     configure_routes()
 
 
-def configure_templates(dev_mode: bool):
+def configure_middleware() -> None:
+    """Configure the middleware to use for the application ."""
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=["*"],
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
 
+
+def configure_templates(dev_mode: bool) -> None:
+    """Configure the templates for the application.
+    Args:
+        dev_mode (bool): Enables FastAPI development mode
+    """
     folder = os.path.dirname(__file__)
     template_folder = os.path.join(folder, "templates")
     template_folder = os.path.abspath(template_folder)
     fastapi_chameleon.global_init(template_folder, auto_reload=dev_mode)
 
 
-def configure_routes():
+def configure_routes() -> None:
     folder = os.path.dirname(__file__)
     static_folder = os.path.join(folder, "static")
     static_folder = os.path.abspath(static_folder)
     app.mount("/static", StaticFiles(directory=static_folder), name="static")
 
     # API endpoints
-    app.include_router(part_api.api)
+    app.include_router(api_router, prefix=settings.API_V1_STR)
 
     # Webpages
     app.include_router(home.router)
@@ -57,8 +80,6 @@ def configure_routes():
 if __name__ == "__main__":
     main()
 else:
-    load_dotenv()
-
-    DEV_MODE = os.getenv("DEV_MODE", "False") == "True"
-
+    DEV_MODE = settings.DEV_MODE
     configure(dev_mode=DEV_MODE)
+    logger.info(f"Dev Mode is: {DEV_MODE}")
