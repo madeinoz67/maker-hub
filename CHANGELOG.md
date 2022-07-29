@@ -6,6 +6,7 @@
 
 **Dependencies Updated:**
 
+- Bump actions/setup-node from 2.5.1 to 3.4.1 [\#289](https://github.com/madeinoz67/maker-hub/pull/289) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump actions/setup-python from 2 to 4.1.0 [\#287](https://github.com/madeinoz67/maker-hub/pull/287) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump mkdocs-material from 8.1.8 to 8.3.9 [\#285](https://github.com/madeinoz67/maker-hub/pull/285) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump black from 21.12b0 to 22.6.0 [\#284](https://github.com/madeinoz67/maker-hub/pull/284) ([dependabot[bot]](https://github.com/apps/dependabot))
