@@ -76,3 +76,4 @@ site/*
 app/coverage.xml
 coverage.xml
 htmlcov
+*.log

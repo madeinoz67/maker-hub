@@ -1,12 +1,11 @@
 import datetime
-
 from typing import List
 
 import sqlalchemy as sa
 import sqlalchemy.orm as orm
-from app.models.modelbase import SqlAlchemyBase
 
 from app.models.location import Location
+from app.models.modelbase import SqlAlchemyBase
 
 
 class Stock(SqlAlchemyBase):

@@ -20,3 +20,10 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
+
+from urllib.parse import urlparse
+
+
+def get_database_path(url: str) -> str:
+    path = urlparse(url).path
+    return path[path.index("data") :]  # noqa: E203

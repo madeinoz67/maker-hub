@@ -6,8 +6,8 @@ authors = ["Stephen Eaton <seaton@strobotics.com.au>"]
 license = "MIT"
 
 [tool.poetry.dependencies]
-python = "^3.9"
-fastapi = "^0.73.0"
+python = "^3.10"
+fastapi = "^0.79.0"
 pydantic = { version = "^1.9", extras = ["email"] }
 pyjwt = "^2.4"
 uvicorn = "^0.18.2"
@@ -39,6 +39,9 @@ mypy = "^0.931"
 mkdocs-material = "^8.3.9"
 mkdocs-macros-plugin = "^0.6.3"
 mkdocs-mermaid2-plugin = "^0.5.2"
+codespell = "^2.1.0"
+flake8 = "^4.0.1"
+isort = "^5.10.1"
 
 [tool.isort]
 profile = "black"

@@ -1,11 +1,10 @@
 import datetime
-
 from typing import List
 
 import sqlalchemy as sa
 import sqlalchemy.orm as orm
-from app.models.modelbase import SqlAlchemyBase
 
+from app.models.modelbase import SqlAlchemyBase
 from app.models.stock import Stock
 
 
@@ -35,4 +34,4 @@ class Part(SqlAlchemyBase):
 
 
 def __repr__(self):
-    return "<Part {}>".format(self.id)
+    return f"<Part {self.id}>"

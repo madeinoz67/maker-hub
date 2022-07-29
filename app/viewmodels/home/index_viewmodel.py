@@ -1,6 +1,6 @@
-from starlette.requests import Request
-
 from typing import List
+
+from starlette.requests import Request
 
 from app.schema.part import Part
 from app.services import part_service, project_service, storage_service

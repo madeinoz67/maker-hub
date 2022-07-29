@@ -1,9 +1,9 @@
 import datetime
-
 from typing import List
 
 import sqlalchemy as sa
 import sqlalchemy.orm as orm
+
 from app.models.modelbase import SqlAlchemyBase
 
 
@@ -27,4 +27,4 @@ class Project(SqlAlchemyBase):
 
 
 def __repr__(self):
-    return "<Project {}>".format(self.id)
+    return f"<Project {self.id}>"

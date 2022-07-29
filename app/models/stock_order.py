@@ -1,5 +1,6 @@
-from app.models.part import Part
 import datetime
+
+from app.models.part import Part
 
 
 class StockOrder:

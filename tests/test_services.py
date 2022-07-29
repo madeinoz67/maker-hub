@@ -1,7 +1,6 @@
 import pytest
-from app.services import part_service
-from app.services import project_service
-from app.services import storage_service
+
+from app.services import part_service, project_service, storage_service
 
 
 @pytest.mark.asyncio

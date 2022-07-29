@@ -1,9 +1,9 @@
+from typing import List
+
 from starlette.requests import Request
 
 from app.services import project_service
 from app.viewmodels.shared.viewmodel import ViewModelBase
-
-from typing import List
 
 
 class ProjectlistViewModel(ViewModelBase):
