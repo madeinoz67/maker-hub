@@ -6,6 +6,13 @@
 
 **Dependencies Updated:**
 
+- Bump actions/setup-python from 2 to 4.1.0 [\#287](https://github.com/madeinoz67/maker-hub/pull/287) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump mkdocs-material from 8.1.8 to 8.3.9 [\#285](https://github.com/madeinoz67/maker-hub/pull/285) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump black from 21.12b0 to 22.6.0 [\#284](https://github.com/madeinoz67/maker-hub/pull/284) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump uvicorn from 0.17.0.post1 to 0.18.2 [\#283](https://github.com/madeinoz67/maker-hub/pull/283) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump abatilo/actions-poetry from 2.1.4 to 2.1.5 [\#282](https://github.com/madeinoz67/maker-hub/pull/282) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump python from 3.10.2-slim to 3.10.5-slim [\#274](https://github.com/madeinoz67/maker-hub/pull/274) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump pyjwt from 2.3.0 to 2.4.0 [\#268](https://github.com/madeinoz67/maker-hub/pull/268) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump github/codeql-action from 1 to 2 [\#261](https://github.com/madeinoz67/maker-hub/pull/261) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump actions/checkout from 2 to 3 [\#246](https://github.com/madeinoz67/maker-hub/pull/246) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump loguru from 0.5.3 to 0.6.0 [\#233](https://github.com/madeinoz67/maker-hub/pull/233) ([dependabot[bot]](https://github.com/apps/dependabot))
