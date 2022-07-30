@@ -30,7 +30,7 @@ def get_application() -> FastAPI:
         projects, ideas, documentation, parts and footprints etc",
         debug=CONFIG.DEBUG,
         version=CONFIG.VERSION
-        //openapi_url=f"{CONFIG.API_V1_STR}/openapi.json",
+        # openapi_url=f"{CONFIG.API_V1_STR}/openapi.json",
     )
 
 
@@ -86,11 +86,11 @@ def configure_routes() -> None:
     app.mount("/static", StaticFiles(directory=static_folder), name="static")
 
     # API endpoints
-    app.include_router(AuthRouter.api)
-    app.include_router(UserRouter.api)
-    app.include_router(RegisterRouter.api)
-    app.include_router(MailRouter.api)
-    app.include_router(PartRouter.api)
+    app.include_router(AuthRouter)
+    app.include_router(UserRouter)
+    app.include_router(RegisterRouter)
+    app.include_router(MailRouter)
+    app.include_router(PartRouter)
 
     # Webpages
     app.include_router(home.router)
@@ -103,6 +103,6 @@ def configure_routes() -> None:
 if __name__ == "__main__":
     main()
 else:
-    DEV_MODE = settings.DEV_MODE
+    DEV_MODE = CONFIG.DEV_MODE
     configure(dev_mode=DEV_MODE)
     logger.info(f"Dev Mode is: {DEV_MODE}")
