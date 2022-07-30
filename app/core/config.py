@@ -25,6 +25,7 @@ import logging
 import sys
 from functools import lru_cache
 
+from decouple import config
 from loguru import logger
 from pydantic import BaseSettings
 
@@ -42,13 +43,28 @@ class Settings(BaseSettings):
     API_V1_STR: str = "/api/v1"
     DEV_MODE: bool = False
     DEBUG: bool = False
-    DATABASE_URL: str = "sqlite+aiosqlite:///./app/dbdata/maker-hub.db"
     LOGFILE: str = "maker-hub.log"
-    ENABLE_SQL_LOGGING: bool = False
     VERSION: str = "2021.0.0-Dev3"  # TODO: Update this when you release a new version
 
     NANOID_ALPHABET: str = "0123456789abcdefghijklmnopqrstuvwxyz"
     NANOID_SIZE: int = 26
+
+    # Mongo Engine settings
+    mongo_uri = config("MONGO_URI")
+
+    # Security settings
+    authjwt_secret_key = config("SECRET_KEY")
+    salt = config("SALT").encode()
+
+    # FastMail SMTP server settings
+    mail_console = config("MAIL_CONSOLE", default=False, cast=bool)
+    mail_server = config("MAIL_SERVER", default="smtp.myserver.io")
+    mail_port = config("MAIL_PORT", default=587, cast=int)
+    mail_username = config("MAIL_USERNAME", default="")
+    mail_password = config("MAIL_PASSWORD", default="")
+    mail_sender = config("MAIL_SENDER", default="noreply@myserver.io")
+
+    testing = config("TESTING", default=False, cast=bool)
 
     HOST: str = "http://127.0.0.1"
     PORT: int = 8000
@@ -59,7 +75,7 @@ class Settings(BaseSettings):
         case_sensitive = True
 
 
-settings = Settings()
+CONFIG = Settings()
 
 # Logging Configuration
 LOGGING_LEVEL = logging.DEBUG if get_settings().DEBUG else logging.INFO

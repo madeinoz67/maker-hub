@@ -1,31 +1,21 @@
 import datetime
 from typing import List
 
-import sqlalchemy as sa
-import sqlalchemy.orm as orm
-
-from app.models.location import Location
-from app.models.modelbase import SqlAlchemyBase
+from beanie import Document
 
 
-class Stock(SqlAlchemyBase):
-    __tablename__ = "stock"
-
-    id: int = sa.Column(sa.Integer, primary_key=True, autoincrement=True)
-    created_date: datetime.datetime = sa.Column(
-        sa.DateTime, default=datetime.datetime.now, index=True
-    )
-    last_updated: datetime.datetime = sa.Column(
-        sa.DateTime, default=datetime.datetime.now, index=True
-    )
-    quantity: int = sa.Column(sa.Integer)
-    comment: str = sa.Column(sa.String, nullable=True)
+class Stock(Document):
+    id: int
+    created_date: datetime.datetime
+    last_updated: datetime.datetime
+    quantity: int
+    comment: str
 
     # Part relationship
-    part_id: str = sa.Column(sa.String, sa.ForeignKey("parts.id"))
-    part = orm.relation("Part")
+    # part_id: str
 
-    # TODO: Add Location relationship
-    # location: List[Location] = orm.relationship(
-    #     Location, order_by=[Location.name], back_populates="stock"
-    # )
+
+# TODO: Add Location relationship
+# location: List[Location] = orm.relationship(
+#     Location, order_by=[Location.name], back_populates="stock"
+# )

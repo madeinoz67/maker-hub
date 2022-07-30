@@ -1,14 +1,21 @@
 import os
 
 import fastapi_chameleon
+from beanie import init_beanie
 from dotenv import load_dotenv
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from loguru import logger
+from motor.motor_asyncio import AsyncIOMotorClient
 from starlette.staticfiles import StaticFiles
 
-from app.api import part_api
-from app.core.config import settings
+from app.api.auth import router as AuthRouter
+from app.api.mail import router as MailRouter
+from app.api.part import router as PartRouter
+from app.api.register import router as RegisterRouter
+from app.api.user import router as UserRouter
+from app.core.config import CONFIG
+from app.models.user import User
 from app.views import home, parts, projects, reports, storage
 
 
@@ -21,9 +28,9 @@ def get_application() -> FastAPI:
         title="Maker Hub",
         description="Open Source Personal Hub for Makers: Manage Parts, \
         projects, ideas, documentation, parts and footprints etc",
-        debug=settings.DEBUG,
-        version=settings.VERSION,
-        openapi_url=f"{settings.API_V1_STR}/openapi.json",
+        debug=CONFIG.DEBUG,
+        version=CONFIG.VERSION
+        //openapi_url=f"{CONFIG.API_V1_STR}/openapi.json",
     )
 
 
@@ -35,8 +42,10 @@ def main():
 
 
 def configure(dev_mode: bool):
+    configure_middleware()
     configure_templates(dev_mode)
     configure_routes()
+    configure_db(dev_mode)
 
 
 def configure_middleware() -> None:
@@ -48,6 +57,15 @@ def configure_middleware() -> None:
         allow_methods=["*"],
         allow_headers=["*"],
     )
+
+
+def configure_db(dev_mode: bool) -> None:
+    """Configure the DB.
+    Args:
+        dev_mode (bool): Enables FastAPI development mode
+    """
+    app.db = AsyncIOMotorClient(CONFIG.mongo_uri).account
+    init_beanie(app.db, document_models=[User])
 
 
 def configure_templates(dev_mode: bool) -> None:
@@ -68,7 +86,11 @@ def configure_routes() -> None:
     app.mount("/static", StaticFiles(directory=static_folder), name="static")
 
     # API endpoints
-    app.include_router(part_api.api)
+    app.include_router(AuthRouter.api)
+    app.include_router(UserRouter.api)
+    app.include_router(RegisterRouter.api)
+    app.include_router(MailRouter.api)
+    app.include_router(PartRouter.api)
 
     # Webpages
     app.include_router(home.router)
