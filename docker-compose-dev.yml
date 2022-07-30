@@ -1,33 +1,18 @@
 version: '3.8'
 
 services:
-  makerhub:
-    image: makerhub
-    build:
-      context: .
-      dockerfile: ./Dockerfile
-    restart: unless-stopped
-    ports:
-      - 8080:8000
-    networks:
-      - mongo_net
-    depends_on:
-      - mongodb
-
-  mongodb:
+  mongodb-dev:
     image: mongo:latest
-    container_name: mongodb
     restart: unless-stopped
+    container_name: mongodb
     ports:
       - 27017:27017
     environment:
-      - MONGO_INITDB_DATABASE=makerhub
+      - MONGO_INITDB_DATABASE=makerhub-dev
       - MONGO_INITDB_ROOT_USERNAME=${MONGO_ADMIN_USERNAME}
       - MONGO_INITDB_ROOT_PASSWORD=${MONGO_ADMIN_PASSWORD}
     volumes:
-      - mongodb:/data/db
-    networks:
-      - mongo_net
+      - mongodb-dev:/data/db
 
   # Mongo Express Service
   mongo-express:
@@ -39,19 +24,8 @@ services:
     environment:
       ME_CONFIG_MONGODB_ADMINUSERNAME: ${MONGO_ADMIN_USERNAME}
       ME_CONFIG_MONGODB_ADMINPASSWORD: ${MONGO_ADMIN_PASSWORD}
-      ME_CONFIG_MONGODB_SERVER: mongodb
-      ME_CONFIG_BASICAUTH_USERNAME: ${MONGO_EXPRESS_ADMIN_USERNAME}
-      ME_CONFIG_BASICAUTH_PASSWORD: ${MONGO_EXPRESS_ADMIN_PASSWORD}
+      ME_CONFIG_MONGODB_SERVER: mongodb-dev
       # use the name of the mongo container above for server env var.
       # In our case this is mongodb
-    networks:
-      - mongo_net
-    depends_on:
-      - mongodb
-
-networks:
-  mongo_net:
-    driver: bridge
-
 volumes:
-  mongodb:
+  mongodb-dev:
