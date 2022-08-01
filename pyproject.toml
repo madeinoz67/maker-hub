@@ -36,7 +36,7 @@ mkdocs-material = "^8.3.9"
 mkdocs-macros-plugin = "^0.6.3"
 mkdocs-mermaid2-plugin = "^0.5.2"
 codespell = "^2.1.0"
-flake8 = "^4.0.1"
+flake8 = "^5.0.2"
 isort = "^5.10.1"
 
 [tool.isort]
