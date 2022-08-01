@@ -120,16 +120,3 @@ class FactorySettings:
 
 settings = FactorySettings(GlobalSettings().ENV_STATE)()
 logger.info(f"Settings: {settings.__repr__()}")
-
-# # Logging Configuration
-# LOGGING_LEVEL = logging.DEBUG if settings.DEBUG else logging.INFO
-# LOGGERS = ("uvicorn.asgi", "uvicorn.access")
-
-# logging.getLogger().handlers = [InterceptHandler()]
-# for logger_name in LOGGERS:
-#     logging_logger = logging.getLogger(logger_name)
-#     logging_logger.handlers = [InterceptHandler(level=LOGGING_LEVEL)]
-
-# logger.configure(handlers=[{"sink": sys.stderr, "level": LOGGING_LEVEL}])
-# if settings.DEBUG:
-#     logger.add(settings.LOGFILE, enqueue=True)
