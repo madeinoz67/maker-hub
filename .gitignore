@@ -77,3 +77,4 @@ app/coverage.xml
 coverage.xml
 htmlcov
 *.log
+.coverage*

@@ -21,31 +21,58 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-import logging
-import sys
+
 from functools import lru_cache
+from pathlib import Path
+from typing import Optional
 
 from loguru import logger
-from pydantic import BaseSettings
+from pydantic import BaseModel, BaseSettings, Field
 
-from app.core.logging import InterceptHandler
-
-
-@lru_cache()
-def get_settings():
-    return Settings()
+APP_ROOT = Path(__file__).parent.parent
+logger.info(f"Application root: {APP_ROOT}")
 
 
-class Settings(BaseSettings):
-    """Application .env default settings."""
+class AppSettings(BaseModel):
+    """Application configuration using pydantic `BaseModel`.
+    Will be accessed as `fastapi_settings` within the application.
+    """
+
+    title: str = "Maker Hub"
+    description: str = "Open Source Personal Hub for Makers: Manage Parts, projects, ideas, documentation, parts and footprints etc"
+
+    version: str = "0.1.0"
+    docs_url: str = "/docs"
+    debug: bool = True
+
+
+class GlobalSettings(BaseSettings):
+    """Global configuration using pydantic `BaseSettings`.
+    Will be accessed as `settings` within the application.
+    """
+
+    fastapi_settings: AppSettings = AppSettings()
+
+    APP_DIR: Path = APP_ROOT
+
+    ENV_STATE: Optional[str] = Field(None, env="ENV_STATE")
+
+    DEBUG: bool = False
+
+    DISABLE_DOCS: bool = False
+
+    SECRET_KEY: str = "overriden_by_dotenv_value"
+
+    MONGO_SCHEME: Optional[str] = None
+    MONGO_HOST: Optional[str] = None
+    MONGO_PORT: Optional[str] = None
+    MONGO_USER: Optional[str] = None
+    MONGO_PASSWORD: Optional[str] = None
+    MONGO_DB: Optional[str] = None
 
     API_V1_STR: str = "/api/v1"
-    DEV_MODE: bool = False
-    DEBUG: bool = False
-    DATABASE_URL: str = "sqlite+aiosqlite:///./app/dbdata/maker-hub.db"
+
     LOGFILE: str = "maker-hub.log"
-    ENABLE_SQL_LOGGING: bool = False
-    VERSION: str = "2021.0.0-Dev3"  # TODO: Update this when you release a new version
 
     NANOID_ALPHABET: str = "0123456789abcdefghijklmnopqrstuvwxyz"
     NANOID_SIZE: int = 26
@@ -54,22 +81,42 @@ class Settings(BaseSettings):
     PORT: int = 8000
 
     class Config:
-        env_file = ".env"
+        env_file = APP_ROOT.parent / ".env"
         env_file_encoding = "utf-8"
-        case_sensitive = True
 
 
-settings = Settings()
+class DevSettings(GlobalSettings):
+    """Configuration for development environment."""
 
-# Logging Configuration
-LOGGING_LEVEL = logging.DEBUG if get_settings().DEBUG else logging.INFO
-LOGGERS = ("uvicorn.asgi", "uvicorn.access")
+    DEV_MODE: bool = True
 
-logging.getLogger().handlers = [InterceptHandler()]
-for logger_name in LOGGERS:
-    logging_logger = logging.getLogger(logger_name)
-    logging_logger.handlers = [InterceptHandler(level=LOGGING_LEVEL)]
+    class Config:
+        env_prefix = "DEV_"
 
-logger.configure(handlers=[{"sink": sys.stderr, "level": LOGGING_LEVEL}])
-if get_settings().DEBUG:
-    logger.add(get_settings().LOGFILE, enqueue=True)
+
+class PrdSettings(GlobalSettings):
+    """Configuration for production environment."""
+
+    DEV_MODE: bool = False
+
+    class Config:
+        env_prefix = "PRD_"
+
+
+class FactorySettings:
+    """Callable class that loads Dev or Prod settings."""
+
+    def __init__(self, env_state: Optional[str] = None):
+        self.env_state = env_state
+
+    def __call__(self):
+        if self.env_state == "dev":
+            return DevSettings()
+        elif self.env_state == "prd":
+            return PrdSettings()
+        else:
+            raise ValueError(f"Invalid env_state: {self.env_state}")
+
+
+settings = FactorySettings(GlobalSettings().ENV_STATE)()
+logger.info(f"Settings: {settings.__repr__()}")

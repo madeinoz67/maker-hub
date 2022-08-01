@@ -1,14 +1,14 @@
 import os
 
 import fastapi_chameleon
-from dotenv import load_dotenv
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from loguru import logger
 from starlette.staticfiles import StaticFiles
 
-from app.api import part_api
+from app.api.part import router as PartRouter
 from app.core.config import settings
+from app.db.db_config import db
 from app.views import home, parts, projects, reports, storage
 
 
@@ -17,14 +17,12 @@ def get_application() -> FastAPI:
     Returns:
         FastAPI: FastAPI Application
     """
-    return FastAPI(
-        title="Maker Hub",
-        description="Open Source Personal Hub for Makers: Manage Parts, \
-        projects, ideas, documentation, parts and footprints etc",
-        debug=settings.DEBUG,
-        version=settings.VERSION,
-        openapi_url=f"{settings.API_V1_STR}/openapi.json",
-    )
+
+    app_settings = settings.fastapi_settings.dict()
+    app = FastAPI(**app_settings)
+    app.add_event_handler("startup", db.initialize_db)
+    logger.info(f"FastAPI Settings: {app_settings}")
+    return app
 
 
 app = get_application()
@@ -35,6 +33,7 @@ def main():
 
 
 def configure(dev_mode: bool):
+    configure_middleware()
     configure_templates(dev_mode)
     configure_routes()
 
@@ -68,7 +67,7 @@ def configure_routes() -> None:
     app.mount("/static", StaticFiles(directory=static_folder), name="static")
 
     # API endpoints
-    app.include_router(part_api.api)
+    app.include_router(PartRouter)
 
     # Webpages
     app.include_router(home.router)
@@ -82,5 +81,5 @@ if __name__ == "__main__":
     main()
 else:
     DEV_MODE = settings.DEV_MODE
-    configure(dev_mode=DEV_MODE)
-    logger.info(f"Dev Mode is: {DEV_MODE}")
+    configure(DEV_MODE)
+    logger.info(f"Development Mode is: {DEV_MODE}")

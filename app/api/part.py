@@ -1,12 +1,12 @@
 import fastapi
 
-from app.schema.datatable import DataTableRequest, DataTableResponse
+from app.models.datatable import DataTableRequest, DataTableResponse
 from app.services import part_service
 
-api = fastapi.APIRouter()
+router = fastapi.APIRouter()
 
 
-@api.post("/api/part/datatable")
+@router.post("/api/part/datatable")
 async def table_datasource(request: DataTableRequest) -> DataTableResponse:
     """Parts Datatable Source
 

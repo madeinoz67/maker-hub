@@ -2,7 +2,7 @@ from typing import List, Optional
 
 from pydantic import BaseModel
 
-from app.schema.part import Part
+from .part import Part
 
 
 class Search(BaseModel):
