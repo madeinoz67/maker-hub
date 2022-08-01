@@ -27,6 +27,8 @@ from typing import cast
 
 from loguru import logger
 
+from .config import settings
+
 
 class InterceptHandler(logging.Handler):
     def emit(self, record: logging.LogRecord) -> None:  # pragma: no cover
@@ -46,3 +48,17 @@ class InterceptHandler(logging.Handler):
             level,
             record.getMessage(),
         )
+
+
+# Logging Configuration
+LOGGING_LEVEL = logging.DEBUG if settings.DEBUG else logging.INFO
+LOGGERS = ("uvicorn.asgi", "uvicorn.access")
+
+logging.getLogger().handlers = [InterceptHandler()]
+for logger_name in LOGGERS:
+    logging_logger = logging.getLogger(logger_name)
+    logging_logger.handlers = [InterceptHandler(level=LOGGING_LEVEL)]
+
+logger.configure(handlers=[{"sink": sys.stderr, "level": LOGGING_LEVEL}])
+if settings.DEBUG:
+    logger.add(settings.LOGFILE, enqueue=True)

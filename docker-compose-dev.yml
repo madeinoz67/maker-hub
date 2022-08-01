@@ -1,20 +1,18 @@
 version: '3.8'
 
 services:
-  mongodb-dev:
+  mongodb:
     image: mongo:latest
     restart: unless-stopped
     container_name: mongodb
     ports:
       - 27017:27017
-    environment:
-      - MONGO_INITDB_DATABASE=makerhub-dev
-      - MONGO_INITDB_ROOT_USERNAME=${MONGO_ADMIN_USERNAME}
-      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_ADMIN_PASSWORD}
-    volumes:
-      - mongodb-dev:/data/db
+      #environment:
+      #  - MONGO_INITDB_DATABASE=makerhub-dev
+      #volumes:
+      #  - mongodb-dev:/data/db
 
-  # Mongo Express Service
+      # Mongo Express Service
   mongo-express:
     image: mongo-express:latest # latest image
     container_name: mongo-express
@@ -22,10 +20,8 @@ services:
     ports:
       - 8081:8081
     environment:
-      ME_CONFIG_MONGODB_ADMINUSERNAME: ${MONGO_ADMIN_USERNAME}
-      ME_CONFIG_MONGODB_ADMINPASSWORD: ${MONGO_ADMIN_PASSWORD}
-      ME_CONFIG_MONGODB_SERVER: mongodb-dev
+      ME_CONFIG_MONGODB_SERVER: mongodb
       # use the name of the mongo container above for server env var.
       # In our case this is mongodb
-volumes:
-  mongodb-dev:
+      #volumes:
+      #  mongodb-dev:

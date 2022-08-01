@@ -5,15 +5,14 @@ from beanie import Document
 from pydantic import BaseModel
 
 
-class Part(Document):
+class Part(BaseModel):
     id: str
-    created_date: datetime.datetime = datetime.datetime.now()
-    last_updated: datetime.datetime = datetime.datetime.now()
     name: str
     description: str
-    notes: Optional[str]
-    footprint: Optional[str]
+    notes: Optional[str] = None
+    footprint: Optional[str] = None
 
 
-def __repr__(self):
-    return f"<Part {self.id}>"
+class PartDB(Part, Document):
+    created_date: datetime.datetime = datetime.datetime.now()
+    last_updated: datetime.datetime = datetime.datetime.now()

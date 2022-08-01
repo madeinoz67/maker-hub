@@ -1,21 +1,14 @@
 import os
 
 import fastapi_chameleon
-from beanie import init_beanie
-from dotenv import load_dotenv
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from loguru import logger
-from motor.motor_asyncio import AsyncIOMotorClient
 from starlette.staticfiles import StaticFiles
 
-from app.api.auth import router as AuthRouter
-from app.api.mail import router as MailRouter
 from app.api.part import router as PartRouter
-from app.api.register import router as RegisterRouter
-from app.api.user import router as UserRouter
-from app.core.config import CONFIG
-from app.models.user import User
+from app.core.config import settings
+from app.db.db_config import db
 from app.views import home, parts, projects, reports, storage
 
 
@@ -24,14 +17,12 @@ def get_application() -> FastAPI:
     Returns:
         FastAPI: FastAPI Application
     """
-    return FastAPI(
-        title="Maker Hub",
-        description="Open Source Personal Hub for Makers: Manage Parts, \
-        projects, ideas, documentation, parts and footprints etc",
-        debug=CONFIG.DEBUG,
-        version=CONFIG.VERSION
-        # openapi_url=f"{CONFIG.API_V1_STR}/openapi.json",
-    )
+
+    app_settings = settings.fastapi_settings.dict()
+    app = FastAPI(**app_settings)
+    app.add_event_handler("startup", db.initialize_db)
+    logger.info(f"FastAPI Settings: {app_settings}")
+    return app
 
 
 app = get_application()
@@ -45,7 +36,6 @@ def configure(dev_mode: bool):
     configure_middleware()
     configure_templates(dev_mode)
     configure_routes()
-    configure_db(dev_mode)
 
 
 def configure_middleware() -> None:
@@ -57,15 +47,6 @@ def configure_middleware() -> None:
         allow_methods=["*"],
         allow_headers=["*"],
     )
-
-
-def configure_db(dev_mode: bool) -> None:
-    """Configure the DB.
-    Args:
-        dev_mode (bool): Enables FastAPI development mode
-    """
-    app.db = AsyncIOMotorClient(CONFIG.mongo_uri).account
-    init_beanie(app.db, document_models=[User])
 
 
 def configure_templates(dev_mode: bool) -> None:
@@ -86,10 +67,6 @@ def configure_routes() -> None:
     app.mount("/static", StaticFiles(directory=static_folder), name="static")
 
     # API endpoints
-    app.include_router(AuthRouter)
-    app.include_router(UserRouter)
-    app.include_router(RegisterRouter)
-    app.include_router(MailRouter)
     app.include_router(PartRouter)
 
     # Webpages
@@ -103,6 +80,6 @@ def configure_routes() -> None:
 if __name__ == "__main__":
     main()
 else:
-    DEV_MODE = CONFIG.DEV_MODE
-    configure(dev_mode=DEV_MODE)
-    logger.info(f"Dev Mode is: {DEV_MODE}")
+    DEV_MODE = settings.DEV_MODE
+    configure(DEV_MODE)
+    logger.info(f"Development Mode is: {DEV_MODE}")
