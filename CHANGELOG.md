@@ -10,6 +10,7 @@
 
 **Dependencies Updated:**
 
+- Bump python-slugify from 5.0.2 to 6.1.2 [\#298](https://github.com/madeinoz67/maker-hub/pull/298) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump pytest-asyncio from 0.17.2 to 0.19.0 [\#296](https://github.com/madeinoz67/maker-hub/pull/296) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump mkdocs-mermaid2-plugin from 0.5.2 to 0.6.0 [\#295](https://github.com/madeinoz67/maker-hub/pull/295) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump python-dotenv from 0.19.2 to 0.20.0 [\#294](https://github.com/madeinoz67/maker-hub/pull/294) ([dependabot[bot]](https://github.com/apps/dependabot))
