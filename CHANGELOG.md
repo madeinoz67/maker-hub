@@ -8,6 +8,10 @@
 
 - move to nosql / mongo as document store [\#112](https://github.com/madeinoz67/maker-hub/issues/112)
 
+**Dependencies Updated:**
+
+- Bump python-dotenv from 0.19.2 to 0.20.0 [\#294](https://github.com/madeinoz67/maker-hub/pull/294) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 **Merged pull requests:**
 
 - MongodDB start [\#293](https://github.com/madeinoz67/maker-hub/pull/293) ([madeinoz67](https://github.com/madeinoz67))
