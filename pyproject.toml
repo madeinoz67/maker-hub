@@ -21,7 +21,7 @@ loguru = "^0.6.0"
 python-dotenv = "^0.20.0"
 gunicorn = "^20.1.0"
 uvloop = "^0.16.0"
-httptools = "^0.3.0"
+httptools = "^0.4.0"
 beanie = "^1.11.6"
 
 [tool.poetry.dev-dependencies]
