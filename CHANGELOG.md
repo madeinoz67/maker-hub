@@ -10,6 +10,7 @@
 
 **Dependencies Updated:**
 
+- Bump mkdocs-macros-plugin from 0.6.4 to 0.7.0 [\#304](https://github.com/madeinoz67/maker-hub/pull/304) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump beanie from 1.11.6 to 1.11.7 [\#303](https://github.com/madeinoz67/maker-hub/pull/303) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump httptools from 0.3.0 to 0.4.0 [\#302](https://github.com/madeinoz67/maker-hub/pull/302) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump mypy from 0.931 to 0.971 [\#301](https://github.com/madeinoz67/maker-hub/pull/301) ([dependabot[bot]](https://github.com/apps/dependabot))
