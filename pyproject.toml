@@ -22,7 +22,7 @@ python-dotenv = "^0.20.0"
 gunicorn = "^20.1.0"
 uvloop = "^0.16.0"
 httptools = "^0.4.0"
-beanie = "^1.11.6"
+beanie = "^1.11.7"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.5"
