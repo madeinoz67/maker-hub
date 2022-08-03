@@ -10,6 +10,7 @@
 
 **Dependencies Updated:**
 
+- Bump beanie from 1.11.6 to 1.11.7 [\#303](https://github.com/madeinoz67/maker-hub/pull/303) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump httptools from 0.3.0 to 0.4.0 [\#302](https://github.com/madeinoz67/maker-hub/pull/302) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump mypy from 0.931 to 0.971 [\#301](https://github.com/madeinoz67/maker-hub/pull/301) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump flake8 from 4.0.1 to 5.0.3 [\#299](https://github.com/madeinoz67/maker-hub/pull/299) ([dependabot[bot]](https://github.com/apps/dependabot))
