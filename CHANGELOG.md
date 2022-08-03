@@ -10,6 +10,7 @@
 
 **Dependencies Updated:**
 
+- Bump mypy from 0.931 to 0.971 [\#301](https://github.com/madeinoz67/maker-hub/pull/301) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump flake8 from 4.0.1 to 5.0.3 [\#299](https://github.com/madeinoz67/maker-hub/pull/299) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump python-slugify from 5.0.2 to 6.1.2 [\#298](https://github.com/madeinoz67/maker-hub/pull/298) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump pytest-asyncio from 0.17.2 to 0.19.0 [\#296](https://github.com/madeinoz67/maker-hub/pull/296) ([dependabot[bot]](https://github.com/apps/dependabot))
