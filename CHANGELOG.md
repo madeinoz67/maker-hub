@@ -10,6 +10,8 @@
 
 **Dependencies Updated:**
 
+- Bump flake8 from 5.0.3 to 5.0.4 [\#307](https://github.com/madeinoz67/maker-hub/pull/307) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump python from 3.10.5-slim to 3.10.6-slim [\#306](https://github.com/madeinoz67/maker-hub/pull/306) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump pytest from 6.2.5 to 7.1.2 [\#305](https://github.com/madeinoz67/maker-hub/pull/305) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump mkdocs-macros-plugin from 0.6.4 to 0.7.0 [\#304](https://github.com/madeinoz67/maker-hub/pull/304) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump beanie from 1.11.6 to 1.11.7 [\#303](https://github.com/madeinoz67/maker-hub/pull/303) ([dependabot[bot]](https://github.com/apps/dependabot))
