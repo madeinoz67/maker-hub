@@ -7,7 +7,7 @@ from app.viewmodels.reports.overview_viewmodel import OverviewViewModel
 router = fastapi.APIRouter()
 
 
-@router.get("/reports")
+@router.get("/reports", include_in_schema=False)
 @template()
 async def overview(request: Request):
     vm = OverviewViewModel(request)
