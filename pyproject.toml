@@ -62,7 +62,6 @@ addopts = '''
   --cov-report=html
   --cov-report=xml
   --no-cov-on-fail
-  --cov-fail-under=100
 '''
 
 [build-system]
