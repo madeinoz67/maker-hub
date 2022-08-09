@@ -2,8 +2,6 @@ from typing import List, Optional
 
 from pydantic import BaseModel
 
-from .part import Part
-
 
 class Search(BaseModel):
     value: str = ""
@@ -35,10 +33,9 @@ class DataTableRequest(DataTableBase):
     columns: List[Column]
 
 
-class DataTableResponse(DataTableBase):
+class DataTableResponseBase(DataTableBase):
     recordsTotal: int
     recordsFiltered: int
-    data: List[Part] = []
     error: Optional[str] = None
 
 
