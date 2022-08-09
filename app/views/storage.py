@@ -8,7 +8,7 @@ from app.viewmodels.storage.storagelist_viewmodel import StoragelistViewModel
 router = fastapi.APIRouter()
 
 
-@router.get("/storage")
+@router.get("/storage", include_in_schema=False)
 @template()
 async def storagelist(request: Request):
     vm = StoragelistViewModel(request)
@@ -16,7 +16,7 @@ async def storagelist(request: Request):
     return vm.to_dict()
 
 
-@router.get("/storage/create")
+@router.get("/storage/create", include_in_schema=False)
 @template()
 def create(request: Request):
     vm = ViewModelBase(request)

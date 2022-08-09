@@ -1,9 +1,13 @@
 [tool.poetry]
 name = "maker-hub"
-version = "2022.08.01"
+version = "2022.8.0"
 description = "Makers Hub for Inventory and Projects"
 authors = ["Stephen Eaton <seaton@strobotics.com.au>"]
 license = "MIT"
+packages = [
+  { include = "app"}
+]
+readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.9"
@@ -58,9 +62,7 @@ addopts = '''
   --cov-report=html
   --cov-report=xml
   --no-cov-on-fail
-  --cov-fail-under=100
 '''
-env = ["SECRET_KEY=secret"]
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
