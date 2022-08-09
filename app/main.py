@@ -6,7 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from loguru import logger
 from starlette.staticfiles import StaticFiles
 
-from app.api.part import router as PartRouter
+from app.api.v1.api import api_v1_router
 from app.core.config import settings
 from app.db.db_config import db
 from app.views import home, parts, projects, reports, storage
@@ -67,7 +67,7 @@ def configure_routes() -> None:
     app.mount("/static", StaticFiles(directory=static_folder), name="static")
 
     # API endpoints
-    app.include_router(PartRouter)
+    app.include_router(api_v1_router, prefix="/api/1")
 
     # Webpages
     app.include_router(home.router)

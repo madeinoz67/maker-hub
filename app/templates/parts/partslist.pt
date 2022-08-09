@@ -68,7 +68,7 @@
                     "pagingType": "full_numbers",
                     serverSide: true,
                     ajax: {
-                        url: '/api/part/datatable',
+                        url: '/api/1/parts/datatable',
                         type: 'POST',
                         datasource: 'data',
                         dataType: 'json',
