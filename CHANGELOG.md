@@ -10,6 +10,7 @@
 
 **Dependencies Updated:**
 
+- Bump pydantic from 1.9.1 to 1.9.2 [\#309](https://github.com/madeinoz67/maker-hub/pull/309) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump flake8 from 5.0.3 to 5.0.4 [\#307](https://github.com/madeinoz67/maker-hub/pull/307) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump python from 3.10.5-slim to 3.10.6-slim [\#306](https://github.com/madeinoz67/maker-hub/pull/306) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump pytest from 6.2.5 to 7.1.2 [\#305](https://github.com/madeinoz67/maker-hub/pull/305) ([dependabot[bot]](https://github.com/apps/dependabot))
