@@ -26,7 +26,7 @@ from typing import Optional
 from pydantic import BaseModel, HttpUrl
 
 
-class BaseResponseBody(BaseModel):
+class ErrorResponseModel(BaseModel):
     status: int = 200
     code: Optional[int] = None
     property: Optional[str] = None

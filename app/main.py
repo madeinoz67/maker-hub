@@ -67,7 +67,7 @@ def configure_routes() -> None:
     app.mount("/static", StaticFiles(directory=static_folder), name="static")
 
     # API endpoints
-    app.include_router(api_v1_router, prefix="/api/1")
+    app.include_router(api_v1_router, prefix=settings.API_V1_STR)
 
     # Webpages
     app.include_router(home.router)

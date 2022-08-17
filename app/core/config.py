@@ -41,7 +41,7 @@ class AppSettings(BaseModel):
     title: str = "Maker Hub"
     description: str = "Open Source Personal Hub for Makers: Manage Parts, projects, ideas, documentation, parts and footprints etc"
 
-    version: str = "0.1.0"
+    version: str = "0.0.1"
     docs_url: str = "/docs"
     debug: bool = True
 
@@ -70,7 +70,7 @@ class GlobalSettings(BaseSettings):
     MONGO_PASSWORD: Optional[str] = None
     MONGO_DB: Optional[str] = None
 
-    API_V1_STR: str = "/api/v1"
+    API_V1_STR: str = "/api/1"
 
     LOGFILE: str = "maker-hub.log"
 
