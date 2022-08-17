@@ -1,9 +1,11 @@
 import datetime
 from typing import List, Optional
 
-from beanie import Document
+import pymongo
+from beanie import Document, Indexed
 from pydantic import Field, HttpUrl
 
+from app.core.config import settings
 from app.models.core import CoreModel, IDModelMixin
 from app.models.datatable import DataTableResponseBase
 
@@ -30,11 +32,48 @@ class PartBaseModel(CoreModel):
     updated_at: Optional[datetime.datetime] = Field(datetime.datetime.now())
 
 
-class PartPublicModel(IDModelMixin, PartBaseModel):
-    id: str
+class PartDB(PartBaseModel, Document):
+    class Settings:
+        name = "parts"
+        indexes = [
+            [
+                ("name", pymongo.TEXT),
+                ("description", pymongo.TEXT),
+            ],
+        ]
+
+
+class PartCreateModel(PartDB):
+    name: str
+
+    class Config:
+        schema_extra = {
+            "example": {
+                "name": "Part 1",
+                "description": "Part 1 description",
+                "footprint": "SOT23",
+                "tags": ["tag1", "tag2"],
+            }
+        }
+
+
+class PartUpdateModel(PartDB):
+    class Config:
+        schema_extra = {
+            "example": {
+                "name": "Part 1",
+                "description": "Part 1 description",
+                "footprint": "SOT23",
+                "tags": ["tag1", "tag2"],
+            }
+        }
+
+
+class PartPublicModel(PartDB):
     href: Optional[HttpUrl] = None
 
     class Config:
+        fields = {"id": "id"}
         schema_extra = {
             "example": {
                 "id": "1",
@@ -99,35 +138,3 @@ class PartPublicResponseModel(CoreModel):
 
 class PartTableResponse(DataTableResponseBase):
     data: List[PartPublicModel] = []
-
-
-class PartCreateModel(PartBaseModel):
-    name: str
-
-    class Config:
-        schema_extra = {
-            "example": {
-                "name": "Part 1",
-                "description": "Part 1 description",
-                "footprint": "SOT23",
-                "tags": ["tag1", "tag2"],
-            }
-        }
-
-
-class PartUpdateModel(PartBaseModel):
-    pass
-
-    class Config:
-        schema_extra = {
-            "example": {
-                "name": "Part 1",
-                "description": "Part 1 description",
-                "footprint": "SOT23",
-                "tags": ["tag1", "tag2"],
-            }
-        }
-
-
-class PartDB(IDModelMixin, PartBaseModel, Document):
-    pass

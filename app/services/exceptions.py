@@ -1,5 +1,5 @@
 #
-# Copyright 2022 Stephen Eaton
+# Copyright 2021 Stephen Eaton
 #
 # This file is part of Maker-Hub.
 #
@@ -21,20 +21,12 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-from typing import List, Optional
 
-from beanie import Document
-from pydantic import BaseModel, Field
-
-
-class CoreModel(BaseModel):
-    """App Base Model
-    Any common logic to be shared with all schema goes here.
-    """
-
-    pass
+class DuplicatedEntryError(Exception):
+    def __init__(self, message="A entry with the same name already exists"):
+        super().__init__(message)
 
 
-class IDModelMixin(Document, BaseModel):
-
-    pass
+class NoResultsFound(Exception):
+    def __init__(self, message: str = "No Results Found"):
+        super().__init__(message)

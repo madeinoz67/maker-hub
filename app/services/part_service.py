@@ -1,5 +1,11 @@
 from typing import List
 
+from loguru import logger
+
+from app.models.part import PartCreateModel, PartDB, PartPublicModel
+
+from .exceptions import DuplicatedEntryError
+
 
 async def get_part_count() -> int:
     return 283
@@ -11,6 +17,19 @@ async def get_total_stock() -> int:
 
 async def get_stock_value() -> float:
     return 1_500.00
+
+
+# create_part
+# function to create a new part in the mongoDatabase
+async def create(details: PartCreateModel) -> PartPublicModel:
+
+    result = await details.find_one({"name": details.name})
+    if not result:
+        await details.insert()
+        return details
+    else:
+        logger.error(f"Part name:'{details.name}' already exists")
+        raise DuplicatedEntryError(f"Part name: '{details.name}' already exists")
 
 
 async def get_latest_parts(

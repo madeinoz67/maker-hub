@@ -1,22 +1,27 @@
+from http.client import HTTPException
 from typing import Optional
 
 import fastapi
-from fastapi import Depends, Response, status
+from fastapi import Depends, HTTPException, Response, status
 from loguru import logger
 
-from app.api.exceptions import DuplicatedEntryError, NoResultsFound
 from app.core.config import settings
 from app.models.datatable import DataTableRequest
 from app.models.part import (
     PartCreateModel,
+    PartDB,
     PartPublicModel,
     PartPublicResponseModel,
     PartTableResponse,
     PartUpdateModel,
 )
 from app.services import part_service
+from app.services.exceptions import DuplicatedEntryError, NoResultsFound
 
 router = fastapi.APIRouter()
+
+__host = settings.HOST
+__port = settings.PORT
 
 
 @router.get(
@@ -104,7 +109,22 @@ async def part_create(
     - PartPublicModel: The newly created part.
 
     """
-    raise NoResultsFound()
+    try:
+        part = await part_service.create(details)
+        logger.debug(f"Created part {part.id} | name: {part.name}")
+        part.href = (
+            f"{__host}:{__port}"  # TODO: Fix href field not found in PartPublicModel
+        )
+
+        return part.dict() if __body else Response(status_code=status.HTTP_201_CREATED)
+    except DuplicatedEntryError as e:
+        raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail=str(e)) from e
+    except Exception as e:
+        logger.error(e)
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Internal server error",
+        ) from e
 
 
 @router.delete("/{part_id}", name="part_delete")
