@@ -2,7 +2,7 @@ from typing import List
 
 from loguru import logger
 
-from app.models.part import PartCreateModel, PartDB, PartPublicModel
+from app.models.part import PartCreateModel, PartDB, PartPublicResponseModel
 
 from .exceptions import DuplicatedEntryError
 
@@ -21,12 +21,14 @@ async def get_stock_value() -> float:
 
 # create_part
 # function to create a new part in the mongoDatabase
-async def create(details: PartCreateModel) -> PartPublicModel:
+async def create(details: PartCreateModel) -> PartPublicResponseModel:
 
-    result = await details.find_one({"name": details.name})
+    part = PartPublicResponseModel.parse_obj(details)
+    result = await part.find_one({"name": part.name})
     if not result:
-        await details.insert()
-        return details
+        await part.insert()
+        logger.debug(f"Created part {part.id} | name: {part.name}")
+        return part
     else:
         logger.error(f"Part name:'{details.name}' already exists")
         raise DuplicatedEntryError(f"Part name: '{details.name}' already exists")

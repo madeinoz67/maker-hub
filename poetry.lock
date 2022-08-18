@@ -54,7 +54,7 @@ typecheck = ["mypy"]
 
 [[package]]
 name = "beanie"
-version = "1.11.7"
+version = "1.11.8"
 description = "Asynchronous Python ODM for MongoDB"
 category = "main"
 optional = false
@@ -155,11 +155,11 @@ colorama = {version = "*", markers = "platform_system == \"Windows\""}
 
 [[package]]
 name = "codespell"
-version = "2.1.0"
+version = "2.2.0"
 description = "Codespell"
 category = "dev"
 optional = false
-python-versions = ">=3.5"
+python-versions = ">=3.6"
 
 [package.extras]
 hard-encoding-detection = ["chardet"]

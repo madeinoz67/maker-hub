@@ -1,9 +1,9 @@
 import datetime
-from typing import List, Optional
+from typing import Dict, List, Optional
 
 import pymongo
 from beanie import Document, Indexed
-from pydantic import Field, HttpUrl
+from pydantic import Field, HttpUrl, root_validator
 
 from app.core.config import settings
 from app.models.core import CoreModel, IDModelMixin
@@ -20,14 +20,14 @@ class PartStockItem(CoreModel):
 
 
 class PartBaseModel(CoreModel):
-    description: Optional[str] = Field(None)
-    footprint: Optional[str] = Field(None)
-    stock: Optional[List[PartStockItem]] = Field(None)
-    tags: Optional[List[str]] = Field(None)
-    notes: Optional[str] = Field(None)
-    name: Optional[str] = Field(None)
-    mpn: Optional[str] = Field(None)
-    manufacturer: Optional[str] = Field(None)
+    description: Optional[str]
+    footprint: Optional[str]
+    stock: Optional[List[PartStockItem]]
+    tags: Optional[List[str]]
+    notes: Optional[str]
+    name: Optional[str]
+    mpn: Optional[str]
+    manufacturer: Optional[str]
     created_at: Optional[datetime.datetime] = Field(datetime.datetime.now())
     updated_at: Optional[datetime.datetime] = Field(datetime.datetime.now())
 
@@ -43,7 +43,7 @@ class PartDB(PartBaseModel, Document):
         ]
 
 
-class PartCreateModel(PartDB):
+class PartCreateModel(PartBaseModel):
     name: str
 
     class Config:
@@ -69,8 +69,16 @@ class PartUpdateModel(PartDB):
         }
 
 
-class PartPublicModel(PartDB):
-    href: Optional[HttpUrl] = None
+class PartPublicResponseModel(PartDB):
+    href: Optional[HttpUrl]
+
+    @root_validator
+    def build_href(cls, values) -> Dict:
+        if values["id"] is not None:
+            values[
+                "href"
+            ] = f'{settings.BASE_URL}{settings.API_V1_STR}/parts/{values["id"]}'
+        return values
 
     class Config:
         fields = {"id": "id"}
@@ -98,11 +106,11 @@ class PartPublicModel(PartDB):
         }
 
 
-class PartPublicResponseModel(CoreModel):
+class PartListPublicResponseModel(CoreModel):
     count: int = 0
     next: Optional[HttpUrl] = None
     previous: Optional[HttpUrl] = None
-    results: List[PartPublicModel] = []
+    results: List[PartPublicResponseModel] = []
 
     class Config:
         schema_extra = {
@@ -137,4 +145,4 @@ class PartPublicResponseModel(CoreModel):
 
 
 class PartTableResponse(DataTableResponseBase):
-    data: List[PartPublicModel] = []
+    data: List[PartPublicResponseModel] = []

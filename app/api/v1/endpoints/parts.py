@@ -2,15 +2,14 @@ from http.client import HTTPException
 from typing import Optional
 
 import fastapi
-from fastapi import Depends, HTTPException, Response, status
+from fastapi import HTTPException, Response, status
 from loguru import logger
 
 from app.core.config import settings
 from app.models.datatable import DataTableRequest
 from app.models.part import (
     PartCreateModel,
-    PartDB,
-    PartPublicModel,
+    PartListPublicResponseModel,
     PartPublicResponseModel,
     PartTableResponse,
     PartUpdateModel,
@@ -20,13 +19,10 @@ from app.services.exceptions import DuplicatedEntryError, NoResultsFound
 
 router = fastapi.APIRouter()
 
-__host = settings.HOST
-__port = settings.PORT
-
 
 @router.get(
     "/",
-    response_model=PartPublicResponseModel,
+    response_model=PartListPublicResponseModel,
     status_code=status.HTTP_200_OK,
     name="parts_list",
 )
@@ -34,7 +30,7 @@ async def parts_list(
     q: Optional[str] = None,
     limit: Optional[int] = 100,
     offset: Optional[int] = 0,
-) -> PartPublicResponseModel:
+) -> PartListPublicResponseModel:
     """# List Parts
 
     ## Args:
@@ -74,14 +70,14 @@ async def parts_list(
 
 @router.post(
     "/",
-    response_model=PartPublicModel,
+    response_model=PartPublicResponseModel,
     status_code=status.HTTP_201_CREATED,
     name="part_create",
 )
 async def part_create(
     details: PartCreateModel,
     __body: bool = True,
-) -> PartPublicModel:
+) -> PartPublicResponseModel:
     """# Add a new part.
 
     At a minimum this will create a new part in the database for the part name
@@ -106,16 +102,11 @@ async def part_create(
     - DuplicatedEntryError: If the part already exists.
 
     ## Returns:
-    - PartPublicModel: The newly created part.
+    - PartPublicResponseModel: The newly created part.
 
     """
     try:
         part = await part_service.create(details)
-        logger.debug(f"Created part {part.id} | name: {part.name}")
-        part.href = (
-            f"{__host}:{__port}"  # TODO: Fix href field not found in PartPublicModel
-        )
-
         return part.dict() if __body else Response(status_code=status.HTTP_201_CREATED)
     except DuplicatedEntryError as e:
         raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail=str(e)) from e
@@ -145,11 +136,11 @@ async def part_delete(part_id: str) -> Response:
 
 @router.get(
     "/{part_id}",
-    response_model=PartPublicModel,
+    response_model=PartPublicResponseModel,
 )
 async def part_read(
     part_id: str,
-) -> PartPublicModel:
+) -> PartPublicResponseModel:
     """# Read a part.
 
     ## Args:
@@ -168,12 +159,12 @@ async def part_read(
     raise NoResultsFound()
 
 
-@router.put("/{part_id}", response_model=PartPublicModel, name="part_update")
+@router.put("/{part_id}", response_model=PartPublicResponseModel, name="part_update")
 async def part_update(
     part_id: str,
     details: PartUpdateModel,
     __body: bool = True,
-) -> PartPublicModel:
+) -> PartPublicResponseModel:
     """# Part Update
     Updates all of the parts fields at the same time.
     ## Args:
@@ -203,12 +194,12 @@ async def part_update(
     raise NoResultsFound()
 
 
-@router.patch("/{part_id}", response_model=PartPublicModel, name="part_update")
+@router.patch("/{part_id}", response_model=PartPublicResponseModel, name="part_update")
 async def part_update(
     part_id: str,
     details: PartUpdateModel,
     __body: bool = True,
-) -> PartPublicModel:
+) -> PartPublicResponseModel:
     """# Part Update
 
     Updates specific fields of a part.

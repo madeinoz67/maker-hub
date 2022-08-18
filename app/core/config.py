@@ -70,13 +70,14 @@ class GlobalSettings(BaseSettings):
     MONGO_PASSWORD: Optional[str] = None
     MONGO_DB: Optional[str] = None
 
-    API_V1_STR: str = "/api/1"
+    API_V1_STR: str = "/api/v1"
 
     LOGFILE: str = "maker-hub.log"
 
     NANOID_ALPHABET: str = "0123456789abcdefghijklmnopqrstuvwxyz"
     NANOID_SIZE: int = 26
 
+    BASE_URL = "http://127.0.0.1:8000"
     HOST: str = "http://127.0.0.1"
     PORT: int = 8000
 

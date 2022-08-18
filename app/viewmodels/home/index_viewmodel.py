@@ -2,7 +2,7 @@ from typing import List
 
 from starlette.requests import Request
 
-from app.models.part import PartPublicModel as Part
+from app.models.part import PartPublicResponseModel as Part
 from app.services import part_service, project_service, storage_service
 from app.viewmodels.shared.viewmodel import ViewModelBase
 
