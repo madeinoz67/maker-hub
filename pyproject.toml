@@ -10,9 +10,9 @@ packages = [
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.9"
-fastapi = "^0.79.0"
-pydantic = { version = "^1.9", extras = ["email"] }
+python = "^3.10"
+fastapi = "^0.91.0"
+pydantic = { version = "^1.10", extras = ["email"] }
 uvicorn = "^0.18.2"
 python-multipart = "^0.0.5"
 progressbar2 = "^4.0.0"
@@ -29,17 +29,17 @@ httptools = "^0.4.0"
 beanie = "^1.11.7"
 
 [tool.poetry.dev-dependencies]
-pytest = "^7.1.2"
-pytest-cov = "^3.0"
-pytest-asyncio = "^0.19.0"
-pytest-env = "^0.6.2"
-black = "^22.6"
-docker = "^5.0.3"
-mypy = "^0.971"
-mkdocs-material = "^8.3.9"
+pytest = "^7.2.1"
+pytest-cov = "^4.0"
+pytest-asyncio = "^0.20.3"
+pytest-env = "^0.8.1"
+black = "^23.1"
+docker = "^6.0.1"
+mypy = "^1.0"
+mkdocs-material = "^9.0.2"
 mkdocs-macros-plugin = "^0.7.0"
-mkdocs-mermaid2-plugin = "^0.6.0"
-codespell = "^2.1.0"
+mkdocs-mermaid2-plugin = "^0.1.1"
+codespell = "^2.2.2"
 flake8 = "^5.0.4"
 isort = "^5.10.1"
 

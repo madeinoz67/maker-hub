@@ -10,6 +10,10 @@
 
 **Dependencies Updated:**
 
+- Fix ci issues [\#389](https://github.com/madeinoz67/maker-hub/pull/389) ([madeinoz67](https://github.com/madeinoz67))
+- Bump python from 3.10.6-slim to 3.11.2-slim [\#382](https://github.com/madeinoz67/maker-hub/pull/382) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump actions/setup-node from 3.4.1 to 3.6.0 [\#368](https://github.com/madeinoz67/maker-hub/pull/368) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump codespell from 2.1.0 to 2.2.2 [\#340](https://github.com/madeinoz67/maker-hub/pull/340) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump pydantic from 1.9.1 to 1.9.2 [\#309](https://github.com/madeinoz67/maker-hub/pull/309) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump flake8 from 5.0.3 to 5.0.4 [\#307](https://github.com/madeinoz67/maker-hub/pull/307) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump python from 3.10.5-slim to 3.10.6-slim [\#306](https://github.com/madeinoz67/maker-hub/pull/306) ([dependabot[bot]](https://github.com/apps/dependabot))
