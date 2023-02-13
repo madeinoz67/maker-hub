@@ -10,6 +10,7 @@
 
 **Dependencies Updated:**
 
+- Fix ci issues [\#389](https://github.com/madeinoz67/maker-hub/pull/389) ([madeinoz67](https://github.com/madeinoz67))
 - Bump codespell from 2.1.0 to 2.2.2 [\#340](https://github.com/madeinoz67/maker-hub/pull/340) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump pydantic from 1.9.1 to 1.9.2 [\#309](https://github.com/madeinoz67/maker-hub/pull/309) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump flake8 from 5.0.3 to 5.0.4 [\#307](https://github.com/madeinoz67/maker-hub/pull/307) ([dependabot[bot]](https://github.com/apps/dependabot))
