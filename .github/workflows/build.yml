@@ -11,7 +11,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.x"
+          python-version: "3.10"
       - uses: actions/setup-node@v3.4.1
         with:
           node-version: "12.x"
