@@ -77,11 +77,7 @@ typecheck = ["mypy"]
 
 [[package]]
 name = "beanie"
-<<<<<<< HEAD
-version = "1.11.8"
-=======
 version = "1.17.0"
->>>>>>> master
 description = "Asynchronous Python ODM for MongoDB"
 category = "main"
 optional = false
@@ -304,13 +300,6 @@ colorama = {version = "*", markers = "platform_system == \"Windows\""}
 
 [[package]]
 name = "codespell"
-<<<<<<< HEAD
-version = "2.2.0"
-description = "Codespell"
-category = "dev"
-optional = false
-python-versions = ">=3.6"
-=======
 version = "2.2.2"
 description = "Codespell"
 category = "dev"
@@ -320,7 +309,6 @@ files = [
     {file = "codespell-2.2.2-py3-none-any.whl", hash = "sha256:87dfcd9bdc9b3cb8b067b37f0af22044d7a84e28174adfc8eaa203056b7f9ecc"},
     {file = "codespell-2.2.2.tar.gz", hash = "sha256:c4d00c02b5a2a55661f00d5b4b3b5a710fa803ced9a9d7e45438268b099c319c"},
 ]
->>>>>>> master
 
 [package.extras]
 dev = ["check-manifest", "flake8", "pytest", "pytest-cov", "pytest-dependency", "tomli"]
