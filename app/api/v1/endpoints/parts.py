@@ -106,7 +106,8 @@ async def part_create(
 
     """
     try:
-        part = await part_service.create(details)
+        result = await part_service.create(details)
+        part = PartPublicResponseModel.parse_obj(result)
         return part.dict() if __body else Response(status_code=status.HTTP_201_CREATED)
     except DuplicatedEntryError as e:
         raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail=str(e)) from e

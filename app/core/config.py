@@ -57,9 +57,9 @@ class GlobalSettings(BaseSettings):
 
     ENV_STATE: Optional[str] = Field(None, env="ENV_STATE")
 
-    DEBUG: bool = False
+    DEBUG: Optional[bool] = False
 
-    DISABLE_DOCS: bool = False
+    DISABLE_DOCS: Optional[bool] = False
 
     SECRET_KEY: str = "overriden_by_dotenv_value"
 

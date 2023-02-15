@@ -21,9 +21,9 @@ async def get_stock_value() -> float:
 
 # create_part
 # function to create a new part in the mongoDatabase
-async def create(details: PartCreateModel) -> PartPublicResponseModel:
+async def create(details: PartCreateModel) -> PartDB:
 
-    part = PartPublicResponseModel.parse_obj(details)
+    part = PartDB.parse_obj(details)
     result = await part.find_one({"name": part.name})
     if not result:
         await part.insert()
